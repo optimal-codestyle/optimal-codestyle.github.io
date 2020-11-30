@@ -1,4 +1,4 @@
-![epam](https://habrastorage.org/webt/k1/_8/e6/k1_8e631hj6qo4g-ebdtohl3ktc.jpeg)
+![epam](https://habrastorage.org/webt/hq/rw/d-/hqrwd-extkiwaucd-id2punkdjk.jpeg)
 
 _Грубо говоря, очевидно, что некоторые виды форматирования лучше других._
 _— Стив Макконелл, Совершенный код._
