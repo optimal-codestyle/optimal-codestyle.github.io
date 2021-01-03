@@ -3,32 +3,36 @@
 _At a coarse level, it’s clear that some forms of layout are better than others._
 _— Steve McConnell, Code Complete._
 
-Эта статья об особенностях человеческого зрения и о том, как знание этих особенностей может помочь нам улучшить объективную удобочитаемость наших программ.
+This article is about human vision and how knowing these features can help us improve the objective readability of our programs.
 <cut />
 
 # Содержание
 
-* [Вступление](#intro)
-* [Особенности зрения человека ](#visionspecifics)
-* [Как мы читаем обычные тексты](#textreading)
-* [Понимание программ](#comprehension)
-  * [Когнитивные модели понимания программ](#cognitivemodels)
-    * [Концепции и терминология](#concepts)
-    * [Модель понимания от общего к частному](#topdownmodel)
-    * [Понимание от частного к общему](#downtopmodel)
-    * [Оппортунистическая и систематические стратегии](#strategies)
-  * [Специфика чтения текста программы](#codereading)
-  * [Роль идентификаторов](#identifiers)
-* [Основные принципы форматирования](#analysis)
-  * [Формирование визуальной структуры](#visualrepresentation)
-  * [Длина строки](#linelength)
-  * [Имена](#names)
-  * [Пробелы](#spaces)
-  * [Расстановка фигурных скобок](#braces)
-* [Заключение](#resume)
+* [Introduction](#intro)
+* [Features of Human Vision](#visionspecifics)
+  * [Field of View](#fieldofview)
+  * [Ambient and Focal Vision](#ambientfocal)
+  * [The Laws of Perceptual Organization](#laws)
+  * [Asymmetry of the Visual Field](asymmetry)
+* [How We Read Texts](#textreading)
+* [Program Comprehension](#comprehension)
+  * [Cognitive Models of Program Comprehension](#cognitivemodels)
+    * [Concepts and terminology](#concepts)
+    * [Top-Down Model](#topdownmodel)
+    * [Bottom-Up Model](#downtopmodel)
+    * [Opportunistic and Systematic Strategies](#strategies)
+  * [Specifics of Reading Program Texts](#codereading)
+  * [Role of Identifiers](#identifiers)
+* [Basic Principles of Formatting](#analysis)
+  * [Building the Visual Structure](#visualrepresentation)
+  * [Line Length](#linelength)
+  * [Names](#names)
+  * [Spaces](#spaces)
+  * [Arranging Curly Braces](#braces)
+* [Conclusion](#resume)
 
 <anchor>intro</anchor>
-# Вступление
+# Introduction
 _At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust._
 _— Rudolph Arnheim, Art and Visual Perception_
 
@@ -38,180 +42,202 @@ _— Harold Abelson and Gerald Jay Sussman, Structure and Interpretation of Comp
 _Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder._
 _— Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship._
 
-Наверно, никому не надо доказывать то, что _легкость восприятия_ (_readability_) текста программы является одним из решающих факторов, определяющих успешность её сопровождения и развития.
+Probably no one needs to prove that the _readability_ of the program text is one of the decisive factors that determine the success of its maintenance and development.
 
-Обычно, когда оценивают текст программы с точки зрения ее _легкости восприятия_, используют термин _удобочитаемость_. Строго говоря, это не совсем одно и то же, поскольку, как будет показано далее, процесс восприятия программы это больше, чем просто чтение.  Тем не менее, поскольку речь идет о тексте, и термин _удобочитаемость_ можно считать достаточно устоявшимся, я также буду использовать его в этом смысле.
+Usually, when evaluating the text of a program in terms of its _ease of perception_, the term _readability_ is used. Strictly speaking, they are not exactly the same thing, because, as will be shown later, the process of perceiving a program is more than just reading. However, since we are talking about text, and the term _readability_ is fairly well-established, I will also use it in that sense.
 
-Для поддержания удобочитаемости кода в процессе разработки программы обычно договариваются о некотором общем своде правил форматирования (стиле) исходного кода. Уже само по себе наличие свода таких правил способно оказать положительное влияние на его удобочитаемость и качество, так как, во-первых, формирует у программистов определенные привычки относительно тех языковых конструкций, которые они ожидают увидеть в тексте программы, а, во-вторых, заставляет их внимательнее относиться к тому, что они написали (если, конечно, форматирование кода не переложено полностью на средства автоформатирования).
+In order to maintain readability of the code, during program development it is common to agree on some common set of formatting rules (style) for the source code. The very existence of a set of such rules can have a positive effect on its readability and quality, since, firstly, it forms certain habits among programmers regarding the language constructions that they expect to see in the program text, and, secondly, it forces them to be more attentive to what they have written (unless, of course, the formatting of the code is completely transferred to the auto-formatting tools).
 
-Тем не менее, отдельные правила часто вызывают вопросы, поскольку критерии их выбора неясны, и они нередко противоречат аналогичным правилам в других подобных стилях.
+However, individual rules are often questionable because the criteria for their selection are unclear and they often contradict similar rules in other similar styles.
 
-Правила задают конкретные детали оформления кода в целях поддержания удобочитаемости, но при этом нет объяснения того, как эти правила помогают ее достичь. Без понимания этого, решение инженерной задачи формирования удобочитаемого, то есть оптимального с точки зрения легкости восприятия текста программы, подменяется бездумным следованием формальным и часто произвольно выбранным правилам, которые к тому же меняются при переходе с проекта на проект, с языка на язык. В результате формируется ложное представление о том, что сами по себе правила не так важны, и выбор того или иного стиля это всего лишь дело вкуса и привычки.
+The rules provide specific details for how the code is formatted to maintain readability, but there is no explanation of how the rules help achieve it. Without understanding this, the solution to the engineering problem of forming a readable (i.e optimal from the point of view of the ease of perception of the program text) is replaced by thoughtless adherence to formal and often arbitrarily chosen rules, which also change when moving from project to project, from language to language. As a result, a false idea is formed that the what the rules say is not so important, and the choice of one or another style is just a matter of taste and habit.
 
 Действительно, наши привычки во многом определяют, насколько комфортно мы чувствуем себя в той или иной ситуации и, в частности, воспринимаем тот ли иной стиль форматирования. Но ощущение комфорта вследствие привычки не может быть мерой того, насколько объективно хорош этот стиль: очевидно, что привычка к какому-то стилю может лишь означать, что мы просто перестали замечать специфические особенности этого стиля, которые на деле могут быть контрпродуктивными в смысле формирования объективно удобочитаемого кода.
 
-Говоря об _объективной удобочитаемости_, я подразумеваю, что полная удобочитаемость текста состоит из субъективной составляющей, вызванной выработанными привычками и навыками, и о которой мы говорили выше, и объективной. Эта вторая составляющая определяется возможностями и ограничениями общих для всех нормальных в психическом и физическом состоянии людей механизмами восприятия и обработки визуальной информации.
+Indeed, our habits largely determine how comfortable we feel in a given situation and, in particular, how we perceive a particular formatting style. But the feeling of comfort due to habit cannot be a measure of how objectively good this style is. It is obvious that the habit of a certain style can only mean that we simply stopped noticing the specific features of this style, which in fact can be counterproductive in the sense of forming objectively readable code.
 
-Таким образом, субъективная составляющая связана с некоторыми частными привычками, которые могут быть изменены, а объективная — с общими психофизическими особенностями зрения человека, которые мы не предполагаем возможным изменять. Поэтому, говоря об оптимизации текста программы, имеет смысл говорить лишь об объективной составляющей удобочитаемости, и поэтому далее в этой статье термин удобочитаемость всегда будет относиться к этой её составляющей.
+When I speak of _objective readability_, I mean that the full readability of a text consists of a subjective component, caused by developed habits and skills, which we talked about above, and an objective one. This second component is determined by the capabilities and limitations of the mechanisms of perception and processing of visual information common to all people in the normal mental and physical state.
 
-Давайте посмотрим подробнее, на то, что нам известно о механизмах восприятия человеком зрительной информации, чтении текстов вообще и чтении и восприятии текстов программ.
+Thus, the subjective component is associated with some private habits that can be changed, and the objective – with the general psychophysical features of a human's vision, which we do not assume is possible to change. Therefore, when talking about optimizing the text of a program, it makes sense to talk only about the objective component of readability, and therefore further in this article the term _readability_ will always refer to this component of it.
+
+Let's take a closer look at what we know about the mechanisms of human perception of visual information, reading plain texts, and reading and perceiving program texts.
 
 <anchor>visionspecifics</anchor>
-# Особенности зрения человека[⁹](#9)
-## Поле зрения
-[Поле зрения](https://ru.wikipedia.org/wiki/Поле_зрения) человека достаточно велико: 55° вверх, 60° вниз, 90° наружу (то есть суммарное поле зрения двумя глазами — 180°) и 60° внутрь. Однако внутри этого поля острота зрения и цветовосприятие распределены неравномерно: острота зрения порядка 1' достигается в области _фовеа_, формирующей ~2° центрального (_фовеального_) зрения, но она не так хороша в _парафовеальной_ области (которая покрывает 5° в обе стороны от точки фиксации) и еще хуже на периферии.[¹](#1)
+# Features of Human Vision[⁹](#9)
+<anchor>fieldofview</anchor>
+## Field of View
+The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relatively large: 50° superiorly, 60° inferiorly, 90° temporally (towards an ear) and 50° nasally. Situated in the temporal hemifield is the normal blind spot approximately 12 to 17 degrees from fixation and 1.5 degrees below the horizontal meridian. Within this field, visual acuity and color perception are unevenly distributed: visual acuity of the order of 1' is achieved in the area of ​​_fovea_, which forms ~2° of central (_foveal_) vision, but it is not so good in the _parafoveal_ area (which covers 5° in both directions from the fixation point) and even worse at the periphery.[¹](#1)
 
-Подобным же образом от центра к краю падает и способность различать цвета, причем это изменение различно для разных цветовых компонент. Можно сказать, что, двигаясь от центра человеческой сетчатки к периферии, мы как бы оказываемся на более ранних этапах эволюции, переходя от наиболее высоко организованных структур к примитивному глазу, который различает лишь простое движение теней.
+Likewise, the ability to distinguish colors decreases from the center to the edge, and this change is different for different color components. We can say that moving from the center of the human retina to the periphery, we seem to find ourselves in earlier stages of evolution, moving from the most highly organized structures to the primitive eye, which distinguishes only the simple movement of shadows.
 
-**Рисунок 1. Поле зрения правого глаза человека. Оранжевое пятно — место проекции слепого пятна глазного дна. ([оригинал](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Goldmann_visual_field_record_sheet.svg))**
+**Figure 1. Field of view of the human right eye. Orange spot - the place of projection of the fundus blind spot.([оригинал](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Goldmann_visual_field_record_sheet.svg))**
 <img src="https://habrastorage.org/webt/7v/mo/qz/7vmoqzost4u5nzaeluqofvn3we4.png" style="zoom:20%;" />
 
-## Амбьентное и фокальное зрение
-В современной нейропсихологии существует представлении об  _амбьентной_  (от фр. ambiance = окружение) и _фокальной_ зрительных системах. В то время как первая, эволюционно более древняя, ответственна за динамическую пространственную локализацию, вторая занимается идентификацией объектов.
+<anchor>ambientfocal</anchor>
+## Ambient and Focal Vision
+In modern neuropsychology, there is a concept of _ambiant_ (from the French **ambiant** ‘surrounding’) and _focal_ visual systems. While the first, evolutionarily more ancient, is responsible for dynamic spatial localization, the second deals with the identification of objects.
 
-**Таблица. 1. Сравнительные признаки фокальной и амбьентной систем**
-
-| Зрительная система           | Фокальная | Амбьентная             |
+**Table. 1. Comparative features of focal and ambient systems**
+| Visual System                | Focal     | Ambient                |
 | ---------------------------- | --------- | ---------------------- |
-| Функция                      | Что       | Где/Как                |
-| Включенность в движение      | Меньше    | Больше                 |
-| Осознание/Память             | Больше    | Меньше или отсутствует |
-| Временные свойства           | Медленная | Быстрая                |
-| Чувствительность к освещению | Высокая   | Низкая                 |
-| Пространственное разрешение  | Высокое   | Низкое                 |
+| Function                     | What      | Where / How            |
+| Engagement in movement       | Less      | More                   |
+| Awareness / Memory           | More      | Less or missing        |
+| Temporary properties         | Slow      | Fast                   |
+| Light Sensitivity            | High      | Low                    |
+| Spatial resolution           | High      | Low                    |
 
-Объекты, представляющие собой источник нужных сведений, распределены далеко неравномерно. Обычно они локализованы в небольших участках поля зрения. При этом с помощью амбьентного зрения обнаруживается потенциально интересный объект или элемент объекта, а при помощи фокального зрения направленного на объект, эти сведения воспринимаются и анализируются более детально. Сталкиваясь с новой ситуацией или с новым объектом, мы, как правило, сначала смотрим «широким полем» и лишь затем концентрируем наше внимание на деталях.
+The objects that represent the source of the necessary information are far unevenly distributed. They are usually localized in small areas of the visual field. At the same time, with the help of ambient vision, a potentially interesting object or element of the object is detected, and with the help of focal vision aimed at the object, this information is perceived and analyzed in more detail. When faced with a new situation or with a new object, we, as a rule, first look "wide field" and only then concentrate our attention on details.
 
-Обследование окружения и выбор объектов для детальной обработки осуществляется с помощью движений головы и тела, на которые накладывается тонкий узор движений глаз.  Наиболее известной их разновидностью являются _саккады_ — чрезвычайно быстрые (~500°/сек) скачки баллистического типа, меняющие положение глаз в орбите и позволяющие выделять фрагменты сцены для последующей _фиксации_.
+Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are _saccades_ - extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent _fixation_.
 
-**Рисунок 2. Репродукция картины И. Е. Репина и запись движений глаз испытуемого.**[¹¹](#11)
+**Figure 2. Reproduction of Ilya Repin's painting and recording of the subject's eye movements.**[¹¹](#11)
 <img src="https://habrastorage.org/webt/vi/-m/vw/vi-mvwhun4tp2e2h1sk-cuob0mu.jpeg" />
 <!-- <img src="https://habrastorage.org/webt/pi/m-/sa/pim-sa30htkaqalojvuubbjxrbo.jpeg" /> -->
 <!-- <img src="Yarbus_ne_zhdaly.jpg" style="zoom:40%;" /> -->
-Начало исследованиям соотношения амбьентной (глобальной) и фокальной (локальной) зрительной обработки было положено в экспериментах Дэвида Навона в 1977. Он предъявлял испытуемым большие буквы, состоящие из маленьких букв. Некоторые из этих составных стимулов были «однородными» — глобальная форма и локальные элементы представляли собой одну и ту же букву. Другие были «неоднородными» — глобальная и локальные буквы были разными (скажем, «Е» и «S»). Испытуемые должны были как можно быстрее идентифицировать глобальную или локальную букву.
+Studies of the relationship between ambient (global) and focal (local) visual processing began in the experiments of David Navon in 1977. He presented subjects with large letters consisting of small letters. Some of these compound stimuli were "homogeneous" – the global form and local elements were the same letter. Others were "heterogeneous" – the global and local letters were different (say, "E" and "S"). The subjects had to identify the global or local letter as quickly as possible.
 
-**Рисунок 3. Однородные и неоднородные супербуквы из экспериментов Дэвида Навона.**
-
+**Figure 3. Homogeneous and heterogeneous super letters from David Navon's experiments.**
 <img src="https://habrastorage.org/webt/yu/ha/z3/yuhaz3cdetforzujr9xsmssmyac.png" />
 <!-- <img src="Velichkovskiy_FF.png" style="zoom:40%;" /> -->
 
-Оказалось, что при настройке на глобальную форму она идентифицируется быстро и без всякой интерференции со стороны совпадающих или несовпадающих букв локального уровня. При настройке на идентификацию деталей картина была иной. Во-первых, ответы были более медленными. Во-вторых, в случае неоднородных стимулов ответы дополнительно замедлялись и становились менее точными. Очевидно, _настраиваясь на детальную обработку, мы не всегда можем игнорировать глобальную информацию_.
+It turned out that when set to the global form, it is identified quickly and without any interference with matching or non-matching letters of the local level. When set to identify parts (i.e. small letters), the picture was different. First, the responses were slower. Second, in the case of heterogeneous stimuli, responses were further slowed down and become less accurate. Obviously, _when we set ourselves up for granularity, we cannot always ignore global information_.
 
-В результате исследований отношения глобальной и локальной обработки, тестируемые с помощью супербукв Навона, была обнаружена возможно дифференциальная роль задних отделов левого и правого полушарий. При этом левое полушарие оказалось скорее регулятором настройки на детали, а правое — на глобальные очертания. Чрезвычайно интересным оказалось влияние эмоций: отрицательные эмоции, в отличие от положительных, усиливали установку на восприятие деталей.
+Research on the relationship of global and local processing, tested with the Navona super letters, revealed a possible differential role for the posterior left and right hemispheres. In this case, the left hemisphere turned out to be more of a tuning regulator for details, and the right one for global outlines. The influence of emotions turned out to be extremely interesting: negative emotions, in contrast to positive ones, strengthened the attitude towards the perception of details.
 
-## Законы перцептивной организации
-Интересной особенностью нашего зрения является способность воспринимать группу объектов как единое целое. Так на изображении ниже мы видим собаку, а не просто хаотический набор пятен:
+<anchor>laws</anchor>
+## The Laws of Perceptual Organization
+An interesting feature of our vision is the ability to perceive a group of objects as a whole. So in the image below we see a dog, and not just a chaotic set of spots:
 
-**Рисунок 5. Далматинец**
-
+**Figure 5. Dalmatian.**
 <img src="https://habrastorage.org/webt/nm/8m/-7/nm8m-7vtm8sly2bjy1_vmilhnu0.jpeg" />
 <!-- <img src="dog.jpg" style="zoom:70%;" /> -->
-А здесь мы ясно различаем квадрат и круг[¹⁰](#10):
+And here we clearly see a square and a circle[¹⁰](#10):
 
-**Рисунок 6. Фигуры из точек.**
-
+**Figure 6. Shapes from points.**
 <img src="https://habrastorage.org/webt/lo/sp/oh/lospoh3jfddv6dkgtotqvuepjv0.png" />
 <!-- <img src="https://habrastorage.org/webt/na/qt/b5/naqtb5hym6odlk2ytcijlg6lvwe.png" /> -->
 <!-- ![](Arnheim_1.png) -->
-Есть множество объяснений возникновения подобных иллюзий. С точки зрения когнитивной биономии потребность видеть формы, грани и движения (а также лица) была продиктована необходимостью в выживании. Таким образом, даже при отсутствии реальных линий или форм наша сенсорно-когнитивная система использовала частичную информацию, чтобы создать эти формы в попытке сделать понятным внешне хаотический мир.
+There are many explanations for these illusions. In terms of cognitive bionomy, the need to see shapes, edges, and movements (as well as faces) was dictated by the need for survival. Thus, even in the absence of real lines or shapes, our sensory-cognitive system used partial information to create these shapes in an attempt to make the seemingly chaotic world intelligible.
 
-Посмотрите на рисунок ниже, и вы увидите как с течением времени ориентация треугольников меняется с одного направления на другое, третье.
+Take a look at the picture below and you will see how, over time, the orientation of the triangles changes from one direction to another, a third.
 
-**Рисунок 7. Треугольники, меняющие ориентацию.[¹⁶](#16)**
-
+**Figure 7. Triangles changing orientation.[¹⁶](#16)**
 <img src="https://habrastorage.org/webt/0a/og/y_/0aogy_yxzq8bnzxf-unhccm8d-w.png" />
 <!-- <img src="triangles.png" style="zoom:50%;" /> -->
-Таким образом можно сказать, что в отсутствии явно выраженной доминантной структуры наш мозг постоянно тратит ресурсы на поиски такой структуры.
+Thus, we can say that in the absence of a clearly expressed dominant structure, our brain is constantly spending resources in search of such a structure.
 
-Первыми это явление перцептивной организации стали изучать гештальтпсихологи. Они сформулировали основной закон зрительного восприятия, согласно которому _любая стимулирующая модель воспринимается таким образом, что результирующая структура будет, насколько это позволяют данные условия, наиболее простой_. Поэтому мы воспринимаем квадрат именно так, как он изображен слева, а не каким-то другим образом:[¹⁰](#10)
+Gestalt psychologists were the first to study this phenomenon of perceptual organization. They formulated the basic law of visual perception, according to which _any stimulating model is perceived in such a way that the resulting structure will be, as far as the given conditions allow, the simplest_. Therefore, we perceive the square exactly as it is depicted on the left, and not in some other way: [¹⁰](#10)
 
-**Рисунок 8. Варианты организации точек в фигуру.**
-
+**Figure 8. Options for organizing points into a shape.**
 <img src="https://habrastorage.org/webt/hm/j3/0m/hmj30mmpg6_b_cu3rk0bgrdds1w.png" />
 <!-- ![](Arnheim_2.png) -->
 
-Гештальтпсихологи также сформулировали 6 принципов перцептивной организации. В соответствии с этими принципами _объекты, которые_
+Gestalt psychologists have also formulated 6 principles of perceptual organization. In accordance with these principles, _objects that_
 
-- _расположены близко друг к другу («закон близости»),_
-- _имеют похожие яркостные и цветовые характеристики («сходства»),_
-- _ограничивают небольшую, замкнутую («замкнутости»)_
-- _и симметричную область («симметрии»),_
-- _естественно продолжают друг друга («хорошего продолжения»),_
-- _движутся примерно с равной скоростью в одном направлении («общей судьбы»),_
+- _located close to each other ("the law of proximity"),_
+- _have similar brightness and color characteristics ("similarities"),_
+- _restrict a small, closed ("closed")_
+- _and a symmetric area ("symmetry"),_
+- _naturally continue each other ("good continuation"),_
+- _move at approximately the same speed in one direction ("common destiny"),_
 
-_скорее будут восприняты как единое целое, или фигура, а не как разрозненные элементы среды, или фон_.
+_will sooner be perceived as a whole, or a figure, and not as disparate elements of the environment, or background_.
 
-**Рисунок 9. Примеры сходства по близости, цвету и размеру.[¹⁰](#10) **
-
+**Figure 9. Examples of similarity in proximity, color and size. [¹⁰](#10)**
 <img src="https://habrastorage.org/webt/0-/6r/qu/0-6rqup1wemlrmemrzbf5vpui8u.png" />
 <!-- <img src="https://habrastorage.org/webt/8g/b-/ba/8gb-bax1kdttiv1seb_eqaheviq.png" /> -->
 <!-- <img src="Arnheim_3.png" style="zoom:45%;" /> -->
 
-В случае конкуренции нескольких факторов перцептивной организации преимущество, как правило, отдается фактору _близости_, а затем фактору _сходства по окраске_, _ориентации_ или _размеру_.
+In the case of competition of several factors of perceptual organization, the priority is usually given to the factor of _proximity_, and then the factor of _similarity in color, _orientation_ or _size_.
 
 Учет этих принципов оказывается важным в случае перцептивного поиска или восприятия, поскольку, _если информация организована в соответствии с этими принципами, решение поставленной задачи требует меньших усилий за счет того, что перцептивное поле подвергается группировке, и на образовавшиеся группы элементов последовательно выделяется всё меньшая доля общих ресурсов_. Распределение ресурсов внутри каждой группы оказывается примерно равномерным.
 
-Задачи зрительного поиска обычно затрудняются при добавлении иррелевантных объектов (_дистракторов_). Однако _в случае, когда дистракторы образуют визуально компактные группы, позволяющие игнорировать их как целое, их добавление наоборот может значительно облегчить поиск_.
+Taking these principles into account turns out to be important in the case of perceptual search or perception, because, _if information is organized in accordance with these principles, the solution of the problem posed requires less effort due to the fact that the perceptual field is subjected to grouping, and a smaller proportion of common resources are successively allocated to the formed groups of elements_. The distribution of resources within each group is approximately equal.
 
-## Асимметрия зрительного поля
-Подобно асимметрии между левой и правой рукой существует некоторая асимметрия в том, как мы воспринимаем левое и правое визуальные поля. Трудно утверждать, связано ли это с асимметрией в левом и правом полушариях мозга, ответственных за обработку сенсорной информации от правого и левого поля зрения соответственно, либо от выработанной привычки.
+The tasks of visual search are usually complicated by the addition of irrelevant objects (_distractors_). However, _in the case when distractors form visually compact groups, allowing them to be ignored as a whole, their addition, on the contrary, can greatly facilitate the search_.
 
-Так, в сценическом искусстве известно, что существует разница между левой и правой половиной сцены: как только поднимается занавес в начале акта, зрители начинают смотреть в левую сторону сцены. Левая сторона сцены считается более сильной. В группе из двух или трех актеров тот, кто стоит с левой стороны, будет в данной сцене доминировать. Аналогично, зритель воспринимает рисунок, как если бы он свое внимание сосредоточил на левой стороне. Субъективно он отождествляет себя с левой стороной, и все, что появляется в этой части картины, имеет большое значение. Таким образом, кроме естественной точки равновесия в центре визуальной сцены, формируется дополнительный центр в ее левой части[¹⁰](#10).
+<anchor>asymmetry</anchor>
+## Asymmetry of the Visual Field
+Similar to the asymmetry between the left and right hand, there is some asymmetry in how we perceive the left and right visual fields. Perhaps this is also due to asymmetries in the left and right hemispheres of the brain, which are responsible for processing sensory information from the right and left visual fields, respectively.
+
+Thus, in the scenic arts it is known that there is a difference between the left and right halves of the stage: when the curtain rises in the theater, the audience is inclined to look to its left first and to identify with the characters appearing on that side. Therefore, among the so-called stage areas the left side (from the audience's viewpoint) is considered stronger. In a group of actors, the one farthest left dominates the scene. The audience identifies with him and sees the others, from his position, as opponents. Likewise the observer experiences a picture as though he were facing its left side. He subjectively identifies with the left, and whatever appears there assumes greatest importance.[¹⁰](#10) Thus, in addition to the natural balance point in the center of the visual scene, an additional center is formed in its left part.
 
 <anchor>textreading</anchor>
-# Как мы читаем обычные тексты[¹](#1)
+# How We Read Texts[¹](#1)
+When we read, our eyes incessantly make rapid mechanical (i.e., not controlled by consciousness) movements, _saccades_. On average, their length is 7-9 letter spaces. At this time we do not receive new information. 
 
-Когда мы читаем, наши глаза непрестанно совершают быстрые механические (т.е. не контролируемые сознанием) движения, _саккады_ (_saccades_). В среднем их длина составляет 7-9 символов. В это время мы не получаем новой информации. Основная функция саккад заключается в перемещении новой области текста в область фовеального зрения (2° центральной области видимости) для детального анализа, потому что чтение в области парафовеального или периферического зрения сильно затруднено или невозможно.
+The primary function of a saccade is to bring a new region of text into foveal vision (~2° central field of view) for detailed analysis, because reading on the basis of only parafoveal or peripheral information is difficult to impossible.
 
-**Рисунок 10. Типичная картина движений глаз при чтении[⁹](#9)**
+Between saccades, our eyes remain relatively motionless for the duration of _fixations_ (about 200 – 300 ms). During this period, we recognize the visible part of the text and plan where to make the next jump.
+
+Whereas a majority of the words in a text are fixated during reading, many words are skipped so that foveal processing of each word is not necessary.
+
+**Figure 10. Typical pattern of eye movements while reading.[⁹](#9)**
 <img src="https://habrastorage.org/webt/kv/rt/ln/kvrtlnwdjge8ouyfzzaulxu7dyo.jpeg" />
 <!-- <img src="https://habrastorage.org/webt/hj/ig/oq/hjigoqx9elszvy_18dgb7xtuuio.png" /> -->
 <!-- <img src="Velichkovskiy_reading.png" style="zoom:40%;" /> -->
-Между саккадами наши глаза остаются относительно неподвижными на время _фиксаций_ (_fixations_) (около 200 – 300 мс). В течение этого периода мы распознаем видимую часть текста и планируем, куда совершить следующий cкачок.
 
-Порядка 10–15% времени читающие переводят свой взгляд назад в тексте (_regressions_), чтобы повторно прочитать то, что уже было прочитано. С возрастанием трудности текста увеличивается продолжительность фиксаций и частота регрессий, а длина саккад уменьшается.
+Letter spaces are the appropriate metric to use, because the number of letters traversed by saccades is relatively invariant when the same text is read at different distances, even though the letter spaces subtend different visual angles.[¹⁵](#15)
 
-Длина саккады определяется в размерах букв, а не угловых величинах, и не изменяется с изменением расстояния от глаза до монитора с текстом.[¹⁵](#15)
+About 10-15% of the time, readers move their gaze back in the text (_regressions_) in order to re-read what has already been read. As the difficulty of the text increases, the duration of fixations and the frequency of regressions increase, and the length of saccades decreases.
 
-Во время фиксации мы получаем информацию из области видимости, называемой _областью восприятия_ (_perceptual span_). Размер этой области относительно невелик: в случае алфавитных орфографий (напр. для европейских языков) она начинается от начала фиксированного слова, но не более, чем на 3-4 буквы слева от точки фиксации, и распространяется приблизительно на 14-15 размеров букв вправо от этой точки (суммарно 17-19 букв).
+During fixation, we get information from the _perceptual span_. The size of this area is relatively small, in the case of alphabetic orthographies (for example, in European languages) it starts from the beginning of the fixed word, but no more than 3-4 letter spaces to the left of the fixation point, and extends to about 14-15 letter spaces to the right of this point (in total 17-19 spaces).
 
-_Область идентификации_ (_identification span_), то есть область видимости, необходимая для идентификации фиксированного слова, меньше, чем область восприятия и, как правило, не превышает 7-8 размеров букв справа от фиксации (суммарно порядка 10-12 букв).
+The _identification span_, that is, the scope required to identify a fixed word, is less than the perceptual span and, as a rule, does not exceed 7-8 letter spaces to the right of the fixation (in total, about 10-12 spaces).
 
-Доступность первых 3 буквы слова во время предыдущей фиксации приводит к снижению времени фиксации на этом слове. Некоторые исследователи также показали, что информация о буквах справа от фиксации может быть использована для определения должно ли следующее слово быть пропущено.
+The availability of the first three letters of a word during the previous commit leads to a decrease in the fixation time on that word. Some researches have also shown that the letter information to the right of the fixation can be used to determine whether the next word should be skipped.
 
-Большинство исследователей полагают, что информация о границах слова (обеспечиваемая промежутками между словами) является основным фактором в определении места следующей фиксации. Длина саккады зависит как от длины фиксированного слова, так и от длины слова, следующего за ним.
+Most of the research suggests that boundary information (conveyed by the spaces between words) is the major determinant used in deciding where to move to next; saccade length is influenced by both the length of the fixated word and the word
+to the right of fixation.
 
-В большинстве случаев чтение замедляется (в среднем на 30%) при отсутствии информации о промежутках (между словами). Это вызвано нарушением процессов идентификации слова  и перемещения взгляда. Наоборот, добавление информации о промежутках облегчает чтение. Так, существуют данные, показывающие, что при разделении слов в тексте на тайском языке (для людей, которые никогда прежде не читали такие тексты с разделением слов пробелами), чтение осуществляется более эффективно. Аналогично облегчается и чтение длинных составных слов на немецком языке при разбивке их на простые слова с помощью пробелов, несмотря на то, что такое разбиение грамматически некорректно и не встречается в обычном чтении.
+Most readers are slowed down (on average by about 30%) by the absence of space information, and experiments demonstrated that _both word identification processes and eye guidance are disrupted by the lack of space information_.
 
-Информация о длине слова также играет явную роль в определении того, где должна располагаться точка фиксации. Хотя присутствует некоторая вариативность в том, где внутри слова останавливается взгляд, как правило первая фиксация на слове осуществляется в _предпочитаемой точке взгляда_ (_preferred viewing location_), где-то на расстоянии 1/4 длины слова от его начала. Когда промежуток между текущим и следующим словами попадает в парафовеальную область, первая фиксация на следующем слове происходит ближе к предпочитаемой точке, чем когда этот промежуток оказывается за ее пределами.
+It was found that, when space information is provided for readers of Thai (who are not used to reading with spaces between words), they read more effectively than normal. There are reports that the reading of long German compound words is
+facilitated by the insertion of spaces, even though this format is ungrammatical and never encountered in normal reading.
 
-Несмотря на то, что в среднем позиция первой фиксации на слове лежит между началом слова и его серединой, эта позиция может меняться в зависимости от расстояния до предыдущей точки фиксации. Например, если расстояние до целевого слова большое (8-10 размеров букв), положение следующей фиксации сдвигается влево. Соответственно, если расстояние мало (2-3 размера букв), положение фиксации сдвигается вправо.
+_Thus, it appears safe to conclude that space information is used for guiding the eyes in reading._
 
-Позиция первой (и возможно единственной) фиксации на слове лежит между началом и серединой слова для слов длиной 4-10 буквы. Однако для более длинных слов наблюдается тенденция делать первую фиксацию ближе к началу слова и затем вторую ближе к концу слова.
+Word-length information may be used not only in determining where to fixate next but also in how parafoveal information is used. That is, enough parafoveal letter information may be extracted from short words so that they can be identified and skipped, whereas partial-word information (the first 3 letters) extracted from longer parafoveal words may rarely allow full identification of them but facilitate subsequent foveal processing.
 
-Информационная плотность (или морфологическая структура) слова влияет на продолжительность фиксаций на каждой части слова. Например, было замечено, что если слово было возможно распознать по первым 6 буквам (слова были в среднем длиной около 12 букв), то в общем случае, после первой фиксации в первой половине слова, взгляд переходил к следующему слову; в случаях, когда фиксация во второй части все же осуществлялась, то она была очень короткой. Однако в случае, когда слово могло быть распознано только по его окончанию, первая фиксация была короткой, а вторая, на конце слова, более длинной.
+Word-length information also plays a clear role in where in the word a reader fixates. Although there is variability in where the eyes land on a word, _readers tend to make their first fixation on a word about halfway between the
+beginning and the middle of a word_.
 
-**Таблица 2. Приблизительные средние значения продолжительности фиксаций и длин саккад при чтении и поиске**
+Word-length information helps to guide the eye toward *the preferred viewing location*, i.e a location between the beginning and the middle of the word. When the space indicating the location of word n+1 was visible in the parafovea,
+the first fixation on that word was closer to the preferred viewing location than when the parafoveal preview did not contain that space information.
 
-| Задача           | Средняя продолжительность фиксации (мс) | Средний размер саккады (градусы) |
-|------------------|-----------------------------------------|----------------------------------|
-| Чтение           | 225                                     | 2 (~ 8 букв)                     |
-| Чтение вслух     | 275                                     | 1.5 (~ 6 букв)                   |
-| Визуальный поиск | 275                                     | 3                                |
-| Восприятие сцен  | 330                                     | 4                                |
-| Чтение нот       | 375                                     | 1                                |
-| Печать           | 400                                     | 1 (~ 4 буквы)                    |
+Although the average landing position in a word lies between the beginning and middle of a word, this position varies as a function of the distance from the prior launch site. For example, if the distance to a target word is large (8-10
+letter spaces), the landing position is shifted to the left. Likewise, if the distance is small (2-3 letter spaces), the landing position is shifted to the right.
 
-При исследовании визуального поиска установлено, что когда цель находилась в области с небольшим _эксцентриситетом_ (отклонением от центра сцены), она обнаруживалась точно, с использованием одной саккады; когда цель располагалась ближе к периферии, наблюдались саккады в ложных направлениях (до 40% по времени). _При сложных задачах поиска глаза изначально направлялись к центру сцены и затем к центрам рекурсивно меньших групп объектов до тех пор, пока цель не была найдена_.
+The location of the first fixation is between the beginning and the middle of a word for words that are 4-10 letters long (either for the first fixation in a word or when only a single fixation is made). However, with longer words, the
+effect breaks down, and readers tend to fixate near the beginning of the word and then make a second fixation toward the end of the word.
+
+Informational density (or morphological structure) of the word influences how long the fixations are on each half of the word. For example, it was found that if the word was predictable from the first 6 letters (the words were typically
+about 12 letters), readers generally made a fixation in the first half of the word and then moved their eyes to the next word; if they made a second fixation on the word it tended to be quite short. However, if the word could only be
+identified by knowing what the ending was, readers typically made a short fixation at the beginning followed by a longer fixation on the end of the word.
+
+**Table 1. Approximate Mean Fixation Duration and Saccade Length in Reading, Visual Search, Scene Perception, Music Reading, and Typing**
+
+| Task             | Mean fixation duration (ms) | Mean saccade size (degrees) |
+|------------------|-----------------------------|-----------------------------|
+| Silent reading   | 225                         | 2 (about 8 letters)         |
+| Oral reading     | 275                         | 1.5 (about 6 letters)       |
+| Visual search    | 275                         | 3                           |
+| Scene perception | 330                         | 4                           |
+| Music reading    | 375                         | 1                           |
+| Typing           | 400                         | 1 (about 4 letters)         |
+
+With respect to visual search task it was found that when the target was at a small _eccentricity_, it was located accurately with a single saccade; when the target was more peripheral, wrongly directed initial saccades were common (up to
+40% of the time). Also _in a complex search tasks the eyes is initially directed to the center of the global display and then to the centers of recursively smaller groups of objects until the target was acquired_.
 
 <anchor>comprehension</anchor>
-# Понимание программ
+# Program Comprehension
 Программы отличаются от обычных текстов. Программы составлены из ограниченного набора слов и организованны иначе, чем обычные тексты: в них широко используются формально определенные структуры, обозначаемые в тексте с помощью специальных синтаксических конструкций. Кроме того, существует и семантическое отличие. Восприятие обычного текста, в общем случае, состоит из двух параллельных фаз: восприятие самого текста и осмысление того, о чем он повествует. Когда речь идет о тексте программе, осмысление означает осознание синтаксической и семантической структур программы, но также включает и осознание операционной семантики программы, то есть того, как изменяется состояние программы в процессе её выполнения.[²](#2)
 
 <anchor>cognitivemodels</anchor>
-## Когнитивные модели понимания программ[³](#3)
+## Cognitive Models of Program Comprehension[³](#3)
 <anchor>concepts</anchor>
-### Концепции и терминология
+### Concepts and terminology
 _Ментальная модель_ описывает мысленное представление разработчика о программе, которую необходимо понять, в то время как _когнитивная модель_ описывает познавательные процессы и временные информационные структуры, которые используются для формирования ментальной модели в сознании программиста.
 
 _План программирования_ (_programming plan_) – это фрагмент кода, представляющий типичный сценарий в программировании. Например, программа сортировки будет содержать цикл для сравнения двух чисел в каждой итерации. Планы программирования также часто называют _клише_ и _схемы_.  _Делокализованный план_ (_delocalized plan_) возникает, когда план программирования реализуется в различных частях программы. Наличие делокализованных планов усложняет понимание программ.
@@ -221,20 +247,20 @@ _Маяк_ (_beacon_) это характерный элемент кода, к�
 _Правила написания программ_ (_rules of programming discourse_) охватывают принятые соглашения, такие как стандарты кодирования и реализации алгоритмов. Эти правила формируют определенные ожидания в сознании программиста.
 
 <anchor>topdownmodel</anchor>
-### Модель понимания от общего к частному
+### Top-Down Model
 В этой модели предполагается, что процесс понимания программы происходит от общего к частному, когда воссоздание знания о прикладной области программы отображается затем на код программы. Процесс начинается с формулировки гипотезы об общем характере программы. Первичная гипотеза затем уточняется иерархическим способом путем формирования вспомогательных гипотез. Вспомогательные гипотезы уточняются и оцениваются в первую очередь по глубине. Верификация (или отклонение) гипотез сильно зависит от отсутствия или наличия маяков.
 Процесс понимания программы от общего к частному используется, когда код программы или его вид знаком. При этом опытные программисты используют маяки, планы программирования и правила написания программ для декомпозиции целей и планов в планы более низкого уровня.
 
 <anchor>downtopmodel</anchor>
-### Понимание от частного к общему
+### Bottom-Up Model
 Теория понимания программ от частного к общему предполагает, что программисты сначала читают код и затем мысленно группируют утверждения в коде в абстракции более высокого уровня. Эти абстракции в дальнейшем также группируются, и этот процесс повторяется пока не достигается высокоуровневое понимание программы.
 
 <anchor>strategies</anchor>
-### Оппортунистическая и систематические стратегии
+### Opportunistic and Systematic Strategies
 При использовании этих стратегий программисты либо систематически читают код в деталях, отслеживая потоки управления и данных в программе, для получения целостного понимания программы, либо читают его по необходимости, фокусируясь только на коде, относящемся к текущей задаче. В первом случае, программисты получают как статическое знание о программе (информацию о ее структуре), так и знание о причинно-следственных связях в ней (знание о взаимодействии между компонентами при их выполнении). Это позволяет им сформировать ментальную модель программы. При оппортунистическом подходе программисты в основном получают статическое знание, приводящее в результате к формированию более слабой ментальной модели работа программы. Это приводит к большему числу ошибок, так как программисты не могут распознать причинно-следственные связи между компонентами внутри программы.
 
 <anchor>codereading</anchor>
-## Специфика чтения текста программы
+## Specifics of Reading Program Texts
 Процесс чтения программы отличается от чтения прозы. Кроме непосредственно чтения текста, программисту приходится также сканировать текст с целью восприятия основных элементов верхнего уровня её иерархической структуры, осуществлять поиск отдельных идентификаторов, переходить от одного места в программе к другому, возможно расположенному в другом файле.
 
 Сравнительное исследование линейности чтения программ новичками и экспертами[²](#2) показало, что и те и другие читают код менее линейно, чем обычные тексты. Более того, эксперты читают код менее линейно, чем новички. Авторы предполагают, что навыки нелинейного чтения увеличиваются с опытом.
@@ -275,7 +301,7 @@ _Правила написания программ_ (_rules of programming disc
 | Word(Pattern)Matching | Простое сопоставление визуальных шаблонов.                   |
 
 <anchor>identifiers</anchor>
-## Роль идентификаторов[⁴](#4)
+## Role of Identifiers[⁴](#4)
 Идентификаторы в коде программы часто выполняют роль маяков для планов программирования, поддерживающих ментальные модели более высокого уровня. Идентификаторы составляют примерно 70% исходного кода.
 
 В общем случае, использование целых слов в идентификаторах приводит к лучшему восприятию программы, чем при использовании сокращений.
@@ -292,9 +318,9 @@ _Правила написания программ_ (_rules of programming disc
 <!--При исследовании влияния разных видов заполнений промежутков между словами на время чтения было обнаружено, что скорость уменьшалась на 10-75% в зависимости от вида заполнителя.-->
 
 <anchor>analysis</anchor>
-# Основные принципы форматирования
+# Basic Principles of Formatting
 <anchor>visualrepresentaion</anchor>
-## Формирование визуальной структуры
+## Building the Visual Structure
 Априори мы знаем, что программа имеет определенную логическую и синтаксическую структуры, и ожидаем, что структура ее визуального представление будет соответствующим образом отражать их.
 
 Как говорилось выше, наш мозг находится в постоянном поиске некоторого оптимального варианта интерпретации визуальной сцены, позволяющего объяснить ее наиболее простым образом. Поэтому можно утверждать, что, чем более явно сформирована визуальная структура, и чем более точно она отражает структуру программы, тем меньше ментальных усилий мы затратим на восприятие этой программы.
@@ -436,7 +462,7 @@ _Подсветка синтаксиса может значительно об�
 <!-- <img src="closure2.png"/> -->
 
 <anchor>linelength</anchor>
-## Длина строки
+## Line Length
 Отсутствие жесткого ограничения справа, не означает, что ограничения нет вообще. Многовековой опыт книгопечатания,[¹³](#13) и десятилетия опыта, наработанного [веб-дизайнерами](http://webtypography.net/2.1.2), сходятся к тому, что оптимальная длина строки, обеспечивающей комфортное чтение составляет приблизительно 45-75 символов.
 
 Несмотря на структурные отличия текстов программ, трудно вообразить, что эти отличия настолько сильны, что могут сделать длинные строки, трудные для чтения обычных текстов, легкими в случае, когда мы читаем программу. Наоборот, можно ожидать, что программы, подобно научным изданиям, требуют более коротких строк, чем проза.[¹⁷](#17)
@@ -455,7 +481,7 @@ _Подсветка синтаксиса может значительно об�
 В общем же случае, длинные строки, как и длинные идентификаторы, это признак плохой читаемости кода.
 
 <anchor>names</anchor>
-## Имена
+## Names
 Имена играют важнейшую роль для обеспечения удобочитаемости программного кода. Они занимают его большую часть и часто играют роль маяков, позволяющих идентифицировать характерные структурные части программы. Основные требования к именам – это их краткость и выразительность. _Чем имя длиннее, тем оно труднее для чтения, запоминания и поиска._ Длинные имена, как правило приводят к длинным строкам, что тоже затрудняет чтение и поиск. Требование выразительности означает, что в области контекста использования, имя должно позволять однозначно определять роль обозначаемого им элемента программы.
 
 Требования краткости и выразительности могут очевидным образом конфликтовать друг с другом, поскольку выразительность может требовать использования более длинных, составных имен. Поэтому имеет смысл сделать оценку допустимой рекомендованной длины имени.
@@ -483,7 +509,7 @@ _Подсветка синтаксиса может значительно об�
 Декорирование имен классов и функций имеет смысл лишь в случае разработки библиотеки на языке, в котором отсутствует понятие пространства имен, позволяющих ограничить их видимость. Все сущности, определяемые внутри вашего приложения, находятся на верхнем уровне пространства имен и, как правило, не нуждаются в каких-либо префиксах  для предотвращения конфликтов имен.
 
 <anchor>spaces</anchor>
-## Пробелы
+## Spaces
 Как указывалось выше, использование любого другого разделителя между словами вместо пробела требует больших усилий при чтении, поскольку приводит к затруднениям при определении границ слова, что в свою очередь затрудняет его распознавание и планирование следующей саккады.
 
 Поэтому рекомендуется разделять идентификаторы в программе с помощью пробелов, даже в случае, если формально такого разделения не требуется. Например, имеет смысл разделять пробелом имя функции и список ее параметров/аргументов:
@@ -511,7 +537,7 @@ _Подсветка синтаксиса может значительно об�
 <!-- ![](space2.png) -->
 
 <anchor>braces</anchor>
-## Расстановка фигурных скобок.
+## Arranging Curly Braces
 На сегодняшний день в языках с Си-подобным синтаксисом доминируют два основных способа расстановки фигурных скобок: в первом открывающая скобка находится на отдельной строке с тем же отступом, как и начало связанного с ней предшествующего синтаксического элемента, а во втором открывающая скобка располагается в конце строки, содержащей окончание такого элемента.
 
 Далее я буду условно называть эти стили _Allman_ и _One Truce Brace Style_ (_1TBS_) по названиям наиболее популярных стилей, которые используют соответствующие правила расстановки скобок. 
@@ -554,7 +580,7 @@ _Подсветка синтаксиса может значительно об�
 
 <anchor>resume</anchor>
 
-# Заключение
+# Conclusion
 Формирование удобочитаемого, то есть легкого для восприятия текста программы требует учета специфических особенностей зрения человека, таких как амбьентное и фокальное зрение, механизмов чтения текста вообще и особенностей чтения текстов программ в частности.
 
 Основную стратегию оптимизации удобочитаемости можно сформулировать как _стремление к более эффективному использованию амбьентого зрения и снижения нагрузки на фокальное_.
@@ -588,5 +614,4 @@ _Подсветка синтаксиса может значительно об�
 <anchor>15</anchor>¹⁵) <a href="https://link.springer.com/article/10.3758/BF03206156">Saccade size in reading depends upon character spaces and not visual angle. Robert E. Morrison, Keith Rayner, 1981</a>
 <anchor>16</anchor>¹⁶) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001.
 <anchor>17</anchor>¹⁷) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей.</a>
-
 <anchor>18</anchor>¹⁸) Alan Cooper. About Face: The Essentials of Interaction Design, Fourth Edition. John Wiley & Sons, Inc., 2014
