@@ -320,143 +320,139 @@ In an eye-tracking study analyzing the effect of identifier style (camel-case an
 # Basic Principles of Formatting
 <anchor>visualrepresentaion</anchor>
 ## Building the Visual Structure
-Априори мы знаем, что программа имеет определенную логическую и синтаксическую структуры, и ожидаем, что структура ее визуального представление будет соответствующим образом отражать их.
+A priori, we know that a program has a certain logical and syntactic structure, and we expect that the structure of its visual representation will reflect them accordingly.
 
-Как говорилось выше, наш мозг находится в постоянном поиске некоторого оптимального варианта интерпретации визуальной сцены, позволяющего объяснить ее наиболее простым образом. Поэтому можно утверждать, что, чем более явно сформирована визуальная структура, и чем более точно она отражает структуру программы, тем меньше ментальных усилий мы затратим на восприятие этой программы.
+As mentioned above, our brain is in constant search for some optimal interpretation of the visual scene, which allows us to explain it in the simplest way. Therefore, it can be argued that the more clearly the visual structure is formed, and the more accurately it reflects the structure of the program, the less mental effort we will spend on the perception of this program.
 
-При визуальном восприятии программы, мы получаем первое впечатление и оцениваем визуальную структуру текста главным образом за счет амбьентного зрения, обладающим малой остротой и цветовосприятием, ухудшающимися от центра к краю. Быстрое амбьентное зрение помогает нам выделить точки интереса в коде для его дальнейшего анализа и чтения с помощью медленного фокального зрения. Это значит, что,  говоря об общей визуальной структуре текста программы, мы должны перейти из области фокального зрения, то есть из мира букв и символов, в область амбьентного зрения, то есть в область пятен и соотношений между ними.
+When we visually perceive the program, we get the first impression and evaluate the visual structure of the text mainly due to ambient vision, which has low acuity and color perception, deteriorating from the center to the edge. Fast ambient vision helps us to highlight points of interest in the code for further analysis and reading using slow focal vision. This means that, speaking about the general visual structure of the program text, we must move from the area of ​​focal vision, that is, from the world of letters and symbols, to the area of ​​ambient vision, that is, to the area of ​​spots and the relationships between them.
 
-Последовательность основных структурных элементов в программе располагается в вертикальном направлении, поэтому и при оценке общей визуальной структуры программы при охвате её «широким взглядом» преобладает вертикальное движение глаз, сопровождающееся небольшими отклонениями по горизонтали. Горизонтальное движение взгляда, связанное с переходом к фокальному зрению и непосредственно чтению, позволяет нам получить детали этих элементов.
+The sequence of the main structural elements in the program is located in the vertical direction, so when evaluating the overall visual structure of the program, when covering it with a "wide view", vertical eye movement prevails, accompanied by small horizontal deviations. The horizontal movement of the gaze associated with the transition to focal vision and reading directly allows us to get the details of these elements.
 
-Соответственно, для корректной оценки общей структуры программы важно сформировать корректную визуальную структуру в вертикальном направлении.
+Therefore, for a correct assessment of the overall structure of the program, it is important to form the correct visual structure in the vertical direction.
 
-Например, в определении функции нам необходимо визуально разделить объявление функции, включающее её имя, возвращаемый тип, список параметров, и тело функции. Внутри тела функции необходимо разделить код инициализации начальных переменных, тело основного алгоритма, формирование и возвращение результата. В свою очередь, внутри кода инициализации нам надо разделить область типов, имен переменных и присваиваемых им значений.
+For example, in a function definition, we need to visually separate the function declaration, including its name, return type, parameter list, and function body. Inside the body of the function, it is necessary to separate the initialization code of the initial variables, the body of the main algorithm, the formation and return of the result. In turn, within the initialization code, we need to separate the scope of types, variable names, and values ​​assigned to them.
 
-Рассмотрим следующий пример:
-
+Consider the following example:
 <img src="https://habrastorage.org/webt/no/u0/py/nou0pysvtpvd-grwc_-lqwsi2sw.png" />
 <!-- ![](cpp1.png) -->
-Для оценки визуальной структуры проведем тест, аналогичный «тесту с прищуриванием» (_squint test_), используемому разработчиками пользовательского интерфейса. Алан Купер в своей книге описывает этот тест так[¹⁸](#18):
-
+To evaluate the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book [¹⁸](#18):
 > Close one eye and squint at the screen with the other eye to see which elements pop out, which are fuzzy, and which seem to be grouped. Changing your perspective can often uncover previously undetected issues in layout and composition.
 
-Фактически, с помощью прищуривания мы пытаемся оценить, как мы воспринимаем изображение посредством амбьентного зрения. Вместо прищуривания можно попробовать посмотреть на код расфокусированным взглядом и несколько в сторону от интересующего нас фрагмента.  
+In fact, by squinting, we are trying to gauge how we perceive an image through ambient vision. Instead of squinting, you can try to look at the code with a defocused gaze and somewhat away from the fragment of interest to us.
 
 <img src="https://habrastorage.org/webt/_b/ea/aw/_beaawvv84diaqqhnwkptkhjz3g.jpeg" />
 <!-- <img src="https://habrastorage.org/webt/-f/df/s0/-fdfs0pog9fw88ozqxrwjlaff-e.png" /> -->
 <!-- ![](cpp1_blur.png) -->
-Визуальная структура этого кода содержит лишь три большие области, что, очевидно, не отражает корректно структуру программы.
+The visual structure of this code contains only three large areas, which obviously does not reflect the program structure correctly.
 
-Разбивка по вертикали позволяет исправить этот недостаток:
-
+Stacking vertically allows you to correct this disadvantage:
 <img src="https://habrastorage.org/webt/iq/i3/7i/iqi37ixwxuqufyuwxusni3cnneu.png" />
 <!-- ![](cpp2.png) -->
 
-Результат теста:
-
+The test result:
 <img src="https://habrastorage.org/webt/6e/fc/py/6efcpyacl2rcz7idcoiw29thjkk.jpeg" />
 <!-- <img src="https://habrastorage.org/webt/ww/62/q5/ww62q51wuyielnb5m8zswzonkfg.png" /> -->
 <!-- ![](cpp2_blur.png) -->
-Связанные области текста могут состоять из строк одинаковой структуры. В этом случае имеет смысл сгруппировать одинаковые элементы строк, подчеркнув тем самым их горизонтальную структуру. Такая группировка позволит выделить общее и сделает различия более заметным.
 
-Таким образом, мы структурируем текст как по вертикали, так и по горизонтали. В первом мы случае выполняем эти разделения посредством добавления пустых строк. Во втором – мы используем отступы и выравнивание.
+Regions of text can be composed of lines of the same structure. In this case, it makes sense to group the same line elements, thereby emphasizing their horizontal structure. This grouping will highlight the common and make the differences more visible.
 
-Отступы служат для формирования визуального представления иерархии в структуре программы между элементами, находящимися на разных строках.
+This way we structure the text both vertically and horizontally. In the first case, we perform these splits by adding blank lines. In the second, we use indentation and alignment.
 
-Давайте посмотрим на следующий код:
+Indents are used to form a visual representation of the hierarchy in the program structure between elements on different lines.
 
+Let's take a look at the following code:
 <img src="https://habrastorage.org/webt/xb/jn/kr/xbjnkre3zaikfrmbo1pctjlcnha.png" />
 <!-- <img src="indent1.png"/> -->
-Список аргументов представлен в виде колонки и имеет отступ относительно первой строки. Достаточно ли этого отступа для того, чтобы правильно отобразить логическую структуру программы? Очевидно, что нет.
+The list of arguments is presented as a column and is indented relative to the first line. Is this indentation sufficient to correctly display the logical structure of the program? Obviously not.
 
 Правило сходства по близости связывает список аргументов с именем переменной сильнее, чем с именем функции даже несмотря на то, что благодаря подсветке синтаксиса формируется сходство по цвету. Но что случится, если алгоритм подсветки изменится? Вот как выглядел этот же код на gitlab:
 
+The proximity rule binds the argument list to the variable name more strongly than to the function name, even though syntax highlighting creates a color similarity. But what happens if the highlighting algorithm changes? Here's what the same code looked like on gitlab:
 <img src="https://habrastorage.org/webt/qh/gv/7i/qhgv7iklbl_6jujgqm6kluodd60.png" />
 <!-- <img src="indent3.png"/> -->
 В данном случае подсветка синтаксиса еще больше ухудшила ситуацию, поскольку правило сходства по цвету теперь также усиливает связь аргументов с именем переменной. Имя функции здесь как бы и ни при чем.
+In this case, syntax highlighting made things worse, since the color similarity rule now also strengthens the association of arguments with a variable name. The function name has nothing to do with it.
 
-При сканировании текста, такое расположение провоцирует движение глаз от результирующей переменной `success` сразу к столбцу списка аргументов и только потом регрессию к имени функции.
+When scanning text, such an arrangement provokes eye movement from the resulting variable `success` directly to the column of the list of arguments and only then regression to the function name.
 
 _Подсветка синтаксиса может значительно облегчить восприятие программы. Однако, как мы видим из этого примера, в случае некорректной визуальной структуры, эффект от нее может быть совершенно противоположный. Учитывая также, что поскольку программист не контролирует подсветку синтаксиса, нельзя принимать ее во внимание при оценке того, насколько  удобочитаемым и правильно отражающим структуру программы является её конкретное визуальное представление._
 
-Чтобы правильно отобразить логическую структуру этого кода в его визуальное представление, необходимо, чтобы список аргументов имел отступ не относительно начала строки, а относительно начала имени функции:
+_Syntax highlighting can greatly facilitate the perception of the program. However, as we can see from this example, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program._
 
+To correctly display the logical structure of this code in its visual representation, it is necessary that the list of arguments is indented not relative to the beginning of the line, but relative to the beginning of the function name:
 <img src="https://habrastorage.org/webt/nz/z9/6l/nzz96lrnme0kfnbe0fhcm8ktgvq.png" />
 <!-- <img src="indent4.png"/> -->
-В этом варианте явно видно, что список аргументов функции синтаксически является частью выражения вызова функции и логически представляет собой набор параметров, который преобразуется  посредством вызова функции.
+In this case, it is clearly seen that the function argument list is syntactically part of the function call expression and is logically a set of parameters that is converted by the function call.
 
-Проведем тест с прищуриванием. Отключим также подсветку синтаксиса для того, чтобы исключить группировку по фактору сходства по окраски, которую мы не контролируем:
+Let's do a squinting test. We will also disable syntax highlighting in order to exclude grouping by the color similarity factor, which we do not control:
 
 <img src="https://habrastorage.org/webt/pd/hd/_n/pdhd_n8bny50x3nqwltsihpvwik.jpeg" />
 <!-- <img src="https://habrastorage.org/webt/iq/l1/y1/iql1y1gu6ae2c5iyv2tzt7lvsgw.png" /> -->
 <!-- <img src="indent4_blurred.png"/> -->
-Видно, что имя функции и список аргументов формируют сильно связанную область. Однако при использовании двух пробелов для отступа подчиненность списка аргументов относительно имени функции выглядит недостаточно выразительно. Использование четырех пробелов помогает решить эту проблему:
+You can see that the function name and argument list form a tightly coupled scope. However, when using two spaces for indentation, the subordination of the argument list relative to the function name does not seem expressive enough. Using four spaces helps to solve this problem:
 
 <img src="https://habrastorage.org/webt/ot/kj/u_/otkju_th20tr1orgivwrq8ju0qo.jpeg" />
 <!-- <img src="https://habrastorage.org/webt/co/s2/nh/cos2nhaky7fucnp08oh0grhckia.png" /> -->
 <!-- <img src="indent4-4_blurred.png"/> -->
-Остается еще одна проблема: список аргументов выглядит как одно неструктурированное пятно, несмотря на то, что в нем присутствуют два типа элементов, метки аргументов и их значения, то есть, этот список обладает определенной структурой. Для того, чтобы визуально выделить эту структуру, используем выравнивание. Но перед этим отвлечемся на некоторое время от этого примера и рассмотрим различные способы форматирования списка аргументов в виде метка:значение.
+One more problem remains: the list of arguments looks like one unstructured spot, despite the fact that there are two types of elements, the labels of the arguments and their values. This list has a certain structure, and in order to visually highlight this structure, we should use alignment. But before that, let's digress from this example for a while and look at various ways to format an argument list as label:value.
 
-**Однострочное форматирование**
+**One line formatting**
 <img src="https://habrastorage.org/webt/xm/os/gy/xmosgy6pigronododp5uljr5oly.png" />
 <!-- <img src="code1.png"/> -->
-В этом варианте визуальная структура не отражает структуру выражения, поэтому поиск затруднен. Этот вариант предназначен лишь для того, чтобы его тщательно читали.
+In this version, the visual structure does not reflect the structure of the expression, so the search is difficult. This option is only intended to be read carefully.
 
-Из-за большой длины строки остаток ее, не помещающийся на первой строке, был помещен на вторую. В данном случае среда разработки сделала отступ, показывающий подчиненность этой строки относительно предыдущей. Однако, в другом месте (например, в панели сравнений на gitlab) вторая строка скорее всего будет начинаться с начала и визуальная структура участка кода, включающего эту строку, будет поломана.
+Due to the large length of the line, the rest of it, which did not fit on the first line, was placed on the second. In this case, the editor made an indent showing the subordination of this line relative to the previous one. However, elsewhere (for example, in the comparison pane on gitlab), the second line will most likely start at the beginning and the visual structure of the piece of code will be broken.
 
-**Выравнивание пар метка:значение**
+**Label:value pairs alignment**
 <img src="https://habrastorage.org/webt/ir/gp/zb/irgpzbpqbvhdnsuzbrdnxhemwum.png" />
 <!-- <img src="code2.png"/> -->
-Этот вариант выглядит лучше в том смысле, что в нем спецификация имени метода и список аргументов явно отделены друг от друга. Уже несколько проще поиск в списке аргументов, поскольку каждая пара располагается на отдельной строке и метки выровнены по левому краю.
+This option looks better in the sense that the method name and the argument list are clearly separated from each other. It is already a little easier to search in the argument list, since each pair is on a separate line and the labels are left aligned.
 
 Тем не менее различение меток и значений затруднено из-за того, что отсутствует явная граница между областями меток и значений для всего списка. Кроме того,  поскольку текст воспринимается как зафиксированный слева и свободный справа, в визуальном представлении этот код выглядит как большой груз (область списка аргументов), подвешенный на тонком и длинном рычаге. Основная масса кода оказывается сильно смещена в правую, менее важную часть пространства.
 
-В данном случае можно попробовать исправить последний недостаток, сместив список аргументов влево:
+However, distinguishing between labels and values ​​is difficult because there is no clear border between label and value areas for the entire list. In addition, since the text is perceived as anchored on the left and free on the right, visually this code appears as a large mass (the area of ​​the argument list) suspended from a thin and long arm. The bulk of the code turns out to be strongly shifted to the right, less important part of the space.
 
+In this case, we can try to fix the last flaw by shifting the list of arguments to the left:
 <img src="https://habrastorage.org/webt/gd/3y/us/gd3yuslr14dsmyu4f1m4tsy4ssk.png" />
 <!-- <img src="code3.png"/> -->
-Для лучшего представления внутренней структуры списка аргументов необходимо сформировать явную разделительную линию между областями меток и значений. Здесь у нас есть два варианта.
+To better represent the internal structure of the argument list, it is necessary to form an explicit dividing line between the label and value areas. We have two options here.
 
-**Вариант 1: метки и аргументы выровнены влево по отдельности**
+**Option 1: labels and arguments are left aligned separately**
 <img src="https://habrastorage.org/webt/qc/n8/zh/qcn8zhxgazbgclie1_0o0c3iv0c.png" />
 <!-- <img src="code4.png"/> -->
-Из всех предложенных до сих пор вариантов, этот наиболее точно передает логическую структуру кода. В нем явно различимы области меток и значений, идентификация и поиск отдельных элементов внутри их значительно облегчается. Однако из-за большой разницы в длинах меток аргументов связи внутри пар с короткими метками оказываются ослабленными.
+Of all the options proposed so far, this one most accurately conveys the logical structure of the code. It clearly distinguishes the areas of labels and values, identifying and finding individual elements within them is much easier. However, due to the large difference in the label lengths of the arguments, the bonds within pairs with short labels are weakened.
 
-**Вариант 2: внутреннее выравнивание**
+**Option 2: inner alignment**
 <img src="https://habrastorage.org/webt/oe/zj/lj/oezjljl0bqs6rc0gryw6822r4e8.png" />
 <!-- <img src="code5.png"/> -->
-Обладая всеми преимуществами предыдущего варианта, этот вариант для данного примера выглядит более естественным. В нем метки аргументов выглядят как естественное продолжение имени метода, как это и должно быть в данном случае. Код выглядит достаточно компактным и без необходимости переноса списка аргументов на следующую строку.
+Having all the advantages of the previous option, this option looks more natural for this example. In it, the argument labels look like a natural continuation of the method name, as it should be in this case. The code looks compact enough without the need to carry the argument list to the next line.
 
-Для  примера с `reticulateSplines` код в этом варианте оформления будет выглядеть следующим образом:
-
+For the `reticulateSplines` example, the code in this styling would look like this:
 <img src="https://habrastorage.org/webt/q-/ff/ay/q-ffaynkxm45pkwpe4ivn0ef0b0.png" />
 <!-- <img src="indent5.png"/> -->
+Alignment is a powerful tool for optimizing the visual presentation of code by forming compact groups in a horizontal direction.
 
-Выравнивание является мощным  средством оптимизации визуального представления кода, за счет формирования компактных групп в горизонтальном направлении.
-
-Разберем следующий код:
-
+Let's analyze the following code:
 <img src="https://habrastorage.org/webt/fs/mg/k0/fsmgk0pgwcqzom18vxjrcqkgnpq.png" />
 <!-- <img src="proto1.png" /> -->
 
-В принципе, каждое отдельное объявление протокола выглядит достаточно удобочитаемым. Однако сказать такое обо всем тексте нельзя: общая структура невыразительна, в ней отсутсвуют явно выраженные массы, которые могли бы притянуть взгляд. В результате «в глазах рябит», и  есть ощущение монотонности. Чтобы воспринять этот код его можно только читать последовательно и полностью: «protocol DataBaseDependent ServiceDependent var dataBase DataBase get set, protocol LocalConfigDependent…»
+Basically, every single protocol declaration looks reasonably readable. However, this cannot be said about the entire text: the general structure is inexpressive, there are no clearly expressed masses in it that could attract the eye. As a result, "dazzles in the eyes", and there is a feeling of tiring monotony. To perceive this code, it can only be read sequentially and completely: "protocol DataBaseDependent ServiceDependent var dataBase DataBase get set, protocol LocalConfigDependent …"
 
-Переформатируем его так, чтобы каждое объявление занимало одну строку и выровняем:
+Let's reformat it so that each declaration spans one line and align it:
 
 <img src="https://habrastorage.org/webt/pt/uu/bv/ptuubvmnslk97jdapakeffafaa0.png" />
 <!-- <img src="proto3.png" /> -->
 
-При этом  в горизонтальном направлении сформировались явно выраженные группы (группировка по «близости»), явно проявилась структура каждого объявления и различия между ними. Отличается и способ чтения этого кода. После быстрого первичного ознакомления со структурой и вычленения общих частей, при дальнейшем разборе эти общие части просто игнорируются, и внимание концентрируется только на различающихся частях. Таким образом, за счет более активного использования амбьентного зрения снижается нагрузка на фокальное и уменьшается количество умственных усилий, требуемых для понимания программы.
+Now clearly defined groups (grouping by "proximity") have been formed in the horizontal direction, and the structure of each definition and the differences between them have been clearly revealed. The way this code is read is also different. After a quick initial familiarization with the structure and identifying common parts, further analysis simply ignores these common parts, and attention is focused only on the different parts. Thus, due to the more active use of ambient vision, the load on the focal vision is reduced and the amount of mental effort required to understand the program is reduced.
 
-Как упоминалось выше, существует некоторая асимметрия в том, как человек воспринимает левую и правую части визуальной сцены. Эта асимметрия еще более естественным образом присутствует в восприятии текста программы: текст жестко привязан к левому краю, где отступы задают уровень иерархии в логической структуре программы. Правый же край свободен и не имеет жесткого ограничения. Чтение слева направо и сверху вниз определяет то, что _что-то новое мы ожидаем увидеть сверху и слева или по центру_.
+As mentioned above, there is some asymmetry in how we perceive the left and right sides of the visual scene. This asymmetry is even more natural in the perception of the program text: the text is rigidly anchored to the left margin, where indents set the level of hierarchy in the logical structure of the program. The right edge is free and does not have a hard limit. Reading from left to right and top to bottom determines what _something new we expect to see top and left or center_.
 
-В этом смысле нельзя назвать удачными с точки зрения читаемости конструкции вида:
+Because of that, the following constructions cannot be called good in terms of readability:
 
 <img src="https://habrastorage.org/webt/82/x3/y1/82x3y16luvwnxvimg_cdysisniq.png" />
 <!-- <img src="closure1.png"/> -->
 
-В таких конструкциях новое пространство имен начинается в конце строки, то есть в области наименьшей важности, там где это начало не ожидаемо. Более естественно расположить начало этого блока кода там, где он и должен быть — вверху слева:
-
+In such constructs, the new namespace begins at the end of the line, that is, in the least important area, where this beginning is not expected. It's more natural to place the beginning of this block of code where it should be - at the top left:
 <img src="https://habrastorage.org/webt/d3/2s/en/d32senybyy8wrbv9di8l_xy_tta.png" />
 <!-- <img src="closure2.png"/> -->
 
