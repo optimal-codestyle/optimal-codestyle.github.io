@@ -365,8 +365,6 @@ Let's take a look at the following code:
 <!-- <img src="indent1.png"/> -->
 The list of arguments is presented as a column and is indented relative to the first line. Is this indentation sufficient to correctly display the logical structure of the program? Obviously not.
 
-Правило сходства по близости связывает список аргументов с именем переменной сильнее, чем с именем функции даже несмотря на то, что благодаря подсветке синтаксиса формируется сходство по цвету. Но что случится, если алгоритм подсветки изменится? Вот как выглядел этот же код на gitlab:
-
 The proximity rule binds the argument list to the variable name more strongly than to the function name, even though syntax highlighting creates a color similarity. But what happens if the highlighting algorithm changes? Here's what the same code looked like on gitlab:
 <img src="https://habrastorage.org/webt/qh/gv/7i/qhgv7iklbl_6jujgqm6kluodd60.png" />
 <!-- <img src="indent3.png"/> -->
@@ -374,8 +372,6 @@ The proximity rule binds the argument list to the variable name more strongly th
 In this case, syntax highlighting made things worse, since the color similarity rule now also strengthens the association of arguments with a variable name. The function name has nothing to do with it.
 
 When scanning text, such an arrangement provokes eye movement from the resulting variable `success` directly to the column of the list of arguments and only then regression to the function name.
-
-_Подсветка синтаксиса может значительно облегчить восприятие программы. Однако, как мы видим из этого примера, в случае некорректной визуальной структуры, эффект от нее может быть совершенно противоположный. Учитывая также, что поскольку программист не контролирует подсветку синтаксиса, нельзя принимать ее во внимание при оценке того, насколько  удобочитаемым и правильно отражающим структуру программы является её конкретное визуальное представление._
 
 _Syntax highlighting can greatly facilitate the perception of the program. However, as we can see from this example, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program._
 
@@ -458,138 +454,132 @@ In such constructs, the new namespace begins at the end of the line, that is, in
 
 <anchor>linelength</anchor>
 ## Line Length
-Отсутствие жесткого ограничения справа, не означает, что ограничения нет вообще. Многовековой опыт книгопечатания,[¹³](#13) и десятилетия опыта, наработанного [веб-дизайнерами](http://webtypography.net/2.1.2), сходятся к тому, что оптимальная длина строки, обеспечивающей комфортное чтение составляет приблизительно 45-75 символов.
+The absence of a hard constraint on the right does not mean that there is no constraint at all. Centuries of typography[¹³](#13) and decades of [web designers](http://webtypography.net/2.1.2) experience agree that the optimal line length for comfortable reading is approximately 45-75 characters.
 
-Несмотря на структурные отличия текстов программ, трудно вообразить, что эти отличия настолько сильны, что могут сделать длинные строки, трудные для чтения обычных текстов, легкими в случае, когда мы читаем программу. Наоборот, можно ожидать, что программы, подобно научным изданиям, требуют более коротких строк, чем проза.[¹⁷](#17)
+Despite the structural differences in program texts, it is difficult to imagine that these differences are so strong that they can make long lines difficult to read in ordinary text easy when we are reading a program. On the contrary, one might expect that programs, like scientific publications, require shorter lines than prose.[¹⁷](#17)
 
-Видимо, повторяя Стива Макконнелла[¹⁴](#14), некоторые разработчики говорят, что на их больших мониторах длинные строки прекрасно помещаются, и их присутствие в коде нормально. Этот аргумент «больших мониторов» не выдерживает никакой критики:
+Apparently, following Steve McConnell[¹⁴](#14), some developers say that on their large monitors long lines fit perfectly, and their presence in the code is normal. This argument of "large monitors" does not hold water:
 
-- Длинную строку трудно охватить «широким взглядом».
-- Оценка структуры выражения затруднена из-за того, что эта структура размазана по строке и не формирует явно выраженных компактных визуальных областей.
-- Из-за неявно выраженной структуры и увеличения эксцентриситета затрудняется поиск.
-- Из-за увеличения расстояния затрудняются переходы от конца строки к началу следующей, и соответственно замедляется чтение.
-- Если отодвинуться от монитора с целью уменьшения углового размера строки, чтобы нивелировать некоторые указанные выше проблемы, это затруднит чтение за счет уменьшения размера букв и расстояний между ними. При этом это размер области идентификации и распознавания и размер саккад, измеряемых в буквах, не изменится. То есть, чтение замедлится.
-- Большие мониторы не всегда доступны или текст программы может отображаться в области с гораздо меньшей шириной. При этом строка или не помещается в области видимости и требует прокрутки, либо строка разбивается на несколько строк и это, как правило, разрушает структуру программы во всей области видимости.
+- A long line is difficult to capture with a "wide eye".
+- The perception of the structure of expression is difficult due to the fact that this structure is smeared along the line and does not form clearly expressed compact visual areas.
+- Due to the implicit structure and the increase in eccentricity, the search is difficult.
+- Due to the increase in distance, transitions from the end of the line to the beginning of the next become more difficult, and accordingly reading slows down.
+- Increasing the distance to the monitor will reduce the angular dimensions of the line, but also reduce the size of words and letters. Smaller letters are more difficult to recognize. In this case, the length of the saccade, expressed in the size of the letters, will not increase. Hence, reading will slow down.
+- Large monitors are not always available or program text may be displayed in a much smaller area. In this case, the line either does not fit in the scope and requires scrolling, or the line is split into several lines and this, as a rule, destroys the structure of the program in the entire scope.
 
-По ряду объективных причин не всегда можно избежать длинных строк (например, из-за использования длинных идентификаторов, которые мы не в силах изменить). Также в случаях, когда нас не интересует структура выражения (например, при выводе отладочного сообщения в лог программы), использование длинной строки может оказаться даже предпочтительнее структурирования длинного выражения разбивкой его на несколько строк, так как делает этот код менее значимым с точки зрения амбьентного зрения.
+For a number of objective reasons, it is not always possible to avoid long strings (for example, due to the use of long identifiers that we cannot change). Also, in cases where we are not interested in the structure of the expression (for example, when outputting a debug message to the program log), the use of a long line may be even preferable to structuring a long expression by breaking it into several lines, since it makes this code less massive and so less meaningful for ambient vision.
 
-В общем же случае, длинные строки, как и длинные идентификаторы, это признак плохой читаемости кода.
+In general, long strings, like long identifiers, are a sign of poor code readability.
 
 <anchor>names</anchor>
 ## Names
-Имена играют важнейшую роль для обеспечения удобочитаемости программного кода. Они занимают его большую часть и часто играют роль маяков, позволяющих идентифицировать характерные структурные части программы. Основные требования к именам – это их краткость и выразительность. _Чем имя длиннее, тем оно труднее для чтения, запоминания и поиска._ Длинные имена, как правило приводят к длинным строкам, что тоже затрудняет чтение и поиск. Требование выразительности означает, что в области контекста использования, имя должно позволять однозначно определять роль обозначаемого им элемента программы.
+Names are critical to making your code readable. They occupy a large part of it and often act as beacons to identify characteristic structural parts of the program. The main requirements for names are their brevity and expressiveness. _The longer the name, the more difficult it is to read, remember and recall._ Long names usually lead to long lines, which also makes reading and search difficult. The requirement of expressiveness means that in the scope of the context of use, the name must allow to unambiguously determine the role of the program element it denotes.
 
-Требования краткости и выразительности могут очевидным образом конфликтовать друг с другом, поскольку выразительность может требовать использования более длинных, составных имен. Поэтому имеет смысл сделать оценку допустимой рекомендованной длины имени.
+The requirements for brevity and expressiveness can obviously conflict with each other, as expressiveness may require the use of longer, compound names. Therefore, it makes sense to make an estimate of the allowed recommended name length.
 
-В идеале, мы хотим распознавать имя с первого взгляда (при первой фиксации). Это значит, что первую оценку оптимальной длины можно заложить как размер области идентификации, то есть 10-12 символов. Особенностью текстов программ, как уже писалось выше является то, что набор допустимых слов в них ограничен, поэтому велика вероятность, что даже в случае более длинного имени мы сможем впоследствии распознавать его по первой части, так что в принципе, даже при длине больше 12 символов нам потребуется лишь одна фиксация. Мы, однако хотим, чтобы при этом это имя помещалось в размер области распознавания (17-19 символов) и оставался некоторый запас, таким образом, чтобы наш мозг имел возможность оптимально спланировать следующую саккаду. Если мы возьмем 4 символа от конца области распознавания, то получим оценку в 13-15 символов.
+Ideally, we want to recognize the name at a glance (on first fixation). This means that the first estimate of the optimal length can be set as the size of the identification area, that is, 10-12 characters.
 
-Допуская в редких случаях две фиксации с «угадыванием» мы получим оценку в 20-24 символа (13-15 из предыдущей оценки + 7-9 на саккаду внутри слова) .
+A feature of program texts, as already mentioned above, is that the set of valid words in them is limited, so it is highly likely that even in the case of a longer name, we will be able to subsequently recognize it by the first part, so even with a length of more than 12 characters we only need one fixation. However, we want this name to fit into the size of the recognition area (17-19 characters) and leave some margin, so that our brain can optimally plan the next saccade. If we take 4 characters from the end of the recognition area, we get an estimate of 13-15 characters.
 
-Взяв середины отрезков полученных оценок получим следующую таблицу:
+Admitting in rare cases two fixations with “guessing”, we get an estimate of 20-24 characters (13-15 from the previous estimate + 7-9 per saccade within a word).
 
-**Таблица 4. Оценки максимальной длины имени.**
+Taking the average values ​​of the ranges of the estimates obtained, we get the following table:
 
-| Число фиксаций              | Оценка максимальной длины имени |
-| --------------------------- | ------------------------------- |
-| 1                           | 11                              |
-| 1 (с угадыванием окончания) | 14                              |
-| 2                           | 22                              |
+**Table 4. Estimates of the maximum name length.**
 
-Эти рекомендации достаточно хорошо согласуются с теми границами, которые приводит в своей книге[¹⁴](#14) Стив Макконнелл: 10-16 и 8-20. Теперь мы можем как-то объяснить их.
+| Fixation count          | Maximum name length |
+|-------------------------|---------------------|
+| 1                       | 11                  |
+| 1 (guessing the suffix) | 14                  |
+| 2                       | 22                  |
 
-На практике иногда приходится использовать имена, длины которых выходят за предлагаемые пределы. Например, когда имя включают в себя некоторое стандартное именование группы, к которой относится данный элемент, как в `PreferencesViewController`. Располагая значимую, уникальную часть имени в начале, мы можем ожидать, что распознаем уникальную часть имени уже при первой фиксации, и в то же время нам не потребуется больших усилий для распознания «стандартного дополнения».
+These guidelines are reasonably consistent with the boundaries given in Steve McConnell's book[¹⁴](# 14): 10-16 and 8-20. Now we can somehow explain them.
 
-За редким исключением не имеет смысла использовать в именах какие-либо префиксы, описывающие некоторые общие характеристики (например тип) или для различения классов,  являющихся частью вашего приложения. Префиксы маскируют смысловую часть имени, в их присутствии позиция первой фиксации на слове при чтении сдвигается  влево от оптимальной, они требуют определенных усилий на дополнительный анализ слова. В некоторых случаях они могут изменять значение имени (`kBytesPerSec` это «килобайты в секунду» или константа `BytesPerSec`?).
+In practice, it is sometimes necessary to use names that are outside the suggested lengths. For example, when the name includes some standard naming of the group to which the given item belongs, as in `PreferencesViewController`. By having the meaningful, unique part of the name at the beginning, we can expect to recognize the unique part of the name on the first fixation, and at the same time, we do not need much effort to recognize the "common continuation".
 
-Декорирование имен классов и функций имеет смысл лишь в случае разработки библиотеки на языке, в котором отсутствует понятие пространства имен, позволяющих ограничить их видимость. Все сущности, определяемые внутри вашего приложения, находятся на верхнем уровне пространства имен и, как правило, не нуждаются в каких-либо префиксах  для предотвращения конфликтов имен.
+With rare exceptions, it doesn't make sense to use any prefixes in the names that describe some common characteristics (for example, type) or to distinguish between classes that are part of your application. Prefixes mask the meaningful part of the name, in their presence the position of the first fixation on the word during reading shifts to the left from the optimal one, they require some effort for additional analysis of the word. In some cases, they can change the value of the name (is `kBytesPerSec` is "kilobytes per second" or the constant `BytesPerSec`?).
+
+Decorating class and function names only makes sense if you are developing a library in a language that lacks the notion of namespaces to limit their visibility. All entities defined within your application are at the top level of the namespace and generally do not need any prefixes to prevent name collisions.
 
 <anchor>spaces</anchor>
 ## Spaces
-Как указывалось выше, использование любого другого разделителя между словами вместо пробела требует больших усилий при чтении, поскольку приводит к затруднениям при определении границ слова, что в свою очередь затрудняет его распознавание и планирование следующей саккады.
+As mentioned above, using any other separator between words instead of a space makes reading difficult, because of the difficulties in determining the boundaries of a word, which in turn lead to difficulties in recognizing and planning the next saccade.
 
-Поэтому рекомендуется разделять идентификаторы в программе с помощью пробелов, даже в случае, если формально такого разделения не требуется. Например, имеет смысл разделять пробелом имя функции и список ее параметров/аргументов:
-
+Therefore, it is recommended to separate identifiers in the program using spaces, even if formally such separation is not required. For example, it makes sense to separate the function name and the list of its parameters/arguments with a space:
 <img src="https://habrastorage.org/webt/1r/iy/il/1riyil0pm_dpnf0h9jkivaqvspi.png" />
 <!-- ![](space1.png) -->
 
-В первой строке пробел отсутствует, и имя функции сливается с первым аргументом в  списке аргументов. Кроме затруднения в чтении, мы можем также заметить, что визуальная структура не совсем корректно отражает логическую структуру программы: выражение вызова функции включает в себя имя функции и список аргументов, список аргументов включает в себя первый и второй аргументы. В первой же строке имя функции сильнее связано с первым аргументом, чем аргументы между собой.
+There is no space on the first line, and the function name visually sticks to the first argument in the argument list. In addition to the difficulty in reading, we can also notice that the visual structure does not quite correctly reflect the logical structure of the program: the function call expression includes the function name and the argument list, the argument list includes the first and second arguments. In the first line, the function name is more closely related to the first argument than the arguments to each other.
 
-Еще один пример:
-
+One more example:
 <img src="https://habrastorage.org/webt/rs/dz/ku/rsdzkuirda_pdn22_ocsalvl8rg.png" />
 <!-- ![](space3_1.png) -->
 
-После разделения на две группы, добавления пробелов и выравнивания:
-
+After splitting into two groups, adding spaces and alignment:
 <img src="https://habrastorage.org/webt/xv/ff/yr/xvffyrmbd0n3tn-ay-xxkdhsjqc.png" />
 <!-- ![](space3_2.png) -->
 
-В данном случае добавление пробелов не только облегчило чтение отдельных строк за счет явного разделения идентификаторов внутри их, но и (вместе с выравниванием) облегчило их сравнение, посредством образования компактных визуальных групп по вертикали. Для того, чтобы понять, что делает этот код, уже не надо читать отдельно каждую строку.
+In this case, the addition of spaces not only made it easier to read individual lines due to the explicit separation of identifiers within them, but (together with alignment) made it easier to compare them by forming compact visual groups vertically. Trying to understand what this code does, you no longer have to read each line separately.
 
-В случае, когда совокупная длина идентификаторов не превышает размера области распознавания, это требование не является настолько критическим, поскольку все выражение может быть сразу охвачено одним взглядом:
-
+In the case when the total length of identifiers does not exceed the size of the recognition area, this requirement is not so critical, since the entire expression can be immediately captured with one glance:
 <img src="https://habrastorage.org/webt/qx/o-/al/qxo-alqr0-hwf2ycvpjo_wwh2dq.png" />
 <!-- ![](space2.png) -->
 
 <anchor>braces</anchor>
 ## Arranging Curly Braces
-На сегодняшний день в языках с Си-подобным синтаксисом доминируют два основных способа расстановки фигурных скобок: в первом открывающая скобка находится на отдельной строке с тем же отступом, как и начало связанного с ней предшествующего синтаксического элемента, а во втором открывающая скобка располагается в конце строки, содержащей окончание такого элемента.
+Today, languages ​​with C-like syntax are dominated by two main ways of placing curly braces: in the first, the open parenthesis is on a separate line with the same indentation as the beginning of the preceding syntax element associated with it, and in the second, the open parenthesis is located at the end of the line containing the ending of such an element.
 
-Далее я буду условно называть эти стили _Allman_ и _One Truce Brace Style_ (_1TBS_) по названиям наиболее популярных стилей, которые используют соответствующие правила расстановки скобок. 
+In what follows, I will conventionally call these styles _Allman_ and _One Truce Brace Style_ (_1TBS_) by the names of the most popular styles that use the appropriate brace placement rules.
 
-Расположение открывающей скобки в начале отдельной строки в стиле _Allman_ обладает следующими преимуществами:
+Placing the opening parenthesis at the beginning of a single line in the _Allman_ style has the following advantages:
 
-- Скобка всегда располагается в левой части визуальной области, т. е. в области наибольшего внимания, и при сканировании кода (в котором преобладают вертикальные движения глаз) всегда так или иначе попадают в область фокального зрения. В стиле _1TBS_ открывающие скобки часто оказываются в правой области кода и попадают лишь в область периферийного зрения, что значительно затрудняет их обнаружение. Другими словами, то что в первом случае происходит естественно и как бы само по себе, в втором требует дополнительных и специальных усилий.
-- Облегчено сопоставление открывающей и закрывающей скобок и, соответственно, определение границ обрамленного ими блока кода. Поиск парной скобки требует лишь вертикального перемещения взгляда, на пути его следования от одной скобки к другой нет никакого текста, и поиск происходит в известном направлении до первого символа. 
-   Действительно, всегда, когда мы видим в тексте закрывающую скобку на отдельной строке, мы знаем, что парная ей открывающая находится *выше*, а это значит, что основным и естественным направлением поиска её будет поиск вверх. 
-   При использовании _1TBS_, поиск в общем случае требует больших усилий за счет того, что он осуществляется в широком секторе, причем взгляд проходит через текст, который надо анализировать, и который часто содержит вложенные пары фигурных скобок, визуально конкурирующие с целевой.
-- Скобка расположена в начале строки, именно там, где мы ожидаем увидеть начало чего бы то ни было, и естественным образом обозначает начало блока кода. В стиле _1TBS_ из-за своего положения в конце строки открывающая скобка часто перестает играть роль явного визуального маркера начала блока. Более того, в некоторых случаях (напр. повторяющиеся конструкции `} else if`) закрывающая скобка предыдущего блока оказывается в начале строки, содержащей конструкцию, предваряющую новый блок, и тем самым визуально связывается с началом этого блока. Таким образом, её формальное и визуальное значения перестают соответствовать друг другу.
-- Расположение скобок на отдельных строках, естественным образом добавляет вертикальные пробелы между синтаксической конструкцией перед открывающей скобкой и обрамленным блоком кода, что, в большинстве случаев, лучше отражает структуру всей конструкции.
-- Горизонтальная позиция открывающей скобки в стиле _Allman_ однозначно определяет уровень вложенности, к которому она относится. В _1TBS_ эта информация отсутствует, так как расположение открывающей скобки в основном определяется лишь длиной строки, расположенной перед ней.
+- The open brace is always located on the left side of the visual area, that is, in the area of ​​greatest attention, and when scanning a code (in which vertical eye movements prevail), it always somehow falls into the area of ​​focal vision. In the _1TBS_ style, the open parentheses are often in the right region of the code and only fall into the peripheral vision, which makes them much more difficult to detect. In other words, what in the first case occurs naturally, in the second requires additional and special efforts.
+- Facilitated matching of opening and closing braces and, accordingly, defining the boundaries of the code block surrounded by them. Searching for a paired brace requires only vertical movement of the gaze, there is no text on its path from one brace to another, and the search proceeds in a known direction up to the first character.
+   Indeed, whenever we see a closing parenthesis in the text on a separate line, we know that the matching opening parenthesis is _higher_, which means that the main and natural direction of searching for it will be upward search.
+   When using _1TBS_, searching is generally more effortful due to the fact that it is carried out in a wide sector, with the view passing through the text that needs to be analyzed, and which often contains nested pairs of curly braces that visually compete with the target.
+- The parenthesis is located at the beginning of the line, exactly where we expect to see the beginning of anything, and naturally denotes the beginning of a block of code. In the _1TBS_ style, because of its position at the end of a line, the open parenthesis often ceases to act as an explicit visual marker for the beginning of a block. Moreover, in some cases (for example, repeated `} else if` constructions), the closing brace of the previous block appears at the beginning of the line containing the construct preceding the new block, and thus visually connects to the beginning of this block. Thus, its formal and visual meanings cease to correspond to each other.
+- Placing parentheses on separate lines naturally adds vertical spaces between the syntactic construction before the opening bracket and the framed code block, which, in most cases, better reflects the structure of the entire construction.
+- The horizontal position of the opening brace in the style of _Allman_ uniquely determines the nesting level to which it belongs. _1TBS_ does not contain this information, since the location of the open brace is mainly determined only by the length of the line before it.
 
-Недостатки _1TBS_ приводит к тому, что открывающая фигурная скобка перестает в полной мере участвовать в формировании визуального представления кода, стиль провоцирует программиста не разделять блоки кода внутри скобок и окружающие их элементы пустыми строками, и в результате текст программы часто выглядит как один плохо структурированный массивный кусок:
-
+The disadvantages of _1TBS_ lead to the fact that the opening curly brace ceases to fully participate in the formation of the visual presentation of the code, the style provokes the programmer not to separate the code blocks inside the brackets and their surrounding elements with empty lines, and as a result, the program text often looks like one poorly structured massive chunk:
 ![picture36](https://habrastorage.org/webt/y1/kr/zq/y1krzqjyfs1tpw0wshh7kznwioy.png)
 
-Код в примере выше демонстрирует основные упомянутые проблемы стиля _1TBS_, а именно: отсутствие явно выраженной визуальной структуры, инвертирование роли закрывающих скобок, потеря визуальной значимости открывающих, которые при беглом взгляде на код лишь приблизительно угадываются с помощью периферийного зрения и их точная локация требует дополнительных горизонтальных движений глаз. При этом этот код еще можно назвать простым с той точки зрения, что в нем условия выражения `if` занимают всего одну строку, и открывающие скобки находятся на той же строке, что и `if`, а блоки кода внутри скобок имеют достаточно простую линейную структуру и не содержат вложенных блоков.
+The code in the example above demonstrates the main problems of the _1TBS_ style mentioned, namely: the absence of a clearly expressed visual structure, the inversion of the role of the closing braces, the loss of the visual significance of the opening braces, which, at a cursory glance at the code, are only approximately guessed using peripheral vision and their exact location requires additional horizontal eye movements. And this is an example of relatively simple code, since in it the conditions of the `if` expression occupy only one line, and the open braces are on the same line as the` if`, and the code blocks inside the braces have a fairly simple linear structure and do not contain nested blocks.
 
-Переформатирование этого кода с использованием стиля _Allman_ позволяет получить более приемлемый результат:
-
+Reformatting this code using the _Allman_ style allows for a more acceptable result:
 ![picture37](https://habrastorage.org/webt/jv/x-/pf/jvx-pfjfuqs01oiohffb9mjmltw.png)
 
-Несмотря на то, что в большинстве случаев _Allman_ объективно выигрывает у _1TBS_, иногда _1TBS_  оказывается предпочтительнее. Как правило, это связано с тем, что в таких случаях дополнительное вертикальное пространство, образуемое за счет расположения скобок на отдельных строках в стиле _Allman_, приводит к тому, что вся конструкция становится визуально разрозненной, теряет свой внутренний ритм и перестает восприниматься как единое целое. И в то же время, при использовании _1TBS_, либо смещение открывающей скобки невелико и не оказывает значимого влияние на восприятие кода, либо её обнаружение непринципиально (например, в случае конструкции `if`, когда и условие, и блок кода занимают по одной строке).
+Despite the fact that in most cases _Allman_ objectively outperforms _1TBS_, sometimes _1TBS_ is preferable. As a rule, in the such cases the additional vertical space formed by placing braces on separate lines in the style of _Allman_ leads to the fact that the whole structure becomes visually fragmented, loses its internal rhythm and ceases to be perceived as a single whole. And at the same time, when using _1TBS_, either the offset of the opening parenthesis is small and does not have a significant effect on the perception of the code, or its detection is not critical (for example, in the case of the `if` construction, when both the condition and the block of code occupy one line each).
 
-Так на предыдущем примере, постановка последней открывающей скобки в конце строки выглядит достаточно естественно, и образовавшееся пустое пространство лишь добавляет небольшой акцент, компенсирующий малый визуальный объем последнего блока, состоящего всего из одной строки. При расположении же скобки на отдельной строке это пространство становится слишком большим, и эта строка выглядит уже оторванной от остальной конструкции:
+So in the previous example, placing the last open brace at the end of the line looks quite natural, and the resulting empty space only adds a small accent, compensating for the small visual volume of the last block, consisting of only one line. When the parenthesis is placed on a separate line, this space becomes too large, and this line looks already torn off from the rest of the construction:
 
 ![](https://habrastorage.org/webt/qx/b5/qe/qxb5qetfvjaier48xmxjlzw1yr8.png)
 
-Возникает вопрос: в каких случаях допустимо использовать _1TBS_? Здесь можно предложить следующие ограничения:
+The question arises: in what cases is it permissible to use _1TBS_? The following restrictions can be suggested:
 
-- Открывающая скобка располагается на той же строке, что и начало синтаксической конструкции, частью которой она является.
-- Скобка не замаскирована большой массой кода непосредственно примыкающего к ней (в основном сверху).
-- Она располагается в левой области текста (области наибольшего внимания).
-- Смещение скобки по горизонтали не должно быть большим, так что скобка оказывается в области распознавания (14-15 размеров букв).
-- Блок, ограниченный скобками, не содержит вложенных блоков таких, что скобки, ограничивающие эти вложенные блоки, расположены близко к открывающей скобке основного блока и визуально конкурируют с ней.
+- The open parenthesis is on the same line as the beginning of the syntactic construct of which it is a part.
+- The parenthesis is not masked by a large mass of code directly adjacent to it (mostly from above).
+- It is located in the left area of ​​the text (area of ​​greatest attention).
+- The horizontal offset of the parenthesis should not be large, so that the parenthesis is in the recognition area (14-15 letter sizes).
+- A block bounded by braces does not contain nested blocks such that the braces bounding these nested blocks are located close to the opening brace of the main block and visually compete with it.
 
-Таким образом, выбор способа расстановки скобок должен осуществляться в каждом конкретном случае, а формальное следование «жестким» правилам расстановки рано или поздно приводит к неудовлетворительному результату. Наиболее оптимальным вариантом видится комбинация стилей  _Allman_ (как основного) и _1TBS_ (как вспомогательного, используемого в редких случаях) .
+Thus, the choice of the method for placing parentheses should be carried out in each specific case, and formal adherence to the "strict" placement rules sooner or later leads to an unsatisfactory result. The best option seems to be a combination of the _Allman_ (as the main) and _1TBS_ styles (as an auxiliary, used in rare cases).
 
 <anchor>resume</anchor>
 
 # Conclusion
-Формирование удобочитаемого, то есть легкого для восприятия текста программы требует учета специфических особенностей зрения человека, таких как амбьентное и фокальное зрение, механизмов чтения текста вообще и особенностей чтения текстов программ в частности.
+The formation of a readable, that is, easily comprehensible program text requires taking into account the specific features of human vision, such as ambient and focal vision, the mechanisms of reading text in general and the features of reading program texts in particular.
 
-Основную стратегию оптимизации удобочитаемости можно сформулировать как _стремление к более эффективному использованию амбьентого зрения и снижения нагрузки на фокальное_.
+The main strategy for optimizing readability can be formulated as _making more efficient use of ambient vision and reducing focal workload_.
 
-Реализация этой стратегии достигается за счет формирования текста в виде относительно компактного по горизонтали «изображения», обладающего ярко выраженной визуальной структурой, корректно отражающей структуру программы. Это изображение формируется за счет иерархического группирования логически связанных элементов программы в компактные визуальные области посредством горизонтальных отступов, добавления пустых строк и выравнивания. Легкость чтения текста программы также обеспечивается выбором оптимальных по длине и выразительности идентификаторов и явного разделения их в тексте программы с помощью пробелов.
+The implementation of this strategy is achieved by forming the text in the form of a relatively compact horizontally "image" with a pronounced visual structure that correctly reflects the logical structure of the program. This image is formed by hierarchically grouping logically related program elements into compact visual areas by means of horizontal indentation, adding blank lines and alignment. The ease of reading the program text is also ensured by the choice of identifiers that are optimal in terms of length and expressiveness and their explicit separation in the program text using spaces.
 
-В  своей книге о типографике Роберт Брингхерст пишет[¹³](#13):
+In his book on typography, Robert Bringhurst writes [¹³](#13):
+> Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly leaded lines. These variations can and should add life to the page…
 
-> Заголовки, подзаголовки, большие цитаты, сноски, иллюстрации, подписи к ним и другие включения, набираемые в разрез текста, создают своеобразные синкопы и вариации в противовес основному ритму строк… Эти вариации могут и должны вдохнуть жизнь а страницу…
->
-> Чтобы книга, то есть длинный текст, была удобна для чтения, страница должна дышать в обоих измерениях.
+> However empty or full it may be, the page must breathe, and in a book — that is, in a long text fit for the reader to live in — the page must breath in both directions.
 
-Аналогично можно сказать,  что  структура программы, разворачиваясь в тексте сверху вниз, также обладает определённым ритмом и вариациями. Задача программиста — визуализировать этот ритм, сделать его явным в общем и в деталях.
-
+Similarly, we can say that the structure of the program, unfolding in the text from top to bottom, also has a certain rhythm and variations. The task of the programmer is to visualize this rhythm, to make it explicit in general and in detail.
 
 ------
 <anchor>1</anchor>¹) <a href="https://www.semanticscholar.org/paper/Eye-movements-in-reading-and-information-20-years-Rayner/87c8a7be8d5e2e2209e766c3e28a3e8ee5babb64">Eye Movements in Reading and Information Processing: 20 Years of Research. Keith Rayner – University of Massachusetts at Amherst</a>
