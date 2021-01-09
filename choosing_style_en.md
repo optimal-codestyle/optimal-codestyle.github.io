@@ -9,8 +9,8 @@ This article is about human vision and how knowing these features can help us im
 
 ## Содержание
 
-* <a href="#intro">Introduction</a>
-* <a href="#visionspecifics">Features of Human Vision</a>
+* <a href="#introduction">Introduction</a>
+* <a href="#features_of_human_vision">Features of Human Vision</a>
   * <a href="#fieldofview">Field of View</a>
   * <a href="#ambientfocal">Ambient and Focal Vision</a>
   * <a href="#laws">The Laws of Perceptual Organization</a>
@@ -33,7 +33,6 @@ This article is about human vision and how knowing these features can help us im
 * <a href="#resume">Conclusion</a>
 
 ## Introduction
-<a id="intro" />
 _At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust._
 _— Rudolph Arnheim, Art and Visual Perception_
 
@@ -61,9 +60,7 @@ Thus, the subjective component is associated with some private habits that can b
 
 Let's take a closer look at what we know about the mechanisms of human perception of visual information, reading plain texts, and reading and perceiving program texts.
 
-<a id="visionspecifics" />
 ## Features of Human Vision[¹](#1)
-<a id="fieldofview" />
 ### Field of View
 The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relatively large: 50° superiorly, 60° inferiorly, 90° temporally (towards an ear) and 50° nasally. Situated in the temporal hemifield is the normal blind spot approximately 12 to 17 degrees from fixation and 1.5 degrees below the horizontal meridian. Within this field, visual acuity and color perception are unevenly distributed: visual acuity of the order of 1' is achieved in the area of ​​_fovea_, which forms ~2° of central (_foveal_) vision, but it is not so good in the _parafoveal_ area (which covers 5° in both directions from the fixation point) and even worse at the periphery.[⁵](#5)
 
@@ -73,7 +70,7 @@ Likewise, the ability to distinguish colors decreases from the center to the edg
 <img src="1920px-Goldmann_visual_field_record_sheet.svg.png" style="zoom:20%;" />
 <!-- <img src="https://habrastorage.org/webt/7v/mo/qz/7vmoqzost4u5nzaeluqofvn3we4.png" style="zoom:20%;" /> -->
 
-<a id="ambientfocal" />
+
 ### Ambient and Focal Vision
 In modern neuropsychology, there is a concept of _ambiant_ (from the French **ambiant** ‘surrounding’) and _focal_ visual systems. While the first, evolutionarily more ancient, is responsible for dynamic spatial localization, the second deals with the identification of objects.
 
@@ -104,7 +101,7 @@ It turned out that when set to the global form, it is identified quickly and wit
 
 Research on the relationship of global and local processing, tested with the Navona super letters, revealed a possible differential role for the posterior left and right hemispheres. In this case, the left hemisphere turned out to be more of a tuning regulator for details, and the right one for global outlines. The influence of emotions turned out to be extremely interesting: negative emotions, in contrast to positive ones, strengthened the attitude towards the perception of details.
 
-<a id="laws" />
+
 ### The Laws of Perceptual Organization
 An interesting feature of our vision is the ability to perceive a group of objects as a whole. So in the image below we see a dog, and not just a chaotic set of spots:
 
@@ -152,13 +149,13 @@ Taking these principles into account turns out to be important in the case of pe
 
 The tasks of visual search are usually complicated by the addition of irrelevant objects (_distractors_). However, _in the case when distractors form visually compact groups, allowing them to be ignored as a whole, their addition, on the contrary, can greatly facilitate the search_.
 
-<a id="asymmetry" />
+
 ### Asymmetry of the Visual Field
 Similar to the asymmetry between the left and right hand, there is some asymmetry in how we perceive the left and right visual fields. Perhaps this is also due to asymmetries in the left and right hemispheres of the brain, which are responsible for processing sensory information from the right and left visual fields, respectively.
 
 Thus, in the scenic arts it is known that there is a difference between the left and right halves of the stage: when the curtain rises in the theater, the audience is inclined to look to its left first and to identify with the characters appearing on that side. Therefore, among the so-called stage areas the left side (from the audience's viewpoint) is considered stronger. In a group of actors, the one farthest left dominates the scene. The audience identifies with him and sees the others, from his position, as opponents. Likewise the observer experiences a picture as though he were facing its left side. He subjectively identifies with the left, and whatever appears there assumes greatest importance.[⁴](#4) Thus, in addition to the natural balance point in the center of the visual scene, an additional center is formed in its left part.
 
-<a id="textreading" />
+
 ## How We Read Texts[⁵](#5)
 When we read, our eyes incessantly make rapid mechanical (i.e., not controlled by consciousness) movements, _saccades_. On average, their length is 7-9 letter spaces. At this time we do not receive new information. 
 
@@ -215,16 +212,16 @@ Informational density (or morphological structure) of the word influences how lo
 
 With respect to visual search task it was found that when the target was at a small _eccentricity_, it was located accurately with a single saccade; when the target was more peripheral, wrongly directed initial saccades were common (up to 40% of the time). Also _in a complex search tasks the eyes is initially directed to the center of the global display and then to the centers of recursively smaller groups of objects until the target was acquired_.
 
-<a id="comprehension" />
+
 ## Program Comprehension
 
 Programs differ from natural language texts in two important ways. First, programs are lexically and syntactically different from natural language texts. Lexically, they are composed from a limited vocabulary, with some words used as programming language keywords, and others used more freely as identifiers to name program constructs like variables and methods. Syntactically, programs are laid out and organized differently than natural language texts. They feature greater use of formally defined structures and multiple forms of indented layout (both horizontal and vertical). The second difference is semantic. Natural language text is typically understood in two concurrent phases: text (how it is written down) and domain (what it means). Source code comprehension however needs a third dimension of comprehension: execution. Thus, in order to understand a program’s goals, programmers must be able to trace source code execution to discover its operational semantics.[⁶](#6)
 
 <!-- Programs are different from regular text. Programs are composed of a limited set of words and are organized differently from ordinary texts: they make extensive use of formally defined structures, denoted in the text using special syntactic constructions. There is also a semantic difference. The perception of an ordinary text, in general, consists of two parallel phases: the perception of the text itself and the comprehension of what it is about. When it comes to the text of a program, comprehension means understanding the syntactic and semantic structures of the program, but it also includes understanding the operational semantics of the program, that is, how the state of the program changes during its execution. [⁶](#6) -->
 
-<a id="cognitivemodels" />
+
 ### Cognitive Models of Program Comprehension[⁸](#8)
-<a id="concepts" />
+
 #### Concepts and terminology
 A _mental model_ describes a developer's mental representation of the program to be understood whereas a _cognitive model_ describes the cognitive processes and temporary information structures in the programmer’s head that are used to form the mental model. 
 
@@ -237,24 +234,24 @@ _Beacons_ are recognizable, familiar features in the code that act as cues to th
 _Rules of programming_ discourse capture the conventions of programming, such as coding standards and algorithm implementations. 
 <!-- These rules form certain expectations in the mind of the programmer. -->
 
-<a id="topdownmodel" />
+
 #### Top-Down Model
 In this model, it is assumed that programmers understand a completed program in a top-down manner where the comprehension process is one of reconstructing knowledge about the domain of the program and mapping this knowledge to the source code. The process starts with a hypothesis about the general nature of the program. This initial hypothesis is then refined in a hierarchical fashion by forming subsidiary hypotheses. Subsidiary hypotheses are refined and evaluated in a depth-first manner. The verification (or rejection) of hypotheses depends heavily on the absence or presence of beacons.
 
 Top-down understanding is used when the code or type of code is familiar; expert programmers use beacons, programming plans and rules of programming discourse to decompose goals and plans into lower-level plans.
 
 
-<a id="downtopmodel" />
+
 #### Bottom-Up Model
 The bottom-up theory of program comprehension assumes that programmers first read code statements and then mentally chunk or group these statements into higher level abstractions. These abstractions (chunks) are aggregated further until a high-level understanding of the program is attained.
 
-<a id="strategies" />
+
 #### Opportunistic and Systematic Strategies
 With these strategies, programmers either systematically read the code in detail, tracing through the control-flow and data-flow abstractions in the program to gain a global understanding of the program, or that they take an as-needed approach, focusing only on the code relating to a particular task at hand.
 
 Subjects using a systematic strategy acquire both static knowledge (information about the structure of the program) and causal knowledge (interactions between components in the program when it is executed). This enabled them to form a mental model of the program. Those using the as-needed approach only acquire static knowledge resulting in a weaker mental model of how the program worked. More errors occurre since the programmers fail to recognize causal interactions between components in the program.
 
-<a id="codereading" />
+
 ### Specifics of Reading Program Texts
 A comparative study of the linearity of program reading by novices and experts[⁶](#6) showed that novices read source code less linearly than natural language text. Moreover, experts read code less linearly than novices. These findings indicate that there are specific differences between reading natural language and source code, and suggest that non-linear reading skills increase with expertise.
 
@@ -293,7 +290,7 @@ The authors describe the following basic types of eye movements that make up mor
 | Thrashing             | The gaze moves rapidly and wildly in a sequence that appears to make no particular sense.                                                                               |
 | Word(Pattern)Matching | Simple visual pattern matching.                                                                                                                                         |
 
-<a id="identifiers" />
+
 ### Role of Identifiers[⁹](#9)
 The comprehension of identifier names in programs is at the core of program understanding. Identifier names are often key beacons to program plans that support higher-level mental models of understanding. Identifiers make up approximately 70% of source code. If a certain identifier naming style significantly increases the speed of code comprehension, this could significantly impact overall program understanding.
 
@@ -305,9 +302,9 @@ In an eye-tracking study analyzing the effect of identifier style (camel-case an
 <img src="underscore_vs_camelcase.png" />
 <!-- <img src="https://habrastorage.org/webt/2-/dz/vt/2-dzvtxei7st1fmgikp2ww6p4zw.jpeg" /> -->
 
-<a id="analysis" />
+
 ## Basic Principles of Formatting
-<a id="visualrepresentaion" />
+
 ### Building the Visual Structure
 A priori, we know that a program has a certain logical and syntactic structure, and we expect that the structure of its visual representation will reflect them accordingly.
 
@@ -438,7 +435,7 @@ In such constructs, the new namespace begins at the end of the line, that is, in
 <img src="closure2.png"/>
 <!-- <img src="https://habrastorage.org/webt/d3/2s/en/d32senybyy8wrbv9di8l_xy_tta.png" /> -->
 
-<a id="linelength" />
+
 ### Line Length
 The absence of a hard constraint on the right does not mean that there is no constraint at all. Centuries of typography[¹²](#12) and decades of [web designers](http://webtypography.net/2.1.2) experience agree that the optimal line length for comfortable reading is approximately 45-75 characters.
 
@@ -457,7 +454,7 @@ For a number of objective reasons, it is not always possible to avoid long strin
 
 In general, long strings, like long identifiers, are a sign of poor code readability.
 
-<a id="names" />
+
 ### Names
 Names are critical to making your code readable. They occupy a large part of it and often act as beacons to identify characteristic structural parts of the program. The main requirements for names are their brevity and expressiveness. _The longer the name, the more difficult it is to read, remember and recall._ Long names usually lead to long lines, which also makes reading and search difficult. The requirement of expressiveness means that in the scope of the context of use, the name must allow to unambiguously determine the role of the program element it denotes.
 
@@ -487,7 +484,7 @@ With rare exceptions, it doesn't make sense to use any prefixes in the names tha
 
 Decorating class and function names only makes sense if you are developing a library in a language that lacks the notion of namespaces to limit their visibility. All entities defined within your application are at the top level of the namespace and generally do not need any prefixes to prevent name collisions.
 
-<a id="spaces" />
+
 ### Spaces
 As mentioned above, using any other separator between words instead of a space makes reading difficult, because of the difficulties in determining the boundaries of a word, which in turn lead to difficulties in recognizing and planning the next saccade.
 
@@ -511,7 +508,7 @@ In the case when the total length of identifiers does not exceed the size of the
 ![](space2.png)
 <!-- <img src="https://habrastorage.org/webt/qx/o-/al/qxo-alqr0-hwf2ycvpjo_wwh2dq.png" /> -->
 
-<a id="braces" />
+
 ### Arranging Curly Braces
 Today, languages ​​with C-like syntax are dominated by two main ways of placing curly braces: in the first, the open parenthesis is on a separate line with the same indentation as the beginning of the preceding syntax element associated with it, and in the second, the open parenthesis is located at the end of the line containing the ending of such an element.
 
@@ -553,7 +550,7 @@ The question arises: in what cases is it permissible to use _1TBS_? The followin
 
 Thus, the choice of the method for placing parentheses should be carried out in each specific case, and formal adherence to the "strict" placement rules sooner or later leads to an unsatisfactory result. The best option seems to be a combination of the _Allman_ (as the main) and _1TBS_ styles (as an auxiliary, used in rare cases).
 
-<a id="resume" />
+
 ## Conclusion
 The formation of a readable, that is, easily comprehensible program text requires taking into account the specific features of human vision, such as ambient and focal vision, the mechanisms of reading text in general and the features of reading program texts in particular.
 
