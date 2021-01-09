@@ -1,12 +1,13 @@
-<!-- <img src="eyecode-v2.jpg" style="zoom:90%;" /> -->
-<!-- ![eye](eyecode-v2.jpg) -->
+<!-- <img src="eyecode-v2.jpg" style="zoom:75%" /> -->
 
 # Cognitive Code Style: Basic Principles of Optimization For Program Text Comprehension
+
+
 
 _At a coarse level, it’s clear that some forms of layout are better than others._
 _— Steve McConnell, Code Complete._
 
-This article is about human vision and how knowing these features can help us improve the objective readability of our programs.
+
 
 ## Contents
 
@@ -33,7 +34,10 @@ This article is about human vision and how knowing these features can help us im
   * <a href="#arranging-curly-braces">Arranging Curly Braces</a>
 * <a href="#conclusion">Conclusion</a>
 
+
+
 ## Introduction
+
 _At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust._
 _— Rudolph Arnheim, Art and Visual Perception_
 
@@ -42,6 +46,7 @@ _— Harold Abelson and Gerald Jay Sussman, Structure and Interpretation of Comp
 
 _Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder._
 _— Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship._
+
 
 Probably no one needs to prove that the _readability_ of the program text is one of the decisive factors that determine the success of its maintenance and development.
 
@@ -60,6 +65,8 @@ When I speak of _objective readability_, I mean that the full readability of a t
 Thus, the subjective component is associated with some private habits that can be changed, and the objective – with the general psychophysical features of a human's vision, which we do not assume is possible to change. Therefore, when talking about optimizing the text of a program, it makes sense to talk only about the objective component of readability, and therefore further in this article the term _readability_ will always refer to this component of it.
 
 Let's take a closer look at what we know about the mechanisms of human perception of visual information, reading plain texts, and reading and perceiving program texts.
+
+
 
 ## Features of Human Vision[¹](#fn-1)
 ### Field of View
