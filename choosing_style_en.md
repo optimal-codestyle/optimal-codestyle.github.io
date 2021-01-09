@@ -68,7 +68,7 @@ The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relativ
 
 Likewise, the ability to distinguish colors decreases from the center to the edge, and this change is different for different color components. We can say that moving from the center of the human retina to the periphery, we seem to find ourselves in earlier stages of evolution, moving from the most highly organized structures to the primitive eye, which distinguishes only the simple movement of shadows.
 
-**Figure 1. Field of view of the human right eye. Orange spot - the place of projection of the fundus blind spot.([оригинал](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Goldmann_visual_field_record_sheet.svg))**
+**Figure 1. Field of view of the human right eye. Orange spot - the place of projection of the fundus blind spot.([orig.](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Goldmann_visual_field_record_sheet.svg))**
 <img src="https://habrastorage.org/webt/7v/mo/qz/7vmoqzost4u5nzaeluqofvn3we4.png" style="zoom:20%;" />
 
 <anchor>ambientfocal</anchor>
@@ -76,14 +76,14 @@ Likewise, the ability to distinguish colors decreases from the center to the edg
 In modern neuropsychology, there is a concept of _ambiant_ (from the French **ambiant** ‘surrounding’) and _focal_ visual systems. While the first, evolutionarily more ancient, is responsible for dynamic spatial localization, the second deals with the identification of objects.
 
 **Table. 1. Comparative features of focal and ambient systems**
-| Visual System                | Focal     | Ambient                |
-| ---------------------------- | --------- | ---------------------- |
-| Function                     | What      | Where / How            |
-| Engagement in movement       | Less      | More                   |
-| Awareness / Memory           | More      | Less or missing        |
-| Temporary properties         | Slow      | Fast                   |
-| Light Sensitivity            | High      | Low                    |
-| Spatial resolution           | High      | Low                    |
+| Visual System          | Focal | Ambient         |
+|------------------------|-------|-----------------|
+| Function               | What  | Where / How     |
+| Engagement in movement | Less  | More            |
+| Awareness / Memory     | More  | Less or missing |
+| Temporary properties   | Slow  | Fast            |
+| Light Sensitivity      | High  | Low             |
+| Spatial resolution     | High  | Low             |
 
 The objects that represent the source of the necessary information are far unevenly distributed. They are usually localized in small areas of the visual field. At the same time, with the help of ambient vision, a potentially interesting object or element of the object is detected, and with the help of focal vision aimed at the object, this information is perceived and analyzed in more detail. When faced with a new situation or with a new object, we, as a rule, first look "wide field" and only then concentrate our attention on details.
 
