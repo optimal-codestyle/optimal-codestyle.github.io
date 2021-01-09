@@ -14,7 +14,7 @@ This article is about human vision and how knowing these features can help us im
   * <a href="#field-of-view">Field of View</a>
   * <a href="#ambient-and-focal-vision">Ambient and Focal Vision</a>
   * <a href="#the-laws-of-perceptual-organization">The Laws of Perceptual Organization</a>
-  * [Asymmetry of the Visual Field](asymmetry-of-the-visual-field)
+  * <a href="#asymmetry-of-the-visual-field">Asymmetry of the Visual Field</a>
 * <a href="#how-we-read-texts">How We Read Texts</a>
 * <a href="#program-comprehension">Program Comprehension</a>
   * <a href="#cognitive-models-of-program-comprehension">Cognitive Models of Program Comprehension</a>
@@ -60,9 +60,9 @@ Thus, the subjective component is associated with some private habits that can b
 
 Let's take a closer look at what we know about the mechanisms of human perception of visual information, reading plain texts, and reading and perceiving program texts.
 
-## Features of Human Vision[¹](#1)
+## Features of Human Vision[¹](#fn-1)
 ### Field of View
-The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relatively large: 50° superiorly, 60° inferiorly, 90° temporally (towards an ear) and 50° nasally. Situated in the temporal hemifield is the normal blind spot approximately 12 to 17 degrees from fixation and 1.5 degrees below the horizontal meridian. Within this field, visual acuity and color perception are unevenly distributed: visual acuity of the order of 1' is achieved in the area of ​​_fovea_, which forms ~2° of central (_foveal_) vision, but it is not so good in the _parafoveal_ area (which covers 5° in both directions from the fixation point) and even worse at the periphery.[⁵](#5)
+The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relatively large: 50° superiorly, 60° inferiorly, 90° temporally (towards an ear) and 50° nasally. Situated in the temporal hemifield is the normal blind spot approximately 12 to 17 degrees from fixation and 1.5 degrees below the horizontal meridian. Within this field, visual acuity and color perception are unevenly distributed: visual acuity of the order of 1' is achieved in the area of ​​_fovea_, which forms ~2° of central (_foveal_) vision, but it is not so good in the _parafoveal_ area (which covers 5° in both directions from the fixation point) and even worse at the periphery.[⁵](#fn-5)
 
 Likewise, the ability to distinguish colors decreases from the center to the edge, and this change is different for different color components. We can say that moving from the center of the human retina to the periphery, we seem to find ourselves in earlier stages of evolution, moving from the most highly organized structures to the primitive eye, which distinguishes only the simple movement of shadows.
 
@@ -88,7 +88,7 @@ The objects that represent the source of the necessary information are far uneve
 
 Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are _saccades_ - extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent _fixation_.
 
-**Figure 2. Reproduction of Ilya Repin's painting and recording of the subject's eye movements.**[²](#2)
+**Figure 2. Reproduction of Ilya Repin's painting and recording of the subject's eye movements.**[²](#fn-2)
 <img src="Yarbus_ne_zhdaly.jpg" />
 <!-- <img src="https://habrastorage.org/webt/vi/-m/vw/vi-mvwhun4tp2e2h1sk-cuob0mu.jpeg" /> -->
 Studies of the relationship between ambient (global) and focal (local) visual processing began in the experiments of David Navon in 1977. He presented subjects with large letters consisting of small letters. Some of these compound stimuli were "homogeneous" – the global form and local elements were the same letter. Others were "heterogeneous" – the global and local letters were different (say, "E" and "S"). The subjects had to identify the global or local letter as quickly as possible.
@@ -110,21 +110,21 @@ An interesting feature of our vision is the ability to perceive a group of objec
 <!-- <img src="https://habrastorage.org/webt/nm/8m/-7/nm8m-7vtm8sly2bjy1_vmilhnu0.jpeg" /> -->
 And here we clearly see a square and a circle:
 
-**Figure 6. Shapes from points.[⁴](#4)**
+**Figure 6. Shapes from points.[⁴](#fn-4)**
 ![](Arnheim_1.png)
 <!-- <img src="https://habrastorage.org/webt/lo/sp/oh/lospoh3jfddv6dkgtotqvuepjv0.png" /> -->
 There are many explanations for these illusions. In terms of cognitive bionomy, the need to see shapes, edges, and movements (as well as faces) was dictated by the need for survival. Thus, even in the absence of real lines or shapes, our sensory-cognitive system used partial information to create these shapes in an attempt to make the seemingly chaotic world intelligible.
 
 Take a look at the picture below and you will see how, over time, the orientation of the triangles changes from one direction to another, a third.
 
-**Figure 7. Triangles changing orientation.[³](#3)**
+**Figure 7. Triangles changing orientation.[³](#fn-3)**
 <img src="triangles.png"/>
 <!-- <img src="https://habrastorage.org/webt/0a/og/y_/0aogy_yxzq8bnzxf-unhccm8d-w.png" /> -->
 Thus, we can say that in the absence of a clearly expressed dominant structure, our brain is constantly spending resources in search of such a structure.
 
 Gestalt psychologists were the first to study this phenomenon of perceptual organization. They formulated the basic law of visual perception, according to which _any stimulating model is perceived in such a way that the resulting structure will be, as far as the given conditions allow, the simplest_. Therefore, we perceive the square exactly as it is depicted on the left, and not in some other way:
 
-**Figure 8. Options for organizing points into a shape.[⁴](#4)**
+**Figure 8. Options for organizing points into a shape.[⁴](#fn-4)**
 ![](Arnheim_2.png)
 <!-- <img src="https://habrastorage.org/webt/hm/j3/0m/hmj30mmpg6_b_cu3rk0bgrdds1w.png" /> -->
 
@@ -139,7 +139,7 @@ Gestalt psychologists have also formulated 6 principles of perceptual organizati
 
 _will sooner be perceived as a whole, or a figure, and not as disparate elements of the environment, or background_.
 
-**Figure 9. Examples of similarity in proximity, color and size.[⁴](#4)**
+**Figure 9. Examples of similarity in proximity, color and size.[⁴](#fn-4)**
 <img src="Arnheim_3.png" />
 <!-- <img src="https://habrastorage.org/webt/0-/6r/qu/0-6rqup1wemlrmemrzbf5vpui8u.png" /> -->
 
@@ -153,10 +153,10 @@ The tasks of visual search are usually complicated by the addition of irrelevant
 ### Asymmetry of the Visual Field
 Similar to the asymmetry between the left and right hand, there is some asymmetry in how we perceive the left and right visual fields. Perhaps this is also due to asymmetries in the left and right hemispheres of the brain, which are responsible for processing sensory information from the right and left visual fields, respectively.
 
-Thus, in the scenic arts it is known that there is a difference between the left and right halves of the stage: when the curtain rises in the theater, the audience is inclined to look to its left first and to identify with the characters appearing on that side. Therefore, among the so-called stage areas the left side (from the audience's viewpoint) is considered stronger. In a group of actors, the one farthest left dominates the scene. The audience identifies with him and sees the others, from his position, as opponents. Likewise the observer experiences a picture as though he were facing its left side. He subjectively identifies with the left, and whatever appears there assumes greatest importance.[⁴](#4) Thus, in addition to the natural balance point in the center of the visual scene, an additional center is formed in its left part.
+Thus, in the scenic arts it is known that there is a difference between the left and right halves of the stage: when the curtain rises in the theater, the audience is inclined to look to its left first and to identify with the characters appearing on that side. Therefore, among the so-called stage areas the left side (from the audience's viewpoint) is considered stronger. In a group of actors, the one farthest left dominates the scene. The audience identifies with him and sees the others, from his position, as opponents. Likewise the observer experiences a picture as though he were facing its left side. He subjectively identifies with the left, and whatever appears there assumes greatest importance.[⁴](#fn-4) Thus, in addition to the natural balance point in the center of the visual scene, an additional center is formed in its left part.
 
 
-## How We Read Texts[⁵](#5)
+## How We Read Texts[⁵](#fn-5)
 When we read, our eyes incessantly make rapid mechanical (i.e., not controlled by consciousness) movements, _saccades_. On average, their length is 7-9 letter spaces. At this time we do not receive new information. 
 
 The primary function of a saccade is to bring a new region of text into foveal vision (~2° central field of view) for detailed analysis, because reading on the basis of only parafoveal or peripheral information is difficult to impossible.
@@ -165,11 +165,11 @@ Between saccades, our eyes remain relatively motionless for the duration of _fix
 
 Whereas a majority of the words in a text are fixated during reading, many words are skipped so that foveal processing of each word is not necessary.
 
-**Figure 10. Typical pattern of eye movements while reading.[¹](#1)**
+**Figure 10. Typical pattern of eye movements while reading.[¹](#fn-1)**
 <img src="Velichkovskiy_reading.png" style="zoom:90%;" />
 <!-- <img src="https://habrastorage.org/webt/kv/rt/ln/kvrtlnwdjge8ouyfzzaulxu7dyo.jpeg" /> -->
 
-Letter spaces are the appropriate metric to use, because the number of letters traversed by saccades is relatively invariant when the same text is read at different distances, even though the letter spaces subtend different visual angles.[⁷](#7)
+Letter spaces are the appropriate metric to use, because the number of letters traversed by saccades is relatively invariant when the same text is read at different distances, even though the letter spaces subtend different visual angles.[⁷](#fn-7)
 
 About 10-15% of the time, readers move their gaze back in the text (_regressions_) in order to re-read what has already been read. As the difficulty of the text increases, the duration of fixations and the frequency of regressions increase, and the length of saccades decreases.
 
@@ -215,19 +215,19 @@ With respect to visual search task it was found that when the target was at a sm
 
 ## Program Comprehension
 
-Programs differ from natural language texts in two important ways. First, programs are lexically and syntactically different from natural language texts. Lexically, they are composed from a limited vocabulary, with some words used as programming language keywords, and others used more freely as identifiers to name program constructs like variables and methods. Syntactically, programs are laid out and organized differently than natural language texts. They feature greater use of formally defined structures and multiple forms of indented layout (both horizontal and vertical). The second difference is semantic. Natural language text is typically understood in two concurrent phases: text (how it is written down) and domain (what it means). Source code comprehension however needs a third dimension of comprehension: execution. Thus, in order to understand a program’s goals, programmers must be able to trace source code execution to discover its operational semantics.[⁶](#6)
+Programs differ from natural language texts in two important ways. First, programs are lexically and syntactically different from natural language texts. Lexically, they are composed from a limited vocabulary, with some words used as programming language keywords, and others used more freely as identifiers to name program constructs like variables and methods. Syntactically, programs are laid out and organized differently than natural language texts. They feature greater use of formally defined structures and multiple forms of indented layout (both horizontal and vertical). The second difference is semantic. Natural language text is typically understood in two concurrent phases: text (how it is written down) and domain (what it means). Source code comprehension however needs a third dimension of comprehension: execution. Thus, in order to understand a program’s goals, programmers must be able to trace source code execution to discover its operational semantics.[⁶](#fn-6)
 
-<!-- Programs are different from regular text. Programs are composed of a limited set of words and are organized differently from ordinary texts: they make extensive use of formally defined structures, denoted in the text using special syntactic constructions. There is also a semantic difference. The perception of an ordinary text, in general, consists of two parallel phases: the perception of the text itself and the comprehension of what it is about. When it comes to the text of a program, comprehension means understanding the syntactic and semantic structures of the program, but it also includes understanding the operational semantics of the program, that is, how the state of the program changes during its execution. [⁶](#6) -->
+<!-- Programs are different from regular text. Programs are composed of a limited set of words and are organized differently from ordinary texts: they make extensive use of formally defined structures, denoted in the text using special syntactic constructions. There is also a semantic difference. The perception of an ordinary text, in general, consists of two parallel phases: the perception of the text itself and the comprehension of what it is about. When it comes to the text of a program, comprehension means understanding the syntactic and semantic structures of the program, but it also includes understanding the operational semantics of the program, that is, how the state of the program changes during its execution. [⁶](#fn-6) -->
 
 
-### Cognitive Models of Program Comprehension[⁸](#8)
+### Cognitive Models of Program Comprehension[⁸](#fn-8)
 
 #### Concepts and terminology
 A _mental model_ describes a developer's mental representation of the program to be understood whereas a _cognitive model_ describes the cognitive processes and temporary information structures in the programmer’s head that are used to form the mental model. 
 
 _Programming plans_ are generic fragments of code that represent typical scenarios in programming. For example, a sorting program will contain a loop which compares two numbers in each iteration.
 
-_Delocalized plans_ – programming plans realized by lines scattered in different parts of the program. Delocalized plans complicate program comprehension.[¹⁰](#10)
+_Delocalized plans_ – programming plans realized by lines scattered in different parts of the program. Delocalized plans complicate program comprehension.[¹⁰](#fn-10)
 
 _Beacons_ are recognizable, familiar features in the code that act as cues to the presence of certain structures.
 
@@ -253,9 +253,9 @@ Subjects using a systematic strategy acquire both static knowledge (information 
 
 
 ### Specifics of Reading Program Texts
-A comparative study of the linearity of program reading by novices and experts[⁶](#6) showed that novices read source code less linearly than natural language text. Moreover, experts read code less linearly than novices. These findings indicate that there are specific differences between reading natural language and source code, and suggest that non-linear reading skills increase with expertise.
+A comparative study of the linearity of program reading by novices and experts[⁶](#fn-6) showed that novices read source code less linearly than natural language text. Moreover, experts read code less linearly than novices. These findings indicate that there are specific differences between reading natural language and source code, and suggest that non-linear reading skills increase with expertise.
 
-Below, as an example, giving an idea of ​​the difference in reading ordinary texts and program texts, the results of one experiment[¹¹](#11) on the analysis of the eye movements of programmers while reading the code are presented.
+Below, as an example, giving an idea of ​​the difference in reading ordinary texts and program texts, the results of one experiment[¹¹](#fn-11) on the analysis of the eye movements of programmers while reading the code are presented.
 
 **Figure 11. Traces of eye movement of two expert programmers when reading the same code.**
 <img src="code_reading_patterns.png"/>
@@ -291,14 +291,14 @@ The authors describe the following basic types of eye movements that make up mor
 | Word(Pattern)Matching | Simple visual pattern matching.                                                                                                                                         |
 
 
-### Role of Identifiers[⁹](#9)
+### Role of Identifiers[⁹](#fn-9)
 The comprehension of identifier names in programs is at the core of program understanding. Identifier names are often key beacons to program plans that support higher-level mental models of understanding. Identifiers make up approximately 70% of source code. If a certain identifier naming style significantly increases the speed of code comprehension, this could significantly impact overall program understanding.
 
 In general, using actual words rather than abbreviations lead to better comprehension. Identifiers that violate certain guidelines have lower code quality (more bug patterns) than ones that don’t. Longer names reduce correctness and take longer to recall.
 
 In an eye-tracking study analyzing the effect of identifier style (camel-case and underscore) on accuracy, time, and visual effort, with respect to the task of recognizing a correct identifier in a phrase, it was shown that, although, no difference was found between identifier styles with respect to accuracy, results indicate a significant improvement in time and lower visual effort with the underscore style.
 
-**Figure 12. Part of two gaze plots for the correct underscore (left) and camel-cased (right) versions of the 3-word code identifier[⁹](#9)**
+**Figure 12. Part of two gaze plots for the correct underscore (left) and camel-cased (right) versions of the 3-word code identifier[⁹](#fn-9)**
 <img src="underscore_vs_camelcase.png" />
 <!-- <img src="https://habrastorage.org/webt/2-/dz/vt/2-dzvtxei7st1fmgikp2ww6p4zw.jpeg" /> -->
 
@@ -321,7 +321,7 @@ For example, in a function definition, we need to visually separate the function
 Consider the following example:
 ![](cpp1.png)
 
-To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book [¹⁴](#14):
+To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book [¹⁴](#fn-14):
 
 > Close one eye and squint at the screen with the other eye to see which elements pop out, which are fuzzy, and which seem to be grouped. Changing your perspective can often uncover previously undetected issues in layout and composition.
 
@@ -437,11 +437,11 @@ In such constructs, the new namespace begins at the end of the line, that is, in
 
 
 ### Line Length
-The absence of a hard constraint on the right does not mean that there is no constraint at all. Centuries of typography[¹²](#12) and decades of [web designers](http://webtypography.net/2.1.2) experience agree that the optimal line length for comfortable reading is approximately 45-75 characters.
+The absence of a hard constraint on the right does not mean that there is no constraint at all. Centuries of typography[¹²](#fn-12) and decades of [web designers](http://webtypography.net/2.1.2) experience agree that the optimal line length for comfortable reading is approximately 45-75 characters.
 
-Despite the structural differences in program texts, it is difficult to imagine that these differences are so strong that they can make long lines difficult to read in ordinary text easy when we are reading a program. On the contrary, one might expect that programs, like scientific publications, require shorter lines than prose.[¹⁵](#15)
+Despite the structural differences in program texts, it is difficult to imagine that these differences are so strong that they can make long lines difficult to read in ordinary text easy when we are reading a program. On the contrary, one might expect that programs, like scientific publications, require shorter lines than prose.[¹⁵](#fn-15)
 
-Apparently, following Steve McConnell[¹³](#13), some developers say that on their large monitors long lines fit perfectly, and their presence in the code is normal. This argument of "large monitors" does not hold water:
+Apparently, following Steve McConnell[¹³](#fn-13), some developers say that on their large monitors long lines fit perfectly, and their presence in the code is normal. This argument of "large monitors" does not hold water:
 
 - A long line is difficult to capture with a "wide eye".
 - The perception of the structure of expression is difficult due to the fact that this structure is smeared along the line and does not form clearly expressed compact visual areas.
@@ -476,7 +476,7 @@ Taking the means of the estimated ranges, we get the following table:
 | 1 (guessing the suffix) | 14                  |
 | 2                       | 22                  |
 
-These guidelines are reasonably consistent with the boundaries given in Steve McConnell's book[¹⁴](#14): 10-16 and 8-20. Now we can somehow explain them.
+These guidelines are reasonably consistent with the boundaries given in Steve McConnell's book[¹⁴](#fn-14): 10-16 and 8-20. Now we can somehow explain them.
 
 In practice, it is sometimes necessary to use names that are outside the suggested lengths. For example, when the name includes some standard naming of the group to which the given item belongs, as in `PreferencesViewController`. By having the meaningful, unique part of the name at the beginning, we can expect to recognize the unique part of the name on the first fixation, and at the same time, we do not need much effort to recognize the "common continuation".
 
@@ -558,7 +558,7 @@ The main strategy for optimizing readability can be formulated as _making more e
 
 The implementation of this strategy is achieved by forming the text in the form of a relatively compact horizontally "image" with a pronounced visual structure that correctly reflects the logical structure of the program. This image is formed by hierarchically grouping logically related program elements into compact visual areas by means of horizontal indentation, adding blank lines and alignment. The ease of reading the program text is also ensured by the choice of identifiers that are optimal in terms of length and expressiveness and their explicit separation in the program text using spaces.
 
-In his book on typography, Robert Bringhurst writes [¹²](#12):
+In his book on typography, Robert Bringhurst writes [¹²](#fn-12):
 > Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly leaded lines. These variations can and should add life to the page…
 
 > However empty or full it may be, the page must breathe, and in a book — that is, in a long text fit for the reader to live in — the page must breath in both directions.
@@ -566,32 +566,32 @@ In his book on typography, Robert Bringhurst writes [¹²](#12):
 Similarly, we can say that the structure of the program, unfolding in the text from top to bottom, also has a certain rhythm and variations. The task of the programmer is to visualize this rhythm, to make it explicit in general and in detail.
 
 ------
-<a id="1" />¹) Величковский Б.М. Когнитивная наука. Основы психологии познания. Academia, Смысл, 2006
+<a id="fn-1" />¹) Величковский Б.М. Когнитивная наука. Основы психологии познания. Academia, Смысл, 2006
 
-<a id="2" />²) Yarbus A L. Eye Movements and Vision. New York: Plenum Press, 1967.
+<a id="fn-2" />²) Yarbus A L. Eye Movements and Vision. New York: Plenum Press, 1967.
 
-<a id="3" />³) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001.
+<a id="fn-3" />³) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001.
 
-<a id="4" />⁴) Rudolph Arnheim. Art and Visual Perception.  University of California Press, 1974
+<a id="fn-4" />⁴) Rudolph Arnheim. Art and Visual Perception.  University of California Press, 1974
 
-<a id="5" />⁵) <a href="https://www.semanticscholar.org/paper/Eye-movements-in-reading-and-information-20-years-Rayner/87c8a7be8d5e2e2209e766c3e28a3e8ee5babb64">Eye Movements in Reading and Information Processing: 20 Years of Research. Keith Rayner – University of Massachusetts at Amherst</a>
+<a id="fn-5" />⁵) <a href="https://www.semanticscholar.org/paper/Eye-movements-in-reading-and-information-20-years-Rayner/87c8a7be8d5e2e2209e766c3e28a3e8ee5babb64">Eye Movements in Reading and Information Processing: 20 Years of Research. Keith Rayner – University of Massachusetts at Amherst</a>
 
-<a id="6" />⁶) <a href="https://researchonline.gcu.ac.uk/files/24953094/ICPC2015_authors_version.pdf">Eye Movements in Code Reading: Relaxing the Linear Order. Roman Bednarik, Bonita Sharif</a>
+<a id="fn-6" />⁶) <a href="https://researchonline.gcu.ac.uk/files/24953094/ICPC2015_authors_version.pdf">Eye Movements in Code Reading: Relaxing the Linear Order. Roman Bednarik, Bonita Sharif</a>
 
-<a id="7" />⁷) <a href="https://link.springer.com/article/10.3758/BF03206156">Saccade size in reading depends upon character spaces and not visual angle. Robert E. Morrison, Keith Rayner, 1981</a>
+<a id="fn-7" />⁷) <a href="https://link.springer.com/article/10.3758/BF03206156">Saccade size in reading depends upon character spaces and not visual angle. Robert E. Morrison, Keith Rayner, 1981</a>
 
-<a id="8" />⁸) <a href="http://www.ptidej.net/courses/inf6306/fall10/slides/course8/Storey06-TheoriesMethodsToolsProgramComprehension.pdf">Theories, tools and research methods in program comprehension: Past, Present and Future. Margaret-Anne Storey</a>
+<a id="fn-8" />⁸) <a href="http://www.ptidej.net/courses/inf6306/fall10/slides/course8/Storey06-TheoriesMethodsToolsProgramComprehension.pdf">Theories, tools and research methods in program comprehension: Past, Present and Future. Margaret-Anne Storey</a>
 
-<a id="9" />⁹) <a href="http://www.cs.kent.edu/~jmaletic/papers/ICPC2010-CamelCaseUnderScoreClouds.pdf">An Eye Tracking Study on camelCase and under\_score Identifier Styles. Bonita Sharif and Jonathan I. Maletic – Department of Computer Science Kent State University</a>
+<a id="fn-9" />⁹) <a href="http://www.cs.kent.edu/~jmaletic/papers/ICPC2010-CamelCaseUnderScoreClouds.pdf">An Eye Tracking Study on camelCase and under\_score Identifier Styles. Bonita Sharif and Jonathan I. Maletic – Department of Computer Science Kent State University</a>
 
-<a id="10" />¹⁰) <a href="http://www.cs.kent.edu/~jmaletic/Prog-Comp/Papers/letovsky-1986-software.pdf">S. Letovsky and E. Soloway, Delocalized plans and program comprehension, IEEE Software, pp. 41–49, 1986.</a>
+<a id="fn-10" />¹⁰) <a href="http://www.cs.kent.edu/~jmaletic/Prog-Comp/Papers/letovsky-1986-software.pdf">S. Letovsky and E. Soloway, Delocalized plans and program comprehension, IEEE Software, pp. 41–49, 1986.</a>
 
-<a id="11" />¹¹) <a href="http://emipws.org/wp-content/uploads/2015/02/emip2013_report.pdf">Eye movements in programming education: analysing the expert’s gaze. Simon. University of Newcastle, Australia</a>
+<a id="fn-11" />¹¹) <a href="http://emipws.org/wp-content/uploads/2015/02/emip2013_report.pdf">Eye movements in programming education: analysing the expert’s gaze. Simon. University of Newcastle, Australia</a>
 
-<a id="12" />¹²) Robert BringHurst. Elements of Typographic Style. Hartley & Marks, Publishers, 1996 
+<a id="fn-12" />¹²) Robert BringHurst. Elements of Typographic Style. Hartley & Marks, Publishers, 1996 
 
-<a id="13" />¹³) Steve McConnell. Code Complete: A Practical Handbook of Software Construction. Microsoft Press, 2004
+<a id="fn-13" />¹³) Steve McConnell. Code Complete: A Practical Handbook of Software Construction. Microsoft Press, 2004
 
-<a id="14" />¹⁴) Alan Cooper. About Face: The Essentials of Interaction Design, Fourth Edition. John Wiley & Sons, Inc., 2014
+<a id="fn-14" />¹⁴) Alan Cooper. About Face: The Essentials of Interaction Design, Fourth Edition. John Wiley & Sons, Inc., 2014
 
-<a id="15" />¹⁵) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей.</a>
+<a id="fn-15" />¹⁵) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей.</a>
