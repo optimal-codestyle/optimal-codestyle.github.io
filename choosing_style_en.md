@@ -318,7 +318,9 @@ In general, using actual words rather than abbreviations lead to better comprehe
 In an eye-tracking study analyzing the effect of identifier style (camel-case and underscore) on accuracy, time, and visual effort, with respect to the task of recognizing a correct identifier in a phrase, it was shown that, although, no difference was found between identifier styles with respect to accuracy, results indicate a significant improvement in time and lower visual effort with the underscore style.
 
 **Figure 12. Part of two gaze plots for the correct underscore (left) and camel-cased (right) versions of the 3-word code identifier[⁹](#fn-9)**
+
 <img src="underscore_vs_camelcase.png" />
+
 <!-- <img src="https://habrastorage.org/webt/2-/dz/vt/2-dzvtxei7st1fmgikp2ww6p4zw.jpeg" /> -->
 
 
