@@ -10,27 +10,27 @@ This article is about human vision and how knowing these features can help us im
 ## Содержание
 
 * <a href="#introduction">Introduction</a>
-* <a href="#features_of_human_vision">Features of Human Vision</a>
-  * <a href="#fieldofview">Field of View</a>
-  * <a href="#ambientfocal">Ambient and Focal Vision</a>
-  * <a href="#laws">The Laws of Perceptual Organization</a>
-  * [Asymmetry of the Visual Field](asymmetry)
-* <a href="#textreading">How We Read Texts</a>
-* <a href="#comprehension">Program Comprehension</a>
-  * <a href="#cognitivemodels">Cognitive Models of Program Comprehension</a>
-    * <a href="#concepts">Concepts and terminology</a>
-    * <a href="#topdownmodel">Top-Down Model</a>
-    * <a href="#downtopmodel">Bottom-Up Model</a>
-    * <a href="#strategies">Opportunistic and Systematic Strategies</a>
-  * <a href="#codereading">Specifics of Reading Program Texts</a>
-  * <a href="#identifiers">Role of Identifiers</a>
-* <a href="#analysis">Basic Principles of Formatting</a>
-  * <a href="#visualrepresentation">Building the Visual Structure</a>
-  * <a href="#linelength">Line Length</a>
+* <a href="#features-of-human-vision">Features of Human Vision</a>
+  * <a href="#field-of-view">Field of View</a>
+  * <a href="#ambient-and-focal-vision">Ambient and Focal Vision</a>
+  * <a href="#the-laws-of-perceptual-organization">The Laws of Perceptual Organization</a>
+  * [Asymmetry of the Visual Field](asymmetry-of-the-visual-field)
+* <a href="#how-we-read-texts">How We Read Texts</a>
+* <a href="#program-comprehension">Program Comprehension</a>
+  * <a href="#cognitive-models-of-program-comprehension">Cognitive Models of Program Comprehension</a>
+    * <a href="#concepts-and-terminology">Concepts and terminology</a>
+    * <a href="#top-down-model">Top-Down Model</a>
+    * <a href="#bottom-up-model">Bottom-Up Model</a>
+    * <a href="#opportunistic-and-systematic-strategies">Opportunistic and Systematic Strategies</a>
+  * <a href="#specifics-of-reading-program-texts">Specifics of Reading Program Texts</a>
+  * <a href="#role-of-identifiers">Role of Identifiers</a>
+* <a href="#basic-principles-of-formatting">Basic Principles of Formatting</a>
+  * <a href="#building-the-visual-structure">Building the Visual Structure</a>
+  * <a href="#line-length">Line Length</a>
   * <a href="#names">Names</a>
   * <a href="#spaces">Spaces</a>
-  * <a href="#braces">Arranging Curly Braces</a>
-* <a href="#resume">Conclusion</a>
+  * <a href="#arranging-curly-braces">Arranging Curly Braces</a>
+* <a href="#conclusion">Conclusion</a>
 
 ## Introduction
 _At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust._
