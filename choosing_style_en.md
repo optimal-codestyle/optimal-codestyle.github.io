@@ -32,9 +32,8 @@ This article is about human vision and how knowing these features can help us im
   * <a href="#braces">Arranging Curly Braces</a>
 * <a href="#resume">Conclusion</a>
 
-<a id="intro" />
 ## Introduction
-
+<a id="intro" />
 _At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust._
 _— Rudolph Arnheim, Art and Visual Perception_
 
