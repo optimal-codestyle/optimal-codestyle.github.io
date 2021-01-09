@@ -1,13 +1,14 @@
-# Cognitive Code Style: Basic Principles of Optimization For Program Text Comprehension
+<!-- <img src="eyecode-v2.jpg" style="zoom:90%;" /> -->
+<!-- ![eye](eyecode-v2.jpg) -->
 
-![eye](eyecode-v2.jpg)
+# Cognitive Code Style: Basic Principles of Optimization For Program Text Comprehension
 
 _At a coarse level, it’s clear that some forms of layout are better than others._
 _— Steve McConnell, Code Complete._
 
 This article is about human vision and how knowing these features can help us improve the objective readability of our programs.
 
-## Содержание
+## Contents
 
 * <a href="#introduction">Introduction</a>
 * <a href="#features-of-human-vision">Features of Human Vision</a>
@@ -67,7 +68,9 @@ The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relativ
 Likewise, the ability to distinguish colors decreases from the center to the edge, and this change is different for different color components. We can say that moving from the center of the human retina to the periphery, we seem to find ourselves in earlier stages of evolution, moving from the most highly organized structures to the primitive eye, which distinguishes only the simple movement of shadows.
 
 **Figure 1. Field of view of the human right eye. Orange spot - the place of projection of the fundus blind spot.([orig.](https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Goldmann_visual_field_record_sheet.svg))**
-<img src="1920px-Goldmann_visual_field_record_sheet.svg.png" style="zoom:20%;" />
+
+<img src="1920px-Goldmann_visual_field_record_sheet.svg.png" style="zoom:30%;" />
+
 <!-- <img src="https://habrastorage.org/webt/7v/mo/qz/7vmoqzost4u5nzaeluqofvn3we4.png" style="zoom:20%;" /> -->
 
 
@@ -89,12 +92,16 @@ The objects that represent the source of the necessary information are far uneve
 Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are _saccades_ - extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent _fixation_.
 
 **Figure 2. Reproduction of Ilya Repin's painting and recording of the subject's eye movements.**[²](#fn-2)
-<img src="Yarbus_ne_zhdaly.jpg" />
+
+<img src="Yarbus_ne_zhdaly.jpg" style="zoom:90%;" />
+
 <!-- <img src="https://habrastorage.org/webt/vi/-m/vw/vi-mvwhun4tp2e2h1sk-cuob0mu.jpeg" /> -->
 Studies of the relationship between ambient (global) and focal (local) visual processing began in the experiments of David Navon in 1977. He presented subjects with large letters consisting of small letters. Some of these compound stimuli were "homogeneous" – the global form and local elements were the same letter. Others were "heterogeneous" – the global and local letters were different (say, "E" and "S"). The subjects had to identify the global or local letter as quickly as possible.
 
 **Figure 3. Homogeneous and heterogeneous super letters from David Navon's experiments.**
+
 <img src="Velichkovskiy_FF.png" />
+
 <!-- <img src="https://habrastorage.org/webt/yu/ha/z3/yuhaz3cdetforzujr9xsmssmyac.png" /> -->
 
 It turned out that when set to the global form, it is identified quickly and without any interference with matching or non-matching letters of the local level. When set to identify parts (i.e. small letters), the picture was different. First, the responses were slower. Second, in the case of heterogeneous stimuli, responses were further slowed down and become less accurate. Obviously, _when we set ourselves up for granularity, we cannot always ignore global information_.
@@ -106,26 +113,34 @@ Research on the relationship of global and local processing, tested with the Nav
 An interesting feature of our vision is the ability to perceive a group of objects as a whole. So in the image below we see a dog, and not just a chaotic set of spots:
 
 **Figure 5. Dalmatian.**
+
 <img src="dog.jpg" />
+
 <!-- <img src="https://habrastorage.org/webt/nm/8m/-7/nm8m-7vtm8sly2bjy1_vmilhnu0.jpeg" /> -->
 And here we clearly see a square and a circle:
 
 **Figure 6. Shapes from points.[⁴](#fn-4)**
+
 ![](Arnheim_1.png)
+
 <!-- <img src="https://habrastorage.org/webt/lo/sp/oh/lospoh3jfddv6dkgtotqvuepjv0.png" /> -->
 There are many explanations for these illusions. In terms of cognitive bionomy, the need to see shapes, edges, and movements (as well as faces) was dictated by the need for survival. Thus, even in the absence of real lines or shapes, our sensory-cognitive system used partial information to create these shapes in an attempt to make the seemingly chaotic world intelligible.
 
 Take a look at the picture below and you will see how, over time, the orientation of the triangles changes from one direction to another, a third.
 
 **Figure 7. Triangles changing orientation.[³](#fn-3)**
+
 <img src="triangles.png"/>
+
 <!-- <img src="https://habrastorage.org/webt/0a/og/y_/0aogy_yxzq8bnzxf-unhccm8d-w.png" /> -->
 Thus, we can say that in the absence of a clearly expressed dominant structure, our brain is constantly spending resources in search of such a structure.
 
 Gestalt psychologists were the first to study this phenomenon of perceptual organization. They formulated the basic law of visual perception, according to which _any stimulating model is perceived in such a way that the resulting structure will be, as far as the given conditions allow, the simplest_. Therefore, we perceive the square exactly as it is depicted on the left, and not in some other way:
 
 **Figure 8. Options for organizing points into a shape.[⁴](#fn-4)**
+
 ![](Arnheim_2.png)
+
 <!-- <img src="https://habrastorage.org/webt/hm/j3/0m/hmj30mmpg6_b_cu3rk0bgrdds1w.png" /> -->
 
 Gestalt psychologists have also formulated 6 principles of perceptual organization. In accordance with these principles, _objects that_
@@ -140,7 +155,9 @@ Gestalt psychologists have also formulated 6 principles of perceptual organizati
 _will sooner be perceived as a whole, or a figure, and not as disparate elements of the environment, or background_.
 
 **Figure 9. Examples of similarity in proximity, color and size.[⁴](#fn-4)**
+
 <img src="Arnheim_3.png" />
+
 <!-- <img src="https://habrastorage.org/webt/0-/6r/qu/0-6rqup1wemlrmemrzbf5vpui8u.png" /> -->
 
 In the case of competition of several factors of perceptual organization, the priority is usually given to the factor of _proximity_, and then the factor of _similarity in color, _orientation_ or _size_.
@@ -166,7 +183,9 @@ Between saccades, our eyes remain relatively motionless for the duration of _fix
 Whereas a majority of the words in a text are fixated during reading, many words are skipped so that foveal processing of each word is not necessary.
 
 **Figure 10. Typical pattern of eye movements while reading.[¹](#fn-1)**
-<img src="Velichkovskiy_reading.png" style="zoom:90%;" />
+
+<img src="Velichkovskiy_reading.png" style="zoom:80%;" />
+
 <!-- <img src="https://habrastorage.org/webt/kv/rt/ln/kvrtlnwdjge8ouyfzzaulxu7dyo.jpeg" /> -->
 
 Letter spaces are the appropriate metric to use, because the number of letters traversed by saccades is relatively invariant when the same text is read at different distances, even though the letter spaces subtend different visual angles.[⁷](#fn-7)
@@ -319,7 +338,8 @@ Therefore, for a correct assessment of the overall structure of the program, it 
 For example, in a function definition, we need to visually separate the function declaration, including its name, return type, parameter list, and function body. Inside the body of the function, it is necessary to separate the initialization code of the initial variables, the body of the main algorithm, the formation and return of the result. In turn, within the initialization code, we need to separate the scope of types, variable names, and values ​​assigned to them.
 
 Consider the following example:
-![](cpp1.png)
+
+<img src="cpp1.png" style="width:720px;" />
 
 To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book [¹⁴](#fn-14):
 
@@ -327,16 +347,22 @@ To analyze the visual structure, let's make a test similar to the _squint test_ 
 
 In fact, by squinting, we are trying to gauge how we perceive an image through ambient vision. Instead of squinting, you can try to look at the code with a defocused gaze and somewhat away from the fragment of interest to us.
 
-![](cpp1_blur.png)
+<img src="cpp1_blur.png" style="width:720px;" />
 
 The visual structure of this code contains only three large areas, which obviously does not reflect the program structure correctly.
 
 Stacking vertically allows you to correct this disadvantage:
-![](cpp2.png)
+
+<img src="cpp2.png" style="width:720px;" />
+
 <!-- <img src="https://habrastorage.org/webt/iq/i3/7i/iqi37ixwxuqufyuwxusni3cnneu.png" /> -->
 
 The squint test of it:
-![](cpp2_blur.png)
+
+<img src="cpp2_blur.png" style="width:720px;" />
+
+
+
 <!-- <img src="https://habrastorage.org/webt/6e/fc/py/6efcpyacl2rcz7idcoiw29thjkk.jpeg" /> -->
 
 Regions of text can be composed of lines of the same structure. In this case, it makes sense to group the same line elements, thereby emphasizing their horizontal structure. This grouping will highlight the common and make the differences more visible.
@@ -346,14 +372,18 @@ This way we structure the text both vertically and horizontally. In the first ca
 Indents are used to form a visual representation of the hierarchy in the program structure between elements on different lines.
 
 Let's take a look at the following code:
-<img src="indent1.png"/>
-<!-- <img src="https://habrastorage.org/webt/xb/jn/kr/xbjnkre3zaikfrmbo1pctjlcnha.png" /> -->
+
+<img src="indent1.png"  style="width:777px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/xb/jn/kr/xbjnkre3zaikfrmbo1pctjlcnha.png"  style="zoom:50%;"/> -->
 
 The list of arguments is presented as a column and is indented relative to the first line. Is this indentation sufficient to correctly display the logical structure of the program? Obviously not.
 
 The proximity rule binds the argument list to the variable name more strongly than to the function name, even though syntax highlighting creates a color similarity. But what happens if the highlighting algorithm changes? Here's what the same code looked like on gitlab:
-<img src="indent3.png"/>
-<!-- <img src="https://habrastorage.org/webt/qh/gv/7i/qhgv7iklbl_6jujgqm6kluodd60.png" /> -->
+
+<img src="indent3.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/qh/gv/7i/qhgv7iklbl_6jujgqm6kluodd60.png"  style="zoom:50%;"/> -->
 
 In this case, syntax highlighting made things worse, since the color similarity rule now also strengthens the association of arguments with a variable name. The function name has nothing to do with it.
 
@@ -362,78 +392,103 @@ When scanning text, such an arrangement provokes eye movement from the resulting
 _Syntax highlighting can greatly facilitate the perception of the program. However, as we can see from this example, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program._
 
 To correctly display the logical structure of this code in its visual representation, it is necessary that the list of arguments is indented not relative to the beginning of the line, but relative to the beginning of the function name:
-<img src="indent4.png"/>
-<!-- <img src="https://habrastorage.org/webt/nz/z9/6l/nzz96lrnme0kfnbe0fhcm8ktgvq.png" /> -->
+
+<img src="indent4.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/nz/z9/6l/nzz96lrnme0kfnbe0fhcm8ktgvq.png"  style="zoom:50%;"/> -->
 
 In this case, it is clearly seen that the function argument list is syntactically part of the function call expression and is logically a set of parameters that is converted by the function call.
 
 Let's do a squinting test. We will also disable syntax highlighting in order to exclude grouping by the color similarity factor, which we do not control:
-<img src="indent4_blurred.png"/>
-<!-- <img src="https://habrastorage.org/webt/pd/hd/_n/pdhd_n8bny50x3nqwltsihpvwik.jpeg" /> -->
+
+<img src="indent4_blurred.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/pd/hd/_n/pdhd_n8bny50x3nqwltsihpvwik.jpeg"  style="zoom:50%;"/> -->
 
 You can see that the function name and argument list form a tightly coupled scope. However, when using two spaces for indentation, the subordination of the argument list relative to the function name does not seem expressive enough. Using four spaces helps to solve this problem:
 
-<img src="indent4-4_blurred.png"/>
-<!-- <img src="https://habrastorage.org/webt/ot/kj/u_/otkju_th20tr1orgivwrq8ju0qo.jpeg" /> -->
+<img src="indent4-4_blurred.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/ot/kj/u_/otkju_th20tr1orgivwrq8ju0qo.jpeg"  style="zoom:50%;"/> -->
 
 One more problem remains: the list of arguments looks like one unstructured spot, despite the fact that there are two types of elements, the labels of the arguments and their values. This list has a certain structure, and in order to visually highlight this structure, we should use alignment. But before that, let's digress from this example for a while and look at various ways to format an argument list as label:value.
 
 **One line formatting**
-<img src="code1.png"/>
-<!-- <img src="https://habrastorage.org/webt/xm/os/gy/xmosgy6pigronododp5uljr5oly.png" /> -->
+
+<img src="code1.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/xm/os/gy/xmosgy6pigronododp5uljr5oly.png"  style="zoom:50%;"/> -->
 
 In this version, the visual structure does not reflect the structure of the expression, so the search is difficult. This option is only intended to be read carefully.
 
 Due to the large length of the line, the rest of it, which did not fit on the first line, was placed on the second. In this case, the editor made an indent showing the subordination of this line relative to the previous one. However, elsewhere (for example, in the comparison pane on gitlab), the second line will most likely start at the beginning and the visual structure of the piece of code will be broken.
 
 **Label:value pairs alignment**
-<img src="code2.png"/>
-<!-- <img src="https://habrastorage.org/webt/ir/gp/zb/irgpzbpqbvhdnsuzbrdnxhemwum.png" /> -->
+
+<img src="code2.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/ir/gp/zb/irgpzbpqbvhdnsuzbrdnxhemwum.png"  style="zoom:50%;"/> -->
 This option looks better in the sense that the method name and the argument list are clearly separated from each other. It is already a little easier to search in the argument list, since each pair is on a separate line and the labels are left aligned.
 
 However, distinguishing between labels and values ​​is difficult because there is no clear border between label and value areas for the entire list. In addition, since the text is perceived as anchored on the left and free on the right, visually this code appears as a large mass (the area of ​​the argument list) suspended from a thin and long arm. The bulk of the code turns out to be strongly shifted to the right, less important part of the space.
 
 In this case, we can try to fix the last flaw by shifting the list of arguments to the left:
-<img src="code3.png"/>
-<!-- <img src="https://habrastorage.org/webt/gd/3y/us/gd3yuslr14dsmyu4f1m4tsy4ssk.png" /> -->
+
+<img src="code3.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/gd/3y/us/gd3yuslr14dsmyu4f1m4tsy4ssk.png"  style="zoom:50%;"/> -->
 To better represent the internal structure of the argument list, it is necessary to form an explicit dividing line between the label and value areas. We have two options here.
 
 **Option 1: labels and arguments are left aligned separately**
-<img src="code4.png"/>
-<!-- <img src="https://habrastorage.org/webt/qc/n8/zh/qcn8zhxgazbgclie1_0o0c3iv0c.png" /> -->
+
+<img src="code4.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/qc/n8/zh/qcn8zhxgazbgclie1_0o0c3iv0c.png"  style="zoom:50%;"/> -->
 Of all the options proposed so far, this one most accurately conveys the logical structure of the code. It clearly distinguishes the areas of labels and values, identifying and finding individual elements within them is much easier. However, due to the large difference in the label lengths of the arguments, the bonds within pairs with short labels are weakened.
 
 **Option 2: inner alignment**
-<img src="code5.png"/>
-<!-- <img src="https://habrastorage.org/webt/oe/zj/lj/oezjljl0bqs6rc0gryw6822r4e8.png" /> -->
+
+<img src="code5.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/oe/zj/lj/oezjljl0bqs6rc0gryw6822r4e8.png"  style="zoom:50%;"/> -->
 Having all the advantages of the previous option, this option looks more natural for this example. In it, the argument labels look like a natural continuation of the method name, as it should be in this case. The code looks compact enough without the need to carry the argument list to the next line.
 
 For the `reticulateSplines` example, the code in this styling would look like this:
-<img src="indent5.png"/>
-<!-- <img src="https://habrastorage.org/webt/q-/ff/ay/q-ffaynkxm45pkwpe4ivn0ef0b0.png" /> -->
+
+<img src="indent5.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/q-/ff/ay/q-ffaynkxm45pkwpe4ivn0ef0b0.png"  style="zoom:50%;"/> -->
 Alignment is a powerful tool for optimizing the visual presentation of code by forming compact groups in a horizontal direction.
 
 Let's analyze the following code:
-<img src="proto1.png" />
-<!-- <img src="https://habrastorage.org/webt/fs/mg/k0/fsmgk0pgwcqzom18vxjrcqkgnpq.png" /> -->
+
+<img src="proto1.png"  style="width:724px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/fs/mg/k0/fsmgk0pgwcqzom18vxjrcqkgnpq.png"  style="zoom:50%;"/> -->
 
 Basically, every single protocol declaration looks reasonably readable. However, this cannot be said about the entire text: the general structure is inexpressive, there are no clearly expressed masses in it that could attract the eye. As a result, "dazzles in the eyes", and there is a feeling of tiring monotony. To perceive this code, it can only be read sequentially and completely: _"protocol DataBaseDependent ServiceDependent var dataBase DataBase get set, protocol LocalConfigDependent …"_
 
 Let's reformat it so that each declaration spans one line and align it:
-<img src="proto3.png" />
-<!-- <img src="https://habrastorage.org/webt/pt/uu/bv/ptuubvmnslk97jdapakeffafaa0.png" /> -->
+
+<img src="proto3.png"  style="width:724px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/pt/uu/bv/ptuubvmnslk97jdapakeffafaa0.png"  style="zoom:50%;"/> -->
 
 Now clearly defined groups (grouping by "proximity") have been formed in the horizontal direction, and the structure of each definition and the differences between them have been clearly revealed. The way this code is read is also different. After a quick initial familiarization with the structure and identifying common parts, further analysis simply ignores these common parts, and attention is focused only on the different parts. Thus, due to the more active use of ambient vision, the load on the focal vision is reduced and the amount of mental effort required to understand the program is reduced.
 
 As mentioned above, there is some asymmetry in how we perceive the left and right sides of the visual scene. This asymmetry is even more natural in the perception of the program text: the text is rigidly anchored to the left margin, where indents set the level of hierarchy in the logical structure of the program. The right edge is free and does not have a hard limit. Reading from left to right and top to bottom determines what _something new we expect to see top and left or center_.
 
 Because of that, the following constructions cannot be called good in terms of readability:
-<img src="closure1.png"/>
-<!-- <img src="https://habrastorage.org/webt/82/x3/y1/82x3y16luvwnxvimg_cdysisniq.png" /> -->
+
+<img src="closure1.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/82/x3/y1/82x3y16luvwnxvimg_cdysisniq.png"  style="zoom:50%;"/> -->
 
 In such constructs, the new namespace begins at the end of the line, that is, in the least important area, where this beginning is not expected. It's more natural to place the beginning of this block of code where it should be - at the top left:
-<img src="closure2.png"/>
-<!-- <img src="https://habrastorage.org/webt/d3/2s/en/d32senybyy8wrbv9di8l_xy_tta.png" /> -->
+
+<img src="closure2.png"  style="width:720px;"/>
+
+<!-- <img src="https://habrastorage.org/webt/d3/2s/en/d32senybyy8wrbv9di8l_xy_tta.png"  style="zoom:50%;"/> -->
 
 
 ### Line Length
@@ -489,24 +544,30 @@ Decorating class and function names only makes sense if you are developing a lib
 As mentioned above, using any other separator between words instead of a space makes reading difficult, because of the difficulties in determining the boundaries of a word, which in turn lead to difficulties in recognizing and planning the next saccade.
 
 Therefore, it is recommended to separate identifiers in the program using spaces, even if formally such separation is not required. For example, it makes sense to separate the function name and the list of its parameters/arguments with a space:
-![](space1.png)
-<!-- <img src="https://habrastorage.org/webt/1r/iy/il/1riyil0pm_dpnf0h9jkivaqvspi.png" /> -->
+<img src="space1.png" style="width:720px;" />
+<!-- <img src="https://habrastorage.org/webt/1r/iy/il/1riyil0pm_dpnf0h9jkivaqvspi.png"  style="zoom:50%;"/> -->
 
 There is no space on the first line, and the function name visually sticks to the first argument in the argument list. In addition to the difficulty in reading, we can also notice that the visual structure does not quite correctly reflect the logical structure of the program: the function call expression includes the function name and the argument list, the argument list includes the first and second arguments. In the first line, the function name is more closely related to the first argument than the arguments to each other.
 
 One more example:
-![](space3_1.png)
-<!-- <img src="https://habrastorage.org/webt/rs/dz/ku/rsdzkuirda_pdn22_ocsalvl8rg.png" /> -->
+
+<img src="space3_1.png" style="width:720px;" />
+
+<!-- <img src="https://habrastorage.org/webt/rs/dz/ku/rsdzkuirda_pdn22_ocsalvl8rg.png"  style="zoom:50%;"/> -->
 
 After splitting into two groups, adding spaces and alignment:
-![](space3_2.png)
-<!-- <img src="https://habrastorage.org/webt/xv/ff/yr/xvffyrmbd0n3tn-ay-xxkdhsjqc.png" /> -->
+
+<img src="space3_2.png" style="width:720px;" />
+
+<!-- <img src="https://habrastorage.org/webt/xv/ff/yr/xvffyrmbd0n3tn-ay-xxkdhsjqc.png"  style="zoom:50%;"/> -->
 
 In this case, the addition of spaces not only made it easier to read individual lines due to the explicit separation of identifiers within them, but (together with alignment) made it easier to compare them by forming compact visual groups vertically. Trying to understand what this code does, you no longer have to read each line separately.
 
 In the case when the total length of identifiers does not exceed the size of the recognition area, this requirement is not so critical, since the entire expression can be immediately captured with one glance:
-![](space2.png)
-<!-- <img src="https://habrastorage.org/webt/qx/o-/al/qxo-alqr0-hwf2ycvpjo_wwh2dq.png" /> -->
+
+<img src="space2.png" style="width:720px;" />
+
+<!-- <img src="https://habrastorage.org/webt/qx/o-/al/qxo-alqr0-hwf2ycvpjo_wwh2dq.png"  style="zoom:50%;"/> -->
 
 
 ### Arranging Curly Braces
@@ -525,20 +586,26 @@ Placing the opening parenthesis at the beginning of a single line in the _Allman
 - The horizontal position of the opening brace in the style of _Allman_ uniquely determines the nesting level to which it belongs. _1TBS_ does not contain this information, since the location of the open brace is mainly determined only by the length of the line before it.
 
 The disadvantages of _1TBS_ lead to the fact that the opening curly brace ceases to fully participate in the formation of the visual presentation of the code, the style provokes the programmer not to separate the code blocks inside the brackets and their surrounding elements with empty lines, and as a result, the program text often looks like one poorly structured massive chunk:
-![picture36](picture36.png)
-<!-- ![picture36](https://habrastorage.org/webt/y1/kr/zq/y1krzqjyfs1tpw0wshh7kznwioy.png) -->
+
+<img src="picture36.png" style="width:720px;" />
+
+<!-- <img src="https://habrastorage.org/webt/y1/kr/zq/y1krzqjyfs1tpw0wshh7kznwioy.png" style="zoom:50%;" /> -->
 
 The code in the example above demonstrates the main problems of the _1TBS_ style mentioned, namely: the absence of a clearly expressed visual structure, the inversion of the role of the closing braces, the loss of the visual significance of the opening braces, which, at a cursory glance at the code, are only approximately guessed using peripheral vision and their exact location requires additional horizontal eye movements. And this is an example of relatively simple code, since in it the conditions of the `if` expression occupy only one line, and the open braces are on the same line as the` if`, and the code blocks inside the braces have a fairly simple linear structure and do not contain nested blocks.
 
 Reformatting this code using the _Allman_ style allows for a more acceptable result:
-![picture37](picture37.png)
-<!-- ![picture37](https://habrastorage.org/webt/jv/x-/pf/jvx-pfjfuqs01oiohffb9mjmltw.png) -->
+
+<img src="picture37.png" style="width:720px;" />
+
+<!-- <img src="https://habrastorage.org/webt/jv/x-/pf/jvx-pfjfuqs01oiohffb9mjmltw.png" style="zoom:50%;" /> -->
 
 Despite the fact that in most cases _Allman_ objectively outperforms _1TBS_, sometimes _1TBS_ is preferable. As a rule, in the such cases the additional vertical space formed by placing braces on separate lines in the style of _Allman_ leads to the fact that the whole structure becomes visually fragmented, loses its internal rhythm and ceases to be perceived as a single whole. And at the same time, when using _1TBS_, either the offset of the opening parenthesis is small and does not have a significant effect on the perception of the code, or its detection is not critical (for example, in the case of the `if` construction, when both the condition and the block of code occupy one line each).
 
 So in the previous example, placing the last open brace at the end of the line looks quite natural, and the resulting empty space only adds a small accent, compensating for the small visual volume of the last block, consisting of only one line. When the parenthesis is placed on a separate line, this space becomes too large, and this line looks already torn off from the rest of the construction:
-![picture38](picture38.png)
-<!-- ![picture38](https://habrastorage.org/webt/qx/b5/qe/qxb5qetfvjaier48xmxjlzw1yr8.png) -->
+
+<img src="picture38.png" style="width:720px;" />
+
+<!-- <img src="https://habrastorage.org/webt/qx/b5/qe/qxb5qetfvjaier48xmxjlzw1yr8.png" style="zoom:50%;" /> -->
 
 The question arises: in what cases is it permissible to use _1TBS_? The following restrictions can be suggested:
 
