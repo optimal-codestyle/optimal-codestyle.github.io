@@ -569,19 +569,32 @@ In his book on typography, Robert Bringhurst writes [¹²](#12):
 Similarly, we can say that the structure of the program, unfolding in the text from top to bottom, also has a certain rhythm and variations. The task of the programmer is to visualize this rhythm, to make it explicit in general and in detail.
 
 ------
-<a id="1"></a>¹) Величковский Б.М. Когнитивная наука. Основы психологии познания. Academia, Смысл, 2006 
-<a id="2"></a>²) Yarbus A L. Eye Movements and Vision. New York: Plenum Press, 1967. 
-<a id="3"></a>³) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001. 
-<a id="4"></a>⁴) Rudolph Arnheim. Art and Visual Perception.  University of California Press, 1974 
-<a id="5"></a>⁵) <a href="https://www.semanticscholar.org/paper/Eye-movements-in-reading-and-information-20-years-Rayner/87c8a7be8d5e2e2209e766c3e28a3e8ee5babb64">Eye Movements in Reading and Information Processing: 20 Years of Research. Keith Rayner – University of Massachusetts at Amherst</a> 
-<a id="6"></a>⁶) <a href="https://researchonline.gcu.ac.uk/files/24953094/ICPC2015_authors_version.pdf">Eye Movements in Code Reading: Relaxing the Linear Order. Roman Bednarik, Bonita Sharif</a> 
-<a id="7"></a>⁷) <a href="https://link.springer.com/article/10.3758/BF03206156">Saccade size in reading depends upon character spaces and not visual angle. Robert E. Morrison, Keith Rayner, 1981</a> 
-<a id="8"></a>⁸) <a href="http://www.ptidej.net/courses/inf6306/fall10/slides/course8/Storey06-TheoriesMethodsToolsProgramComprehension.pdf">Theories, tools and research methods in program comprehension: Past, Present and Future. Margaret-Anne Storey</a> 
-<a id="9"></a>⁹) <a href="http://www.cs.kent.edu/~jmaletic/papers/ICPC2010-CamelCaseUnderScoreClouds.pdf">An Eye Tracking Study on camelCase and under\_score Identifier Styles. Bonita Sharif and Jonathan I. Maletic – Department of Computer Science Kent State University</a> 
-<a id="10"></a>¹⁰) <a href="http://www.cs.kent.edu/~jmaletic/Prog-Comp/Papers/letovsky-1986-software.pdf">S. Letovsky and E. Soloway, Delocalized plans and program comprehension, IEEE Software, pp. 41–49, 1986.</a> 
-<a id="11"></a>¹¹) <a href="http://emipws.org/wp-content/uploads/2015/02/emip2013_report.pdf">Eye movements in programming education: analysing the expert’s gaze. Simon. University of Newcastle, Australia</a> 
-<a id="12"></a>¹²) Robert BringHurst. Elements of Typographic Style. Hartley & Marks, Publishers, 1996  
-<a id="13"></a>¹³) Steve McConnell. Code Complete: A Practical Handbook of Software Construction. Microsoft Press, 2004 
-<a id="14"></a>¹⁴) Alan Cooper. About Face: The Essentials of Interaction Design, Fourth Edition. John Wiley & Sons, Inc., 2014 
-<a id="15"></a>¹⁵) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей.</a> 
+<a id="1"></a>¹) Величковский Б.М. Когнитивная наука. Основы психологии познания. Academia, Смысл, 2006
 
+<a id="2"></a>²) Yarbus A L. Eye Movements and Vision. New York: Plenum Press, 1967.
+
+<a id="3"></a>³) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001.
+
+<a id="4"></a>⁴) Rudolph Arnheim. Art and Visual Perception.  University of California Press, 1974
+
+<a id="5"></a>⁵) <a href="https://www.semanticscholar.org/paper/Eye-movements-in-reading-and-information-20-years-Rayner/87c8a7be8d5e2e2209e766c3e28a3e8ee5babb64">Eye Movements in Reading and Information Processing: 20 Years of Research. Keith Rayner – University of Massachusetts at Amherst</a>
+
+<a id="6"></a>⁶) <a href="https://researchonline.gcu.ac.uk/files/24953094/ICPC2015_authors_version.pdf">Eye Movements in Code Reading: Relaxing the Linear Order. Roman Bednarik, Bonita Sharif</a>
+
+<a id="7"></a>⁷) <a href="https://link.springer.com/article/10.3758/BF03206156">Saccade size in reading depends upon character spaces and not visual angle. Robert E. Morrison, Keith Rayner, 1981</a>
+
+<a id="8"></a>⁸) <a href="http://www.ptidej.net/courses/inf6306/fall10/slides/course8/Storey06-TheoriesMethodsToolsProgramComprehension.pdf">Theories, tools and research methods in program comprehension: Past, Present and Future. Margaret-Anne Storey</a>
+
+<a id="9"></a>⁹) <a href="http://www.cs.kent.edu/~jmaletic/papers/ICPC2010-CamelCaseUnderScoreClouds.pdf">An Eye Tracking Study on camelCase and under\_score Identifier Styles. Bonita Sharif and Jonathan I. Maletic – Department of Computer Science Kent State University</a>
+
+<a id="10"></a>¹⁰) <a href="http://www.cs.kent.edu/~jmaletic/Prog-Comp/Papers/letovsky-1986-software.pdf">S. Letovsky and E. Soloway, Delocalized plans and program comprehension, IEEE Software, pp. 41–49, 1986.</a>
+
+<a id="11"></a>¹¹) <a href="http://emipws.org/wp-content/uploads/2015/02/emip2013_report.pdf">Eye movements in programming education: analysing the expert’s gaze. Simon. University of Newcastle, Australia</a>
+
+<a id="12"></a>¹²) Robert BringHurst. Elements of Typographic Style. Hartley & Marks, Publishers, 1996 
+
+<a id="13"></a>¹³) Steve McConnell. Code Complete: A Practical Handbook of Software Construction. Microsoft Press, 2004
+
+<a id="14"></a>¹⁴) Alan Cooper. About Face: The Essentials of Interaction Design, Fourth Edition. John Wiley & Sons, Inc., 2014
+
+<a id="15"></a>¹⁵) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей.</a>
