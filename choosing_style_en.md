@@ -1,7 +1,7 @@
 <!-- <img src="eyecode-v2.jpg" style="zoom:75%" /> -->
 
 # Cognitive Code Style
-# Basics for Optimizing Program Readability
+# How to Optimize Program Readability
 
 
 

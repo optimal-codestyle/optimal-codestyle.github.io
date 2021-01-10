@@ -455,12 +455,23 @@ table tbody+tbody {
 .dropdown-menu .divider {
 	border-color: #e5e5e5;
 }
+#write {
+	max-width: 35rem;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 35rem;
+	}
+}
+
+Lexically, they are composed from a limited vocabulary, with some words used as
 
  :root {--mermaid-font-zoom:1em ;} 
 </style>
 </head>
 <body class='typora-export'>
-<div id='write'  class=''><!-- <img src="eyecode-v2.jpg" style="zoom:75%" /> --><h1><a name="cognitive-code-style" class="md-header-anchor"></a><span>Cognitive Code Style</span></h1><h1><a name="basics-for-optimizing-program-readability" class="md-header-anchor"></a><span>Basics for Optimizing Program Readability</span></h1><p>&nbsp;</p><p>&nbsp;</p><p><em><span>At a coarse level, it’s clear that some forms of layout are better than others.</span></em>
+<div id='write'  class=''><!-- <img src="eyecode-v2.jpg" style="zoom:75%" /> --><h1><a name="cognitive-code-style" class="md-header-anchor"></a><span>Cognitive Code Style</span></h1><h1><a name="how-to-optimize-program-readability" class="md-header-anchor"></a><span>How to Optimize Program Readability</span></h1><p>&nbsp;</p><p><em><span>At a coarse level, it’s clear that some forms of layout are better than others.</span></em>
 <em><span>— Steve McConnell, Code Complete.</span></em></p><p>&nbsp;</p><h2><a name="contents" class="md-header-anchor"></a><span>Contents</span></h2><ul><li><p><a href="#introduction"><span>Introduction</span></a></p></li><li><p><a href="#features-of-human-vision"><span>Features of Human Vision</span></a></p><ul><li><a href="#field-of-view"><span>Field of View</span></a></li><li><a href="#ambient-and-focal-vision"><span>Ambient and Focal Vision</span></a></li><li><a href="#the-laws-of-perceptual-organization"><span>The Laws of Perceptual Organization</span></a></li><li><a href="#asymmetry-of-the-visual-field"><span>Asymmetry of the Visual Field</span></a></li></ul></li><li><p><a href="#how-we-read-texts"><span>How We Read Texts</span></a></p></li><li><p><a href="#program-comprehension"><span>Program Comprehension</span></a></p><ul><li><p><a href="#cognitive-models-of-program-comprehension"><span>Cognitive Models of Program Comprehension</span></a></p><ul><li><a href="#concepts-and-terminology"><span>Concepts and terminology</span></a></li><li><a href="#top-down-model"><span>Top-Down Model</span></a></li><li><a href="#bottom-up-model"><span>Bottom-Up Model</span></a></li><li><a href="#opportunistic-and-systematic-strategies"><span>Opportunistic and Systematic Strategies</span></a></li></ul></li><li><p><a href="#specifics-of-reading-program-texts"><span>Specifics of Reading Program Texts</span></a></p></li><li><p><a href="#role-of-identifiers"><span>Role of Identifiers</span></a></p></li></ul></li><li><p><a href="#basic-principles-of-formatting"><span>Basic Principles of Formatting</span></a></p><ul><li><a href="#building-the-visual-structure"><span>Building the Visual Structure</span></a></li><li><a href="#line-length"><span>Line Length</span></a></li><li><a href="#names"><span>Names</span></a></li><li><a href="#spaces"><span>Spaces</span></a></li><li><a href="#arranging-curly-braces"><span>Arranging Curly Braces</span></a></li></ul></li><li><p><a href="#conclusion"><span>Conclusion</span></a></p></li></ul><h2><a name="introduction" class="md-header-anchor"></a><span>Introduction</span></h2><p><em><span>At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust.</span></em>
 <em><span>— Rudolph Arnheim, Art and Visual Perception</span></em></p><p><em><span>First, we want to establish the idea that a computer language is not just a way of getting a computer to perform operations but rather that it is a novel formal medium for expressing ideas about methodology. Thus, programs must be written for people to read, and only incidentally for machines to execute.</span></em>
 <em><span>— Harold Abelson and Gerald Jay Sussman, Structure and Interpretation of Computer Programs.</span></em></p><p><em><span>Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.</span></em>
