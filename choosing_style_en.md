@@ -1,7 +1,8 @@
 <!-- <img src="eyecode-v2.jpg" style="zoom:75%" /> -->
 
 # Cognitive Code Style
-# Optimizing Program Text Readability
+# Basics for Optimizing Program Readability
+
 
 
 
@@ -56,9 +57,9 @@ In order to maintain readability of the code, during program development it is c
 
 However, individual rules are often questionable because the criteria for their selection are unclear and they often contradict similar rules in other similar styles.
 
-The rules provide specific details for how the code is formatted to maintain readability, but there is no explanation of how the rules help achieve it. Without understanding this, the solution to the engineering problem of forming a readable (i.e optimal from the point of view of the ease of perception of the program text) is replaced by thoughtless adherence to formal and often arbitrarily chosen rules, which also change when moving from project to project, from language to language. As a result, a false idea is formed that the what the rules say is not so important, and the choice of one or another style is just a matter of taste and habit.
+The rules provide specific details for how the code is formatted to maintain readability, but there is no explanation of how the rules help achieve it. Without understanding this, the solution to the engineering problem of forming a readable (i.e optimal in the sense of perception) program text is replaced by thoughtless adherence to formal and often arbitrarily chosen rules, which usually change when moving from project to project, from language to language. As a result, a false idea is formed that the what the rules say is not so important, and the choice of one or another style is just a matter of taste and habit.
 
-Indeed, our habits largely determine how comfortable we feel in a given situation and, in particular, how we perceive a particular formatting style. But the feeling of comfort due to habit cannot be a measure of how objectively good this style is. It is obvious that the habit of a certain style can only mean that we simply stopped noticing the specific features of this style, which in fact can be counterproductive in the sense of forming objectively readable code.
+Indeed, our habits largely determine how comfortable we feel in a given situation and, in particular, how we perceive a particular formatting style. But the feeling of comfort due to habit cannot be a measure of how objectively good this style is. It is obvious that the habit of a certain style can only mean that we simply stopped noticing the specific features of this style, which in fact can be counterproductive in the sense of forming _objectively readable_ code.
 
 When I speak of _objective readability_, I mean that the full readability of a text consists of a subjective component, caused by developed habits and skills, which we talked about above, and an objective one. This second component is determined by the capabilities and limitations of the mechanisms of perception and processing of visual information common to all people in the normal mental and physical state.
 
@@ -94,9 +95,9 @@ In modern neuropsychology, there is a concept of _ambiant_ (from the French **am
 | Light Sensitivity      | High  | Low             |
 | Spatial resolution     | High  | Low             |
 
-The objects that represent the source of the necessary information are far unevenly distributed. They are usually localized in small areas of the visual field. At the same time, with the help of ambient vision, a potentially interesting object or element of the object is detected, and with the help of focal vision aimed at the object, this information is perceived and analyzed in more detail. When faced with a new situation or with a new object, we, as a rule, first look "wide field" and only then concentrate our attention on details.
+The objects that represent the source of the necessary information are far unevenly distributed. They are usually localized in small areas of the visual field. With the help of ambient vision, a potentially interesting object or element of the object is detected, and with the help of focal vision aimed at the object, this information is perceived and analyzed in more detail. When faced with a new situation or with a new object, we, as a rule, first look "wide field" and only then concentrate our attention on details.
 
-Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are _saccades_ - extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent _fixation_.
+Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are _saccades_ — extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent _fixation_.
 
 **Figure 2. Reproduction of Ilya Repin's painting and recording of the subject's eye movements.**[²](#fn-2)
 
@@ -113,7 +114,7 @@ Studies of the relationship between ambient (global) and focal (local) visual pr
 
 It turned out that when set to the global form, it is identified quickly and without any interference with matching or non-matching letters of the local level. When set to identify parts (i.e. small letters), the picture was different. First, the responses were slower. Second, in the case of heterogeneous stimuli, responses were further slowed down and become less accurate. Obviously, _when we set ourselves up for granularity, we cannot always ignore global information_.
 
-Research on the relationship of global and local processing, tested with the Navona super letters, revealed a possible differential role for the posterior left and right hemispheres. In this case, the left hemisphere turned out to be more of a tuning regulator for details, and the right one for global outlines. The influence of emotions turned out to be extremely interesting: negative emotions, in contrast to positive ones, strengthened the attitude towards the perception of details.
+Research on the relationship of global and local processing, tested with the Navona super letters, revealed a possible differential role for the posterior left and right hemispheres of the brain. In this case, the left hemisphere turned out to be more of a tuning regulator for details, and the right one for global outlines. The influence of emotions turned out to be extremely interesting: negative emotions, in contrast to positive ones, strengthened the attitude towards the perception of details.
 
 
 ### The Laws of Perceptual Organization
@@ -140,7 +141,7 @@ Take a look at the picture below and you will see how, over time, the orientatio
 <img src="triangles.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/0a/og/y_/0aogy_yxzq8bnzxf-unhccm8d-w.png" /> -->
-Thus, we can say that in the absence of a clearly expressed dominant structure, our brain is constantly spending resources in search of such a structure.
+Thus, we can say that _in the absence of a clearly expressed dominant structure, our brain is constantly spending resources in search of such a structure_.
 
 Gestalt psychologists were the first to study this phenomenon of perceptual organization. They formulated the basic law of visual perception, according to which _any stimulating model is perceived in such a way that the resulting structure will be, as far as the given conditions allow, the simplest_. Therefore, we perceive the square exactly as it is depicted on the left, and not in some other way:
 
@@ -167,7 +168,7 @@ _will sooner be perceived as a whole, or a figure, and not as disparate elements
 
 <!-- <img src="https://habrastorage.org/webt/0-/6r/qu/0-6rqup1wemlrmemrzbf5vpui8u.png" /> -->
 
-In the case of competition of several factors of perceptual organization, the priority is usually given to the factor of _proximity_, and then the factor of _similarity in color, _orientation_ or _size_.
+In the case of competition of several factors of perceptual organization, the priority is usually given to the factor of _proximity_, and then the factor of similarity in _color_, _orientation_ or _size_.
 
 Taking these principles into account turns out to be important in the case of perceptual search or perception, because, _if information is organized in accordance with these principles, the solution of the problem posed requires less effort due to the fact that the perceptual field is subjected to grouping, and a smaller proportion of common resources are successively allocated to the formed groups of elements_. The distribution of resources within each group is approximately equal.
 
@@ -180,50 +181,20 @@ Similar to the asymmetry between the left and right hand, there is some asymmetr
 Thus, in the scenic arts it is known that there is a difference between the left and right halves of the stage: when the curtain rises in the theater, the audience is inclined to look to its left first and to identify with the characters appearing on that side. Therefore, among the so-called stage areas the left side (from the audience's viewpoint) is considered stronger. In a group of actors, the one farthest left dominates the scene. The audience identifies with him and sees the others, from his position, as opponents. Likewise the observer experiences a picture as though he were facing its left side. He subjectively identifies with the left, and whatever appears there assumes greatest importance.[⁴](#fn-4) Thus, in addition to the natural balance point in the center of the visual scene, an additional center is formed in its left part.
 
 
+
 ## How We Read Texts[⁵](#fn-5)
+
 When we read, our eyes incessantly make rapid mechanical (i.e., not controlled by consciousness) movements, _saccades_. On average, their length is 7-9 letter spaces. At this time we do not receive new information. 
 
 The primary function of a saccade is to bring a new region of text into foveal vision (~2° central field of view) for detailed analysis, because reading on the basis of only parafoveal or peripheral information is difficult to impossible.
 
 Between saccades, our eyes remain relatively motionless for the duration of _fixations_ (about 200 – 300 ms). During this period, we recognize the visible part of the text and plan where to make the next jump.
 
-Whereas a majority of the words in a text are fixated during reading, many words are skipped so that foveal processing of each word is not necessary.
-
 **Figure 10. Typical pattern of eye movements while reading.[¹](#fn-1)**
 
 <img src="Velichkovskiy_reading.png" style="zoom:80%;" />
 
 <!-- <img src="https://habrastorage.org/webt/kv/rt/ln/kvrtlnwdjge8ouyfzzaulxu7dyo.jpeg" /> -->
-
-Letter spaces are the appropriate metric to use, because the number of letters traversed by saccades is relatively invariant when the same text is read at different distances, even though the letter spaces subtend different visual angles.[⁷](#fn-7)
-
-About 10-15% of the time, readers move their gaze back in the text (_regressions_) in order to re-read what has already been read. As the difficulty of the text increases, the duration of fixations and the frequency of regressions increase, and the length of saccades decreases.
-
-During fixation, we get information from the _perceptual span_. The size of this area is relatively small, in the case of alphabetic orthographies (for example, in European languages) it starts from the beginning of the fixed word, but no more than 3-4 letter spaces to the left of the fixation point, and extends to about 14-15 letter spaces to the right of this point (in total 17-19 spaces).
-
-The _identification span_, that is, the scope required to identify a fixed word, is less than the perceptual span and, as a rule, does not exceed 7-8 letter spaces to the right of the fixation (in total, about 10-12 spaces).
-
-The availability of the first three letters of a word during the previous commit leads to a decrease in the fixation time on that word. Some researches have also shown that the letter information to the right of the fixation can be used to determine whether the next word should be skipped.
-
-Most of the research suggests that boundary information (conveyed by the spaces between words) is the major determinant used in deciding where to move to next; saccade length is influenced by both the length of the fixated word and the word to the right of fixation.
-
-Most readers are slowed down (on average by about 30%) by the absence of space information, and experiments demonstrated that _both word identification processes and eye guidance are disrupted by the lack of space information_.
-
-It was found that, when space information is provided for readers of Thai (who are not used to reading with spaces between words), they read more effectively than normal. There are reports that the reading of long German compound words is facilitated by the insertion of spaces, even though this format is ungrammatical and never encountered in normal reading.
-
-_Thus, it appears safe to conclude that space information is used for guiding the eyes in reading._
-
-Word-length information may be used not only in determining where to fixate next but also in how parafoveal information is used. That is, enough parafoveal letter information may be extracted from short words so that they can be identified and skipped, whereas partial-word information (the first 3 letters) extracted from longer parafoveal words may rarely allow full identification of them but facilitate subsequent foveal processing.
-
-Word-length information also plays a clear role in where in the word a reader fixates. Although there is variability in where the eyes land on a word, _readers tend to make their first fixation on a word about halfway between the beginning and the middle of a word_.
-
-Word-length information helps to guide the eye toward *the preferred viewing location*, i.e a location between the beginning and the middle of the word. When the space indicating the location of word n+1 was visible in the parafovea, the first fixation on that word was closer to the preferred viewing location than when the parafoveal preview did not contain that space information.
-
-Although the average landing position in a word lies between the beginning and middle of a word, this position varies as a function of the distance from the prior launch site. For example, if the distance to a target word is large (8-10 letter spaces), the landing position is shifted to the left. Likewise, if the distance is small (2-3 letter spaces), the landing position is shifted to the right.
-
-The location of the first fixation is between the beginning and the middle of a word for words that are 4-10 letters long (either for the first fixation in a word or when only a single fixation is made). However, with longer words, the effect breaks down, and readers tend to fixate near the beginning of the word and then make a second fixation toward the end of the word.
-
-Informational density (or morphological structure) of the word influences how long the fixations are on each half of the word. For example, it was found that if the word was predictable from the first 6 letters (the words were typically about 12 letters), readers generally made a fixation in the first half of the word and then moved their eyes to the next word; if they made a second fixation on the word it tended to be quite short. However, if the word could only be identified by knowing what the ending was, readers typically made a short fixation at the beginning followed by a longer fixation on the end of the word.
 
 **Table 1. Approximate Mean Fixation Duration and Saccade Length in Reading, Visual Search, Scene Perception, Music Reading, and Typing**
 
@@ -236,14 +207,44 @@ Informational density (or morphological structure) of the word influences how lo
 | Music reading    | 375                         | 1                           |
 | Typing           | 400                         | 1 (about 4 letters)         |
 
+Letter spaces are the appropriate metric to use, because the number of letters traversed by saccades is relatively invariant when the same text is read at different distances, even though the letter spaces subtend different visual angles.[⁷](#fn-7)
+
+Whereas a majority of the words in a text are fixated during reading, many words are skipped so that foveal processing of each word is not necessary.
+
+About 10-15% of the time, readers move their gaze back in the text (_regressions_) in order to re-read what has already been read. As the difficulty of the text increases, the duration of fixations and the frequency of regressions increase, and the length of saccades decreases.
+
+During fixation, we get information from the _perceptual span_. The size of this area is relatively small, in the case of alphabetic orthographies (for example, in European languages) it starts from the beginning of the fixed word, but no more than 3-4 letter spaces to the left of the fixation point, and extends to about 14-15 letter spaces to the right of this point (in total 17-19 spaces).
+
+The _identification span_, that is, the scope required to identify a fixed word, is less than the perceptual span and, as a rule, does not exceed 7-8 letter spaces to the right of the fixation (in total, about 10-12 spaces).
+
+The availability of the first three letters of a word during the previous fixation leads to a decrease in the fixation time on that word. Some researches have also shown that the letter information to the right of the fixation can be used to determine whether the next word should be skipped.
+
+Most of the research suggests that boundary information (conveyed by the spaces between words) is the major determinant used in deciding where to move to next; saccade length is influenced by both the length of the fixated word and the word to the right of fixation.
+
+Most readers are slowed down (on average by about 30%) by the absence of space information, and experiments demonstrated that _both word identification processes and eye guidance are disrupted by the lack of space information_.
+
+It was found that, when space information is provided for readers of Thai (who are not used to reading with spaces between words), they read more effectively than normal. There are reports that the reading of long German compound words is facilitated by the insertion of spaces, even though this format is ungrammatical and never encountered in normal reading.
+
+_Thus, it appears safe to conclude that space information is used for guiding the eyes in reading._
+
+Word-length information may be used not only in determining where to fixate next but also in how parafoveal information is used. That is, enough parafoveal letter information may be extracted from short words so that they can be identified and skipped, whereas partial-word information (the first three letters) extracted from longer parafoveal words may rarely allow full identification of them but facilitate subsequent foveal processing.
+
+Word-length information also plays a clear role in where in the word a reader fixates. Although there is variability in where the eyes land on a word, readers tend to make their first fixation on a word about halfway between the beginning and the middle of a word.
+
+Word-length information helps to guide the eye toward *the preferred viewing location*, i.e. a location between the beginning and the middle of the word. When the space indicating the location of word n+1 was visible in the parafovea, the first fixation on that word was closer to the preferred viewing location than when the parafoveal preview did not contain that space information.
+
+Although the average landing position in a word lies between the beginning and middle of a word, this position varies as a function of the distance from the prior launch site. For example, if the distance to a target word is large (8-10 letter spaces), the landing position is shifted to the left. Likewise, if the distance is small (2-3 letter spaces), the landing position is shifted to the right.
+
+The location of the first fixation is between the beginning and the middle of a word for words that are 4-10 letters long (either for the first fixation in a word or when only a single fixation is made). However, with longer words, the effect breaks down, and readers tend to fixate near the beginning of the word and then make a second fixation toward the end of the word.
+
+Informational density (or morphological structure) of the word influences how long the fixations are on each half of the word. For example, it was found that if the word was predictable from the first 6 letters (the words were typically about 12 letters), readers generally made a fixation in the first half of the word and then moved their eyes to the next word; if they made a second fixation on the word it tended to be quite short. However, if the word could only be identified by knowing what the ending was, readers typically made a short fixation at the beginning followed by a longer fixation on the end of the word.
+
 With respect to visual search task it was found that when the target was at a small _eccentricity_, it was located accurately with a single saccade; when the target was more peripheral, wrongly directed initial saccades were common (up to 40% of the time). Also _in a complex search tasks the eyes is initially directed to the center of the global display and then to the centers of recursively smaller groups of objects until the target was acquired_.
 
 
 ## Program Comprehension
 
 Programs differ from natural language texts in two important ways. First, programs are lexically and syntactically different from natural language texts. Lexically, they are composed from a limited vocabulary, with some words used as programming language keywords, and others used more freely as identifiers to name program constructs like variables and methods. Syntactically, programs are laid out and organized differently than natural language texts. They feature greater use of formally defined structures and multiple forms of indented layout (both horizontal and vertical). The second difference is semantic. Natural language text is typically understood in two concurrent phases: text (how it is written down) and domain (what it means). Source code comprehension however needs a third dimension of comprehension: execution. Thus, in order to understand a program’s goals, programmers must be able to trace source code execution to discover its operational semantics.[⁶](#fn-6)
-
-<!-- Programs are different from regular text. Programs are composed of a limited set of words and are organized differently from ordinary texts: they make extensive use of formally defined structures, denoted in the text using special syntactic constructions. There is also a semantic difference. The perception of an ordinary text, in general, consists of two parallel phases: the perception of the text itself and the comprehension of what it is about. When it comes to the text of a program, comprehension means understanding the syntactic and semantic structures of the program, but it also includes understanding the operational semantics of the program, that is, how the state of the program changes during its execution. [⁶](#fn-6) -->
 
 
 ### Cognitive Models of Program Comprehension[⁸](#fn-8)
@@ -266,8 +267,6 @@ In this model, it is assumed that programmers understand a completed program in 
 
 Top-down understanding is used when the code or type of code is familiar; expert programmers use beacons, programming plans and rules of programming discourse to decompose goals and plans into lower-level plans.
 
-
-
 #### Bottom-Up Model
 The bottom-up theory of program comprehension assumes that programmers first read code statements and then mentally chunk or group these statements into higher level abstractions. These abstractions (chunks) are aggregated further until a high-level understanding of the program is attained.
 
@@ -287,7 +286,7 @@ Below, as an example, giving an idea of ​​the difference in reading ordinary
 <img src="code_reading_patterns.png"/>
 <!-- <img src="https://habrastorage.org/webt/pq/1j/wr/pq1jwrfci64zg0fwszuwcu3o2f8.jpeg" /> -->
 
-These programmers were given different tasks: the first (left figure) was expected to receive an answer, what is the return value of `rect2.area()`, the second was told that he would be given a multiple choice question about the algorithmic idea.
+The programmers were given different tasks: the first (left figure) was expected to receive an answer, what is the return value of `rect2.area()`, the second was told that he would be given a multiple choice question about the algorithmic idea.
 
 As we can see, these scanpaths are quite different, however, the differences in gaze appear deeper than this difference in what they were expecting to be asked, and suggest that different readers read code in markedly different manners.
 
@@ -336,11 +335,11 @@ In an eye-tracking study analyzing the effect of identifier style (camel-case an
 ### Building the Visual Structure
 A priori, we know that a program has a certain logical and syntactic structure, and we expect that the structure of its visual representation will reflect them accordingly.
 
-As mentioned above, our brain is in constant search for some optimal interpretation of the visual scene, which allows us to explain it in the simplest way. Therefore, it can be argued that the more clearly the visual structure is formed, and the more accurately it reflects the structure of the program, the less mental effort we will spend on the perception of this program.
+As mentioned above, our brain is in constant search for some optimal interpretation of the visual scene, which allows us to explain it in the simplest way. Therefore, it can be asserted that the more clearly the visual structure is formed, and the more accurately it reflects the structure of the program, the less mental effort we will spend on the perception of this program.
 
-When we visually perceive the program, we get the first impression and evaluate the visual structure of the text mainly due to ambient vision, which has low acuity and color perception, deteriorating from the center to the edge. Fast ambient vision helps us to highlight points of interest in the code for further analysis and reading using slow focal vision. This means that, speaking about the general visual structure of the program text, we must move from the area of ​​focal vision, that is, from the world of letters and symbols, to the area of ​​ambient vision, that is, to the area of ​​spots and the relationships between them.
+When we visually perceive the program, we get the first impression and evaluate the visual structure of the text mainly due to ambient vision, which has low acuity and color perception, deteriorating from the center to the edge. Fast ambient vision helps us to highlight points of interest in the code for further analysis and reading using slow focal vision. This means that, speaking about the general visual structure of the program text, we must move from the domain of ​​focal vision, that is, from letters and symbols, to the domain of ​​ambient vision, that is, to  ​​spots and the relationships between them.
 
-The sequence of the main structural elements in the program is located in the vertical direction, so when evaluating the overall visual structure of the program, when covering it with a "wide view", vertical eye movement prevails, accompanied by small horizontal deviations. The horizontal movement of the gaze associated with the transition to focal vision and reading directly allows us to get the details of these elements.
+The sequence of the main structural elements in the program is developed in the vertical direction, so when evaluating the overall visual structure of the program, when covering it with a "wide view", vertical eye movement prevails, accompanied by small horizontal deviations. The horizontal movement of the gaze associated mainly with the transition to focal vision and reading directly allows us to get the details of these elements.
 
 Therefore, for a correct assessment of the overall structure of the program, it is important to form the correct visual structure in the vertical direction.
 
@@ -350,17 +349,17 @@ Consider the following example:
 
 <img src="cpp1.png" style="width:720px;" />
 
-To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book [¹⁴](#fn-14):
+To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book as follows[¹⁴](#fn-14):
 
 > Close one eye and squint at the screen with the other eye to see which elements pop out, which are fuzzy, and which seem to be grouped. Changing your perspective can often uncover previously undetected issues in layout and composition.
 
-In fact, by squinting, we are trying to gauge how we perceive an image through ambient vision. Instead of squinting, you can try to look at the code with a defocused gaze and somewhat away from the fragment of interest to us.
+In fact, by squinting, we are trying to gauge how we perceive an image through ambient vision. Instead of squinting, you can try to look at the code with a defocused gaze and somewhat away from the fragment of interest.
 
 <img src="cpp1_blur.png" style="width:720px;" />
 
 The visual structure of this code contains only three large areas, which obviously does not reflect the program structure correctly.
 
-Stacking vertically allows you to correct this disadvantage:
+Stacking vertically allows you to correct this defect:
 
 <img src="cpp2.png" style="width:720px;" />
 
@@ -398,7 +397,7 @@ In this case, syntax highlighting made things worse, since the color similarity 
 
 When scanning text, such an arrangement provokes eye movement from the resulting variable `success` directly to the column of the list of arguments and only then regression to the function name.
 
-_Syntax highlighting can greatly facilitate the perception of the program. However, as we can see from this example, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program._
+_Syntax highlighting can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program._
 
 To correctly display the logical structure of this code in its visual representation, it is necessary that the list of arguments is indented not relative to the beginning of the line, but relative to the beginning of the function name:
 
@@ -406,9 +405,9 @@ To correctly display the logical structure of this code in its visual representa
 
 <!-- <img src="https://habrastorage.org/webt/nz/z9/6l/nzz96lrnme0kfnbe0fhcm8ktgvq.png"  style="zoom:50%;"/> -->
 
-In this case, it is clearly seen that the function argument list is syntactically part of the function call expression and is logically a set of parameters that is converted by the function call.
+In this case, it is clearly seen that the function argument list is syntactically part of the function call expression and is logically a set of parameters that is accepted by the function.
 
-Let's do a squinting test. We will also disable syntax highlighting in order to exclude grouping by the color similarity factor, which we do not control:
+Let's do a squint test. We will also disable syntax highlighting in order to exclude grouping by the color similarity factor, which we do not control:
 
 <img src="indent4_blurred.png"  style="width:720px;"/>
 
@@ -430,7 +429,7 @@ One more problem remains: the list of arguments looks like one unstructured spot
 
 In this version, the visual structure does not reflect the structure of the expression, so the search is difficult. This option is only intended to be read carefully.
 
-Due to the large length of the line, the rest of it, which did not fit on the first line, was placed on the second. In this case, the editor made an indent showing the subordination of this line relative to the previous one. However, elsewhere (for example, in the comparison pane on gitlab), the second line will most likely start at the beginning and the visual structure of the piece of code will be broken.
+Due to the large length of the line, the rest of it, which did not fit on the first line, was placed on the second one. In this case, the editor made an indent showing the subordination of this line relative to the previous one. However, elsewhere (for example, in the comparison pane on gitlab), the second line will most likely start at the beginning and the visual structure of the piece of code will be broken.
 
 **Label:value pairs alignment**
 
@@ -485,7 +484,7 @@ Let's reformat it so that each declaration spans one line and align it:
 
 Now clearly defined groups (grouping by "proximity") have been formed in the horizontal direction, and the structure of each definition and the differences between them have been clearly revealed. The way this code is read is also different. After a quick initial familiarization with the structure and identifying common parts, further analysis simply ignores these common parts, and attention is focused only on the different parts. Thus, due to the more active use of ambient vision, the load on the focal vision is reduced and the amount of mental effort required to understand the program is reduced.
 
-As mentioned above, there is some asymmetry in how we perceive the left and right sides of the visual scene. This asymmetry is even more natural in the perception of the program text: the text is rigidly anchored to the left margin, where indents set the level of hierarchy in the logical structure of the program. The right edge is free and does not have a hard limit. Reading from left to right and top to bottom determines what _something new we expect to see top and left or center_.
+As mentioned above, there is some asymmetry in how we perceive the left and right sides of the visual scene. This asymmetry is even more natural in the perception of the program text: the text is rigidly anchored to the left margin, where indents set the level of hierarchy in the logical structure of the program. The right edge is free and does not have a hard limit. Reading from left to right and top to bottom determines that _everything new we expect to see top and left or center_.
 
 Because of that, the following constructions cannot be called good in terms of readability:
 
@@ -493,7 +492,7 @@ Because of that, the following constructions cannot be called good in terms of r
 
 <!-- <img src="https://habrastorage.org/webt/82/x3/y1/82x3y16luvwnxvimg_cdysisniq.png"  style="zoom:50%;"/> -->
 
-In such constructs, the new namespace begins at the end of the line, that is, in the least important area, where this beginning is not expected. It's more natural to place the beginning of this block of code where it should be - at the top left:
+In such constructs, the new namespace begins at the end of the line, that is, in the least important area, where this beginning is not expected. It's more natural to place the beginning of this block of code where it should be — at the top left:
 
 <img src="closure2.png"  style="width:720px;"/>
 
@@ -511,18 +510,18 @@ Apparently, following Steve McConnell[¹³](#fn-13), some developers say that on
 - The perception of the structure of expression is difficult due to the fact that this structure is smeared along the line and does not form clearly expressed compact visual areas.
 - Due to the implicit structure and the increase in eccentricity, the search is difficult.
 - Due to the increase in distance, transitions from the end of the line to the beginning of the next become more difficult, and accordingly reading slows down.
-- Increasing the distance to the monitor will reduce the angular dimensions of the line, but also reduce the size of words and letters. Smaller letters are more difficult to recognize. In this case, the length of the saccade, expressed in the size of the letters, will not increase. Hence, reading will slow down.
+- Increasing the distance to the monitor will reduce the angular dimensions of the line, but it will also reduce the size of the letters, and thus will not reduce the length of the saccade. Smaller letters are more difficult to recognize. Hence, reading will slow down.
 - Large monitors are not always available or program text may be displayed in a much smaller area. In this case, the line either does not fit in the scope and requires scrolling, or the line is split into several lines and this, as a rule, destroys the structure of the program in the entire scope.
 
-For a number of objective reasons, it is not always possible to avoid long strings (for example, due to the use of long identifiers that we cannot change). Also, in cases where we are not interested in the structure of the expression (for example, when outputting a debug message to the program log), the use of a long line may be even preferable to structuring a long expression by breaking it into several lines, since it makes this code less massive and so less meaningful for ambient vision.
+For a number of objective reasons, it is not always possible to avoid long lines (for example, due to the use of long identifiers that we cannot change). Also, in cases where we are not interested in the structure of the expression (for example, when outputting a debug message to the program log), the use of a long line may be even preferable to structuring a long expression by breaking it into several lines, since it makes this code less massive and so less meaningful for ambient vision.
 
-In general, long strings, like long identifiers, are a sign of poor code readability.
+In general, massive use of long lines, like long identifiers, is a sign of poor code readability.
 
 
 ### Names
-Names are critical to making your code readable. They occupy a large part of it and often act as beacons to identify characteristic structural parts of the program. The main requirements for names are their brevity and expressiveness. _The longer the name, the more difficult it is to read, remember and recall._ Long names usually lead to long lines, which also makes reading and search difficult. The requirement of expressiveness means that in the scope of the context of use, the name must allow to unambiguously determine the role of the program element it denotes.
+Names are critical to making your code readable. They occupy a large part of it and often act as beacons to identify characteristic structural parts of the program. The main requirements for names are their expressiveness and brevity. _The longer the name, the more difficult it is to read, remember and recall._ Long names usually lead to long lines, which also makes reading and search difficult. The requirement of expressiveness means that in the scope of the context of use, the name must allow to unambiguously determine the role of the program element it denotes.
 
-The requirements for brevity and expressiveness can obviously conflict with each other, as expressiveness may require the use of longer, compound names. Therefore, it makes sense to make an estimate of the allowed recommended name length.
+The requirements for brevity and expressiveness can obviously conflict with each other, as expressiveness may require the use of longer, compound names. Therefore, it makes sense to make an estimate of the recommended name length.
 
 Ideally, we want to recognize the name at a glance (on first fixation). This means that the first estimate of the optimal length can be set as the size of the identification area, that is, 10-12 characters.
 
@@ -544,9 +543,9 @@ These guidelines are reasonably consistent with the boundaries given in Steve Mc
 
 In practice, it is sometimes necessary to use names that are outside the suggested lengths. For example, when the name includes some standard naming of the group to which the given item belongs, as in `PreferencesViewController`. By having the meaningful, unique part of the name at the beginning, we can expect to recognize the unique part of the name on the first fixation, and at the same time, we do not need much effort to recognize the "common continuation".
 
-With rare exceptions, it doesn't make sense to use any prefixes in the names that describe some common characteristics (for example, type) or to distinguish between classes that are part of your application. Prefixes mask the meaningful part of the name, in their presence the position of the first fixation on the word during reading shifts to the left from the optimal one, they require some effort for additional analysis of the word. In some cases, they can change the value of the name (is `kBytesPerSec` is "kilobytes per second" or the constant `BytesPerSec`?).
+With rare exceptions, it doesn't make sense to use any abbreviated prefixes in the names that describe some common characteristics (for example, type) or to denoting classes that are part of your application. Prefixes mask the meaningful part of the name, in their presence the position of the first fixation on the word during reading shifts to the left from the optimal one, they require more mental effort for additional analysis of the identifier. In some cases, they can change the meaning of an identifier (is `kBytesPerSec` is "kilobytes per second" or the constant `BytesPerSec`?).
 
-Decorating class and function names only makes sense if you are developing a library in a language that lacks the notion of namespaces to limit their visibility. All entities defined within your application are at the top level of the namespace and generally do not need any prefixes to prevent name collisions.
+Decorating class and function names only makes sense if you are developing a library in a language that lacks the namespaces to limit their visibility. All entities defined within your application are at the top level of the namespace and generally do not need any prefixes to prevent name collisions.
 
 
 ### Spaces
@@ -556,7 +555,7 @@ Therefore, it is recommended to separate identifiers in the program using spaces
 <img src="space1.png" style="width:720px;" />
 <!-- <img src="https://habrastorage.org/webt/1r/iy/il/1riyil0pm_dpnf0h9jkivaqvspi.png"  style="zoom:50%;"/> -->
 
-There is no space on the first line, and the function name visually sticks to the first argument in the argument list. In addition to the difficulty in reading, we can also notice that the visual structure does not quite correctly reflect the logical structure of the program: the function call expression includes the function name and the argument list, the argument list includes the first and second arguments. In the first line, the function name is more closely related to the first argument than the arguments to each other.
+There is no space on the first line, and the function name visually sticks to the first argument in the argument list. In addition to the difficulty in reading, we can also notice that the visual structure does not quite correctly reflect the logical structure of the program: the function call expression includes the function name and the argument list, the argument list includes the first and second arguments. In the first line, the function name is more strictly bound to the first argument than the arguments to each other.
 
 One more example:
 
@@ -570,7 +569,7 @@ After splitting into two groups, adding spaces and alignment:
 
 <!-- <img src="https://habrastorage.org/webt/xv/ff/yr/xvffyrmbd0n3tn-ay-xxkdhsjqc.png"  style="zoom:50%;"/> -->
 
-In this case, the addition of spaces not only made it easier to read individual lines due to the explicit separation of identifiers within them, but (together with alignment) made it easier to compare them by forming compact visual groups vertically. Trying to understand what this code does, you no longer have to read each line separately.
+In this case, the addition of spaces not only made it easier to read individual lines due to the explicit separation of identifiers within them, but (together with alignment) made it easier to compare them by forming compact visual groups horizontally. Trying to understand what this code does, you no longer have to read each line separately.
 
 In the case when the total length of identifiers does not exceed the size of the recognition area, this requirement is not so critical, since the entire expression can be immediately captured with one glance:
 
@@ -590,17 +589,17 @@ Placing the opening parenthesis at the beginning of a single line in the _Allman
 - Facilitated matching of opening and closing braces and, accordingly, defining the boundaries of the code block surrounded by them. Searching for a paired brace requires only vertical movement of the gaze, there is no text on its path from one brace to another, and the search proceeds in a known direction up to the first character.
    Indeed, whenever we see a closing parenthesis in the text on a separate line, we know that the matching opening parenthesis is _higher_, which means that the main and natural direction of searching for it will be upward search.
    When using _1TBS_, searching is generally more effortful due to the fact that it is carried out in a wide sector, with the view passing through the text that needs to be analyzed, and which often contains nested pairs of curly braces that visually compete with the target.
-- The parenthesis is located at the beginning of the line, exactly where we expect to see the beginning of anything, and naturally denotes the beginning of a block of code. In the _1TBS_ style, because of its position at the end of a line, the open parenthesis often ceases to act as an explicit visual marker for the beginning of a block. Moreover, in some cases (for example, repeated `} else if` constructions), the closing brace of the previous block appears at the beginning of the line containing the construct preceding the new block, and thus visually connects to the beginning of this block. Thus, its formal and visual meanings cease to correspond to each other.
+- The parenthesis is located at the beginning of the line, exactly where we expect to see the beginning of anything, and naturally denotes the beginning of the block of code. In the _1TBS_ style, because of its position at the end of a line, the open parenthesis often ceases to act as an explicit visual marker for the beginning of a block. Moreover, in some cases (for example, repeated `} else if` constructions), the closing brace of the previous block appears at the beginning of the line containing the construct preceding the new block, and thus visually connects to the beginning of this block. Thus, its formal and visual meanings cease to correspond to each other.
 - Placing parentheses on separate lines naturally adds vertical spaces between the syntactic construction before the opening bracket and the framed code block, which, in most cases, better reflects the structure of the entire construction.
 - The horizontal position of the opening brace in the style of _Allman_ uniquely determines the nesting level to which it belongs. _1TBS_ does not contain this information, since the location of the open brace is mainly determined only by the length of the line before it.
 
-The disadvantages of _1TBS_ lead to the fact that the opening curly brace ceases to fully participate in the formation of the visual presentation of the code, the style provokes the programmer not to separate the code blocks inside the brackets and their surrounding elements with empty lines, and as a result, the program text often looks like one poorly structured massive chunk:
+The disadvantages of _1TBS_ lead to the fact that the opening curly brace ceases to fully participate in the formation of the visual presentation of the code, the style provokes the programmer not to separate the code blocks inside the braces and their surrounding elements with empty lines, and as a result, the program text often looks like one poorly structured massive chunk:
 
 <img src="picture36.png" style="width:720px;" />
 
 <!-- <img src="https://habrastorage.org/webt/y1/kr/zq/y1krzqjyfs1tpw0wshh7kznwioy.png" style="zoom:50%;" /> -->
 
-The code in the example above demonstrates the main problems of the _1TBS_ style mentioned, namely: the absence of a clearly expressed visual structure, the inversion of the role of the closing braces, the loss of the visual significance of the opening braces, which, at a cursory glance at the code, are only approximately guessed using peripheral vision and their exact location requires additional horizontal eye movements. And this is an example of relatively simple code, since in it the conditions of the `if` expression occupy only one line, and the open braces are on the same line as the` if`, and the code blocks inside the braces have a fairly simple linear structure and do not contain nested blocks.
+The code in the example above demonstrates the main problems of the _1TBS_ style mentioned, namely: the absence of a clearly expressed visual structure, the inversion of the role of the closing braces, the loss of the visual significance of the opening braces, which, at a cursory glance at the code, are only approximately guessed using peripheral vision and their exact location requires additional horizontal eye movements. And this is an example of relatively simple code, since in it the conditions of the `if` expression occupy only one line, and the open braces are on the same line as the ` if` expression, and the code blocks inside the braces have a fairly simple linear structure and do not contain nested blocks.
 
 Reformatting this code using the _Allman_ style allows for a more acceptable result:
 
@@ -610,7 +609,7 @@ Reformatting this code using the _Allman_ style allows for a more acceptable res
 
 Despite the fact that in most cases _Allman_ objectively outperforms _1TBS_, sometimes _1TBS_ is preferable. As a rule, in the such cases the additional vertical space formed by placing braces on separate lines in the style of _Allman_ leads to the fact that the whole structure becomes visually fragmented, loses its internal rhythm and ceases to be perceived as a single whole. And at the same time, when using _1TBS_, either the offset of the opening parenthesis is small and does not have a significant effect on the perception of the code, or its detection is not critical (for example, in the case of the `if` construction, when both the condition and the block of code occupy one line each).
 
-So in the previous example, placing the last open brace at the end of the line looks quite natural, and the resulting empty space only adds a small accent, compensating for the small visual volume of the last block, consisting of only one line. When the parenthesis is placed on a separate line, this space becomes too large, and this line looks already torn off from the rest of the construction:
+So in the previous example, placing the last open brace at the end of the line looks quite natural, and the resulting empty space only adds a small accent, compensating for the small visual mass of the last block, consisting of only one line. When the brace is placed on a separate line, this space becomes too large, and this line looks torn off from the rest of the construction:
 
 <img src="picture38.png" style="width:720px;" />
 
@@ -632,7 +631,7 @@ The formation of a readable, that is, easily comprehensible program text require
 
 The main strategy for optimizing readability can be formulated as _making more efficient use of ambient vision and reducing focal workload_.
 
-The implementation of this strategy is achieved by forming the text in the form of a relatively compact horizontally "image" with a pronounced visual structure that correctly reflects the logical structure of the program. This image is formed by hierarchically grouping logically related program elements into compact visual areas by means of horizontal indentation, adding blank lines and alignment. The ease of reading the program text is also ensured by the choice of identifiers that are optimal in terms of length and expressiveness and their explicit separation in the program text using spaces.
+The implementation of this strategy is achieved by forming the text in the form of a relatively compact horizontally "image" with a pronounced visual structure that correctly reflects the logical structure of the program. This image is formed by hierarchically grouping logically related program elements into compact visual areas by means of horizontal indentation,  blank lines and alignment. The ease of reading the program text is also ensured by the choice of identifiers that are optimal in terms of length and expressiveness and their explicit separation in the program text using spaces.
 
 In his book on typography, Robert Bringhurst writes [¹²](#fn-12):
 > Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly leaded lines. These variations can and should add life to the page…
