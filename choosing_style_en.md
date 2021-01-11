@@ -629,7 +629,7 @@ Thus, the choice of the method for placing parentheses should be carried out in 
 ## Conclusion
 The formation of a readable, that is, easily comprehensible program text requires taking into account the specific features of human vision, such as ambient and focal vision, the mechanisms of reading text in general and the features of reading program texts in particular.
 
-The main strategy for optimizing readability can be formulated as _making more efficient use of ambient vision and reducing focal workload_.
+The main strategy for optimizing readability can be formulated as _making more efficient use of ambient vision and reducing the load on the focal one_.
 
 The implementation of this strategy is achieved by forming the text in the form of a relatively compact horizontally "image" with a pronounced visual structure that correctly reflects the logical structure of the program. This image is formed by hierarchically grouping logically related program elements into compact visual areas by means of horizontal indentation,  blank lines and alignment. The ease of reading the program text is also ensured by the choice of identifiers that are optimal in terms of length and expressiveness and their explicit separation in the program text using spaces.
 
