@@ -1,5 +1,3 @@
-<!-- <img src="eyecode-v2.jpg" style="zoom:75%" /> -->
-
 # Cognitive Code Style
 # How to Optimize Program Readability
 
@@ -513,10 +511,15 @@ Apparently, following Steve McConnell[¹³](#fn-13), some developers say that on
 - Increasing the distance to the monitor will reduce the angular dimensions of the line, but it will also reduce the size of the letters, and thus will not reduce the length of the saccade. Smaller letters are more difficult to recognize. Hence, reading will slow down.
 - Large monitors are not always available or program text may be displayed in a much smaller area. In this case, the line either does not fit in the scope and requires scrolling, or the line is split into several lines and this, as a rule, destroys the structure of the program in the entire scope.
 
-For a number of objective reasons, it is not always possible to avoid long lines (for example, due to the use of long identifiers that we cannot change). Also, in cases where we are not interested in the structure of the expression (for example, when outputting a debug message to the program log), the use of a long line may be even preferable to structuring a long expression by breaking it into several lines, since it makes this code less massive and so less meaningful for ambient vision.
+Speaking about the optimal length of the line, it should be noted that in the case of ordinary texts, when the text is visually a sequence of rectangular blocks, we can strictly set this length as the number of characters from the left margin of the page, allowing for a fairly arbitrary breakdown of sentences and using word hyphenation.
 
-In general, massive use of long lines, like long identifiers, is a sign of poor code readability.
+The need to form an adequate visual representation of the logical structure of the program leads to the fact that such a formal restriction for the program text in many cases can, on the contrary, worsen the readability of the program.
 
+Lines of program text are not so strictly bound to the left edge and are often indented to display the appropriate level of hierarchy in its structure. The breakdown of expression by lines should be based on the best representation of their internal structure and in the context of the structure of the code, which they are part. We also can't hyphenate identifiers between lines like words in plain text.
+
+On the other hand, there are cases when we are not interested in the structure of the expression (for example, when outputting a debug message to the program log), and using a long string may be preferable to structuring a long expression by splitting it into several lines, since it makes this code less massive and therefore less significant for the ambient vision.
+
+All this means that the restriction on the length of the string is not strict and is only one of many parameters that optimize the overall visual representation of the program text.
 
 ### Names
 Names are critical to making your code readable. They occupy a large part of it and often act as beacons to identify characteristic structural parts of the program. The main requirements for names are their expressiveness and brevity. _The longer the name, the more difficult it is to read, remember and recall._ Long names usually lead to long lines, which also makes reading and search difficult. The requirement of expressiveness means that in the scope of the context of use, the name must allow to unambiguously determine the role of the program element it denotes.
