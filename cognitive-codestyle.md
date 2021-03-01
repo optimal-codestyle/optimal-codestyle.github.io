@@ -644,11 +644,11 @@ In his book on typography, Robert Bringhurst writes [¹²](#fn-12):
 Similarly, we can say that the structure of the program, unfolding in the text from top to bottom, also has a certain rhythm and variations. The task of the programmer is to visualize this rhythm, to make it explicit in general and in detail.
 
 ------
-<a id="fn-1" ></a>¹) Величковский Б.М. Когнитивная наука. Основы психологии познания. Academia, Смысл, 2006
+<a id="fn-1" ></a>¹) Величковский Б.М. Когнитивная наука. Основы психологии познания. Academia, Смысл, 2006. (Boris M. Velichkovsky. Cognitive Science: Foundations of Epistemic Psychology, 2006)
 
-<a id="fn-2" ></a>²) Yarbus A L. Eye Movements and Vision. New York: Plenum Press, 1967.
+<a id="fn-2" ></a>²) Yarbus A L. Eye Movements and Vision. New York: Plenum Press, 1967
 
-<a id="fn-3" ></a>³) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001.
+<a id="fn-3" ></a>³) Robert L.Solso. Cognitive psychology. 6-th edition. Allyn & Bacon, 2001
 
 <a id="fn-4" ></a>⁴) Rudolph Arnheim. Art and Visual Perception.  University of California Press, 1974
 
@@ -672,4 +672,4 @@ Similarly, we can say that the structure of the program, unfolding in the text f
 
 <a id="fn-14" ></a>¹⁴) Alan Cooper. About Face: The Essentials of Interaction Design, Fourth Edition. John Wiley & Sons, Inc., 2014
 
-<a id="fn-15" ></a>¹⁵) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей.</a>
+<a id="fn-15" ></a>¹⁵) <a href="https://www.sovsib.ru/docs/ost2912494.pdf">ОСТ 29.124–94. Издания книжные для взрослых читателей</a>
