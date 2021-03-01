@@ -1,1 +1,1 @@
-/Users/sasha/Documents/Code_Style/choosing_style/cognitive-codestyle.md
+cognitive-codestyle.md
