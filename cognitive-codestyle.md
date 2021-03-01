@@ -1,4 +1,4 @@
-# Cognitive Code Style
+# Cognitive-Oriented Code Style
 # How to Optimize Program Readability
 
 
