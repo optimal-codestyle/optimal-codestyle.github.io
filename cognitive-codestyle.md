@@ -1,5 +1,6 @@
-# Cognitive-Oriented Code Style
-# How to Optimize Program Readability
+# Fundamentals of Optimal Code Style
+### Cognitively-Oriented Approach to Increase Program Readability
+
 
 
 
