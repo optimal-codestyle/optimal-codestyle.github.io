@@ -6,7 +6,7 @@
 
 
 _At a coarse level, it’s clear that some forms of layout are better than others._
-_— Steve McConnell, Code Complete._
+_— **Steve McConnell, Code Complete**._
 
 
 
@@ -38,31 +38,31 @@ _— Steve McConnell, Code Complete._
 ## Introduction
 
 _At the risk of giving my fellow scientists good reason for displeasure, I am applying the principles in which I believe with a somewhat reckless one-sidedness, … partly because in certain cases it is useful to state a point of view with crude simplicity and leave the refinements to the ensuing play of thrust and counterthrust._
-_— Rudolph Arnheim, Art and Visual Perception_
+_— **Rudolph Arnheim, Art and Visual Perception**_
 
 _First, we want to establish the idea that a computer language is not just a way of getting a computer to perform operations but rather that it is a novel formal medium for expressing ideas about methodology. Thus, programs must be written for people to read, and only incidentally for machines to execute._
-_— Harold Abelson and Gerald Jay Sussman, Structure and Interpretation of Computer Programs._
+_— **Harold Abelson and Gerald Jay Sussman, Structure and Interpretation of Computer Programs.**_
 
 _Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder._
-_— Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship._
+_— **Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship**._
 
 
 
-Probably no one needs to prove that the _readability_ of the program text is one of the decisive factors that determine the success of its maintenance and development.
+Probably no one needs to prove that the **_readability_** of the program text is one of the decisive factors that determine the success of its maintenance and development.
 
-Usually, when evaluating the text of a program in terms of its _ease of perception_, the term _readability_ is used. Strictly speaking, they are not exactly the same thing, because, as will be shown later, the process of perceiving a program is more than just reading. However, since we are talking about text, and the term _readability_ is fairly well-established, I will also use it in that sense.
+Usually, when evaluating the text of a program in terms of its **_ease of perception_**, the term **_readability_** is used. Strictly speaking, they are not exactly the same thing, because, as will be shown later, the process of perceiving a program is more than just reading. However, since we are talking about text, and the term **_readability_** is fairly well-established, I will also use it in that sense.
 
-In order to maintain readability of the code, during program development it is common to agree on some common set of formatting rules (style) for the source code. The very existence of a set of such rules can have a positive effect on its readability and quality, since, firstly, it forms certain habits among programmers regarding the language constructions that they expect to see in the program text, and, secondly, it forces them to be more attentive to what they have written (unless, of course, the formatting of the code is completely transferred to the auto-formatting tools).
+In order to maintain readability of the code, during program development it is common to agree on some common set of formatting rules (***code style***) for the source code. The very existence of a set of such rules can have a positive effect on its readability and quality, since, firstly, it forms certain habits among programmers regarding the language constructions that they expect to see in the program text, and, secondly, it forces them to be more attentive to what they have written (unless, of course, the formatting of the code is completely transferred to the auto-formatting tools).
 
 However, individual rules are often questionable because the criteria for their selection are unclear and they often contradict similar rules in other similar styles.
 
 The rules provide specific details for how the code is formatted to maintain readability, but there is no explanation of how the rules help achieve it. Without understanding this, the solution to the engineering problem of forming a readable (i.e optimal in the sense of perception) program text is replaced by thoughtless adherence to formal and often arbitrarily chosen rules, which usually change when moving from project to project, from language to language. As a result, a false idea is formed that the what the rules say is not so important, and the choice of one or another style is just a matter of taste and habit.
 
-Indeed, our habits largely determine how comfortable we feel in a given situation and, in particular, how we perceive a particular formatting style. But the feeling of comfort due to habit cannot be a measure of how objectively good this style is. It is obvious that the habit of a certain style can only mean that we simply stopped noticing the specific features of this style, which in fact can be counterproductive in the sense of forming _objectively readable_ code.
+Indeed, our habits largely determine how comfortable we feel in a given situation and, in particular, how we perceive a particular formatting style. But the feeling of comfort due to habit cannot be a measure of how objectively good this style is. It is obvious that the habit of a certain style can only mean that we simply stopped noticing the specific features of this style, which in fact can be counterproductive in the sense of forming **_objectively readable_** code.
 
-When I speak of _objective readability_, I mean that the full readability of a text consists of a subjective component, caused by developed habits and skills, which we talked about above, and an objective one. This second component is determined by the capabilities and limitations of the mechanisms of perception and processing of visual information common to all people in the normal mental and physical state.
+When I speak of **_objective readability_**, I mean that the full readability of a text consists of a subjective component, caused by developed habits and skills, which we talked about above, and an objective one. This second component is determined by the capabilities and limitations of the mechanisms of perception and processing of visual information common to all people in the normal mental and physical state.
 
-Thus, the subjective component is associated with some private habits that can be changed, and the objective – with the general psychophysical features of a human's vision, which we do not assume is possible to change. Therefore, when talking about optimizing the text of a program, it makes sense to talk only about the objective component of readability, and therefore further in this article the term _readability_ will always refer to this component of it.
+Thus, the subjective component is associated with some private habits that can be changed, and the objective – with the general psychophysical features of a human's vision, which we do not assume is possible to change. Therefore, when talking about optimizing the text of a program, it makes sense to talk only about the objective component of readability, and therefore further in this article the term **_readability_** will always refer to this component of it.
 
 Let's take a closer look at what we know about the mechanisms of human perception of visual information, reading plain texts, and reading and perceiving program texts.
 
@@ -70,7 +70,7 @@ Let's take a closer look at what we know about the mechanisms of human perceptio
 
 ## Features of Human Vision[¹](#fn-1)
 ### Field of View
-The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relatively large: 50° superiorly, 60° inferiorly, 90° temporally (towards an ear) and 50° nasally. Situated in the temporal hemifield is the normal blind spot approximately 12 to 17 degrees from fixation and 1.5 degrees below the horizontal meridian. Within this field, visual acuity and color perception are unevenly distributed: visual acuity of the order of 1' is achieved in the area of ​​_fovea_, which forms ~2° of central (_foveal_) vision, but it is not so good in the _parafoveal_ area (which covers 5° in both directions from the fixation point) and even worse at the periphery.[⁵](#fn-5)
+The human [field of view](https://www.ncbi.nlm.nih.gov/books/NBK220/) is relatively large: 50° superiorly, 60° inferiorly, 90° temporally (towards an ear) and 50° nasally. Situated in the temporal hemifield is the normal blind spot approximately 12 to 17 degrees from fixation and 1.5 degrees below the horizontal meridian. Within this field, visual acuity and color perception are unevenly distributed: visual acuity of the order of 1' is achieved in the area of ​​**_fovea_**, which forms ~2° of central (**_foveal_**) vision, but it is not so good in the **_parafoveal_** area (which covers 5° in both directions from the fixation point) and even worse at the periphery.[⁵](#fn-5)
 
 Likewise, the ability to distinguish colors decreases from the center to the edge, and this change is different for different color components. We can say that moving from the center of the human retina to the periphery, we seem to find ourselves in earlier stages of evolution, moving from the most highly organized structures to the primitive eye, which distinguishes only the simple movement of shadows.
 
@@ -82,7 +82,7 @@ Likewise, the ability to distinguish colors decreases from the center to the edg
 
 
 ### Ambient and Focal Vision
-In modern neuropsychology, there is a concept of _ambiant_ (from the French **ambiant** ‘surrounding’) and _focal_ visual systems. While the first, evolutionarily more ancient, is responsible for dynamic spatial localization, the second deals with the identification of objects.
+In modern neuropsychology, there is a concept of **_ambient_** (from the French ***ambiant*** ‘surrounding’) and **_focal_** visual systems. While the first, evolutionarily more ancient, is responsible for dynamic spatial localization, the second deals with the identification of objects.
 
 **Table. 1. Comparative features of focal and ambient systems**
 | Visual System          | Focal | Ambient         |
@@ -96,7 +96,7 @@ In modern neuropsychology, there is a concept of _ambiant_ (from the French **am
 
 The objects that represent the source of the necessary information are far unevenly distributed. They are usually localized in small areas of the visual field. With the help of ambient vision, a potentially interesting object or element of the object is detected, and with the help of focal vision aimed at the object, this information is perceived and analyzed in more detail. When faced with a new situation or with a new object, we, as a rule, first look "wide field" and only then concentrate our attention on details.
 
-Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are _saccades_ — extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent _fixation_.
+Examination of the environment and selection of objects for detailed processing is carried out using head and body movements, which are superimposed on a subtle pattern of eye movements. The most famous of their varieties are **_saccades_** — extremely fast (~ 500°/sec) jumps of a ballistic type, changing the position of the eyes in orbit and making it possible to highlight fragments of the scene for subsequent **_fixation_**.
 
 **Figure 2. Reproduction of Ilya Repin's painting and recording of the subject's eye movements.**[²](#fn-2)
 
@@ -183,11 +183,11 @@ Thus, in the scenic arts it is known that there is a difference between the left
 
 ## How We Read Texts[⁵](#fn-5)
 
-When we read, our eyes incessantly make rapid mechanical (i.e., not controlled by consciousness) movements, _saccades_. On average, their length is 7-9 letter spaces. At this time we do not receive new information. 
+When we read, our eyes incessantly make rapid mechanical (i.e., not controlled by consciousness) movements, **_saccades_**. On average, their length is 7-9 letter spaces. At this time we do not receive new information. 
 
 The primary function of a saccade is to bring a new region of text into foveal vision (~2° central field of view) for detailed analysis, because reading on the basis of only parafoveal or peripheral information is difficult to impossible.
 
-Between saccades, our eyes remain relatively motionless for the duration of _fixations_ (about 200 – 300 ms). During this period, we recognize the visible part of the text and plan where to make the next jump.
+Between saccades, our eyes remain relatively motionless for the duration of **_fixations_** (about 200 – 300 ms). During this period, we recognize the visible part of the text and plan where to make the next jump.
 
 **Figure 10. Typical pattern of eye movements while reading.[¹](#fn-1)**
 
@@ -210,11 +210,11 @@ Letter spaces are the appropriate metric to use, because the number of letters t
 
 Whereas a majority of the words in a text are fixated during reading, many words are skipped so that foveal processing of each word is not necessary.
 
-About 10-15% of the time, readers move their gaze back in the text (_regressions_) in order to re-read what has already been read. As the difficulty of the text increases, the duration of fixations and the frequency of regressions increase, and the length of saccades decreases.
+About 10-15% of the time, readers move their gaze back in the text (**_regressions_**) in order to re-read what has already been read. As the difficulty of the text increases, the duration of fixations and the frequency of regressions increase, and the length of saccades decreases.
 
-During fixation, we get information from the _perceptual span_. The size of this area is relatively small, in the case of alphabetic orthographies (for example, in European languages) it starts from the beginning of the fixed word, but no more than 3-4 letter spaces to the left of the fixation point, and extends to about 14-15 letter spaces to the right of this point (in total 17-19 spaces).
+During fixation, we get information from the **_perceptual span_**. The size of this area is relatively small, in the case of alphabetic orthographies (for example, in European languages) it starts from the beginning of the fixed word, but no more than 3-4 letter spaces to the left of the fixation point, and extends to about 14-15 letter spaces to the right of this point (in total 17-19 spaces).
 
-The _identification span_, that is, the scope required to identify a fixed word, is less than the perceptual span and, as a rule, does not exceed 7-8 letter spaces to the right of the fixation (in total, about 10-12 spaces).
+The **_identification span_**, that is, the scope required to identify a fixed word, is less than the perceptual span and, as a rule, does not exceed 7-8 letter spaces to the right of the fixation (in total, about 10-12 spaces).
 
 The availability of the first three letters of a word during the previous fixation leads to a decrease in the fixation time on that word. Some researches have also shown that the letter information to the right of the fixation can be used to determine whether the next word should be skipped.
 
@@ -230,7 +230,7 @@ Word-length information may be used not only in determining where to fixate next
 
 Word-length information also plays a clear role in where in the word a reader fixates. Although there is variability in where the eyes land on a word, readers tend to make their first fixation on a word about halfway between the beginning and the middle of a word.
 
-Word-length information helps to guide the eye toward *the preferred viewing location*, i.e. a location between the beginning and the middle of the word. When the space indicating the location of word n+1 was visible in the parafovea, the first fixation on that word was closer to the preferred viewing location than when the parafoveal preview did not contain that space information.
+Word-length information helps to guide the eye toward ***the preferred viewing location***, i.e. a location between the beginning and the middle of the word. When the space indicating the location of word n+1 was visible in the parafovea, the first fixation on that word was closer to the preferred viewing location than when the parafoveal preview did not contain that space information.
 
 Although the average landing position in a word lies between the beginning and middle of a word, this position varies as a function of the distance from the prior launch site. For example, if the distance to a target word is large (8-10 letter spaces), the landing position is shifted to the left. Likewise, if the distance is small (2-3 letter spaces), the landing position is shifted to the right.
 
@@ -238,7 +238,7 @@ The location of the first fixation is between the beginning and the middle of a 
 
 Informational density (or morphological structure) of the word influences how long the fixations are on each half of the word. For example, it was found that if the word was predictable from the first 6 letters (the words were typically about 12 letters), readers generally made a fixation in the first half of the word and then moved their eyes to the next word; if they made a second fixation on the word it tended to be quite short. However, if the word could only be identified by knowing what the ending was, readers typically made a short fixation at the beginning followed by a longer fixation on the end of the word.
 
-With respect to visual search task it was found that when the target was at a small _eccentricity_, it was located accurately with a single saccade; when the target was more peripheral, wrongly directed initial saccades were common (up to 40% of the time). Also _in a complex search tasks the eyes is initially directed to the center of the global display and then to the centers of recursively smaller groups of objects until the target was acquired_.
+With respect to visual search task it was found that when the target was at a small **_eccentricity_**, it was located accurately with a single saccade; when the target was more peripheral, wrongly directed initial saccades were common (up to 40% of the time). Also _in a complex search tasks the eyes is initially directed to the center of the global display and then to the centers of recursively smaller groups of objects until the target was acquired_.
 
 
 ## Program Comprehension
@@ -249,15 +249,15 @@ Programs differ from natural language texts in two important ways. First, progra
 ### Cognitive Models of Program Comprehension[⁸](#fn-8)
 
 #### Concepts and terminology
-A _mental model_ describes a developer's mental representation of the program to be understood whereas a _cognitive model_ describes the cognitive processes and temporary information structures in the programmer’s head that are used to form the mental model. 
+A **_mental model_** describes a developer's mental representation of the program to be understood whereas a _cognitive model_ describes the cognitive processes and temporary information structures in the programmer’s head that are used to form the mental model. 
 
-_Programming plans_ are generic fragments of code that represent typical scenarios in programming. For example, a sorting program will contain a loop which compares two numbers in each iteration.
+**_Programming plans_** are generic fragments of code that represent typical scenarios in programming. For example, a sorting program will contain a loop which compares two numbers in each iteration.
 
-_Delocalized plans_ – programming plans realized by lines scattered in different parts of the program. Delocalized plans complicate program comprehension.[¹⁰](#fn-10)
+**_Delocalized plans_** – programming plans realized by lines scattered in different parts of the program. Delocalized plans complicate program comprehension.[¹⁰](#fn-10)
 
-_Beacons_ are recognizable, familiar features in the code that act as cues to the presence of certain structures.
+**_Beacons_** are recognizable, familiar features in the code that act as cues to the presence of certain structures.
 
-_Rules of programming_ discourse capture the conventions of programming, such as coding standards and algorithm implementations. 
+**_Rules of programming_** discourse capture the conventions of programming, such as coding standards and algorithm implementations. 
 <!-- These rules form certain expectations in the mind of the programmer. -->
 
 
@@ -350,7 +350,7 @@ Consider the following example:
 
 To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book as follows[¹⁴](#fn-14):
 
-> Close one eye and squint at the screen with the other eye to see which elements pop out, which are fuzzy, and which seem to be grouped. Changing your perspective can often uncover previously undetected issues in layout and composition.
+> *Close one eye and squint at the screen with the other eye to see which elements pop out, which are fuzzy, and which seem to be grouped. Changing your perspective can often uncover previously undetected issues in layout and composition.*
 
 In fact, by squinting, we are trying to gauge how we perceive an image through ambient vision. Instead of squinting, you can try to look at the code with a defocused gaze and somewhat away from the fragment of interest.
 
@@ -396,7 +396,7 @@ In this case, syntax highlighting made things worse, since the color similarity 
 
 When scanning text, such an arrangement provokes eye movement from the resulting variable `success` directly to the column of the list of arguments and only then regression to the function name.
 
-_Syntax highlighting can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program._
+Syntax highlighting can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, *it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program.*
 
 To correctly display the logical structure of this code in its visual representation, it is necessary that the list of arguments is indented not relative to the beginning of the line, but relative to the beginning of the function name:
 
@@ -638,9 +638,9 @@ The main strategy for optimizing readability can be formulated as _making more e
 The implementation of this strategy is achieved by forming the text in the form of a relatively compact horizontally "image" with a pronounced visual structure that correctly reflects the logical structure of the program. This image is formed by hierarchically grouping logically related program elements into compact visual areas by means of horizontal indentation,  blank lines and alignment. The ease of reading the program text is also ensured by the choice of identifiers that are optimal in terms of length and expressiveness and their explicit separation in the program text using spaces.
 
 In his book on typography, Robert Bringhurst writes [¹²](#fn-12):
-> Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly leaded lines. These variations can and should add life to the page…
+> *Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly leaded lines. These variations can and should add life to the page…*
 
-> However empty or full it may be, the page must breathe, and in a book — that is, in a long text fit for the reader to live in — the page must breath in both directions.
+> *However empty or full it may be, the page must breathe, and in a book — that is, in a long text fit for the reader to live in — the page must breath in both directions.*
 
 Similarly, we can say that the structure of the program, unfolding in the text from top to bottom, also has a certain rhythm and variations. The task of the programmer is to visualize this rhythm, to make it explicit in general and in detail.
 
