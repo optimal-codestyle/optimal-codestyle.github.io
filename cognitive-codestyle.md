@@ -346,7 +346,7 @@ For example, in a function definition, we need to visually separate the function
 
 Consider the following example:
 
-<img src="cpp1.png" style="width:720px;" />
+<img src="en/cpp1.png" style="width:720px;" />
 
 To analyze the visual structure, let's make a test similar to the _squint test_ used by the UI designers. Alan Cooper describes this test in his book as follows[¹⁴](#fn-14):
 
@@ -354,19 +354,19 @@ To analyze the visual structure, let's make a test similar to the _squint test_ 
 
 In fact, by squinting, we are trying to gauge how we perceive an image through ambient vision. Instead of squinting, you can try to look at the code with a defocused gaze and somewhat away from the fragment of interest.
 
-<img src="cpp1_blur.png" style="width:720px;" />
+<img src="en/cpp1_blur.jpg" style="width:720px;" />
 
 The visual structure of this code contains only three large areas, which obviously does not reflect the program structure correctly.
 
 Stacking vertically allows you to correct this defect:
 
-<img src="cpp2.png" style="width:720px;" />
+<img src="en/cpp2.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/iq/i3/7i/iqi37ixwxuqufyuwxusni3cnneu.png" /> -->
 
 The squint test of it:
 
-<img src="cpp2_blur.png" style="width:720px;" />
+<img src="en/cpp2_blur.jpg"/>
 
 
 
@@ -380,7 +380,7 @@ Indents are used to form a visual representation of the hierarchy in the program
 
 Let's take a look at the following code:
 
-<img src="indent1.png"  style="width:777px;"/>
+<img src="en/indent1.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/xb/jn/kr/xbjnkre3zaikfrmbo1pctjlcnha.png"  style="zoom:50%;"/> -->
 
@@ -388,7 +388,7 @@ The list of arguments is presented as a column and is indented relative to the f
 
 The proximity rule binds the argument list to the variable name more strongly than to the function name, even though syntax highlighting creates a color similarity. But what happens if the highlighting algorithm changes? Here's what the same code looked like on gitlab:
 
-<img src="indent3.png"  style="width:720px;"/>
+<img src="en/indent3.png" />
 
 <!-- <img src="https://habrastorage.org/webt/qh/gv/7i/qhgv7iklbl_6jujgqm6kluodd60.png"  style="zoom:50%;"/> -->
 
@@ -396,11 +396,11 @@ In this case, syntax highlighting made things worse, since the color similarity 
 
 When scanning text, such an arrangement provokes eye movement from the resulting variable `success` directly to the column of the list of arguments and only then regression to the function name.
 
-Syntax highlighting can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, *it should not be taken into account when assessing whether its particular visual representation is readable and correctly reflects the structure of the program.*
+> ***Syntax highlighting*** can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether program's particular visual representation is readable and correctly reflects its structure.
 
 To correctly display the logical structure of this code in its visual representation, it is necessary that the list of arguments is indented not relative to the beginning of the line, but relative to the beginning of the function name:
 
-<img src="indent4.png"  style="width:720px;"/>
+<img src="en/indent4.png" />
 
 <!-- <img src="https://habrastorage.org/webt/nz/z9/6l/nzz96lrnme0kfnbe0fhcm8ktgvq.png"  style="zoom:50%;"/> -->
 
@@ -408,13 +408,13 @@ In this case, it is clearly seen that the function argument list is syntacticall
 
 Let's do a squint test. We will also disable syntax highlighting in order to exclude grouping by the color similarity factor, which we do not control:
 
-<img src="indent4_blurred.png"  style="width:720px;"/>
+<img src="en/indent4_blurred.jpg"/>
 
 <!-- <img src="https://habrastorage.org/webt/pd/hd/_n/pdhd_n8bny50x3nqwltsihpvwik.jpeg"  style="zoom:50%;"/> -->
 
 You can see that the function name and argument list form a tightly coupled scope. However, when using two spaces for indentation, the subordination of the argument list relative to the function name does not seem expressive enough. Using four spaces helps to solve this problem:
 
-<img src="indent4-4_blurred.png"  style="width:720px;"/>
+<img src="en/indent4-4_blurred.jpg"/>
 
 <!-- <img src="https://habrastorage.org/webt/ot/kj/u_/otkju_th20tr1orgivwrq8ju0qo.jpeg"  style="zoom:50%;"/> -->
 
@@ -422,7 +422,7 @@ One more problem remains: the list of arguments looks like one unstructured spot
 
 **One line formatting**
 
-<img src="code1.png"  style="width:720px;"/>
+<img src="en/code1.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/xm/os/gy/xmosgy6pigronododp5uljr5oly.png"  style="zoom:50%;"/> -->
 
@@ -432,7 +432,7 @@ Due to the large length of the line, the rest of it, which did not fit on the fi
 
 **Label:value pairs alignment**
 
-<img src="code2.png"  style="width:720px;"/>
+<img src="en/code2.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/ir/gp/zb/irgpzbpqbvhdnsuzbrdnxhemwum.png"  style="zoom:50%;"/> -->
 This option looks better in the sense that the method name and the argument list are clearly separated from each other. It is already a little easier to search in the argument list, since each pair is on a separate line and the labels are left aligned.
@@ -441,35 +441,35 @@ However, distinguishing between labels and values ​​is difficult because the
 
 In this case, we can try to fix the last flaw by shifting the list of arguments to the left:
 
-<img src="code3.png"  style="width:720px;"/>
+<img src="en/code3.png"  style="width:720px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/gd/3y/us/gd3yuslr14dsmyu4f1m4tsy4ssk.png"  style="zoom:50%;"/> -->
 To better represent the internal structure of the argument list, it is necessary to form an explicit dividing line between the label and value areas. We have two options here.
 
 **Option 1: labels and arguments are left aligned separately**
 
-<img src="code4.png"  style="width:720px;"/>
+<img src="en/code4.png"  style="width:720px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/qc/n8/zh/qcn8zhxgazbgclie1_0o0c3iv0c.png"  style="zoom:50%;"/> -->
 Of all the options proposed so far, this one most accurately conveys the logical structure of the code. It clearly distinguishes the areas of labels and values, identifying and finding individual elements within them is much easier. However, due to the large difference in the label lengths of the arguments, the bonds within pairs with short labels are weakened.
 
 **Option 2: inner alignment**
 
-<img src="code5.png"  style="width:720px;"/>
+<img src="en/code5.png"  style="width:720px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/oe/zj/lj/oezjljl0bqs6rc0gryw6822r4e8.png"  style="zoom:50%;"/> -->
 Having all the advantages of the previous option, this option looks more natural for this example. In it, the argument labels look like a natural continuation of the method name, as it should be in this case. The code looks compact enough without the need to carry the argument list to the next line.
 
 For the `reticulateSplines` example, the code in this styling would look like this:
 
-<img src="indent5.png"  style="width:720px;"/>
+<img src="en/indent5.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/q-/ff/ay/q-ffaynkxm45pkwpe4ivn0ef0b0.png"  style="zoom:50%;"/> -->
 Alignment is a powerful tool for optimizing the visual presentation of code by forming compact groups in a horizontal direction.
 
 Let's analyze the following code:
 
-<img src="proto1.png"  style="width:724px;"/>
+<img src="en/proto1.png"  style="width:724px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/fs/mg/k0/fsmgk0pgwcqzom18vxjrcqkgnpq.png"  style="zoom:50%;"/> -->
 
@@ -477,7 +477,7 @@ Basically, every single protocol declaration looks reasonably readable. However,
 
 Let's reformat it so that each declaration spans one line and align it:
 
-<img src="proto3.png"  style="width:724px;"/>
+<img src="en/proto3.png"  style="width:724px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/pt/uu/bv/ptuubvmnslk97jdapakeffafaa0.png"  style="zoom:50%;"/> -->
 
@@ -487,13 +487,13 @@ As mentioned above, there is some asymmetry in how we perceive the left and righ
 
 Because of that, the following constructions cannot be called good in terms of readability:
 
-<img src="closure1.png"  style="width:720px;"/>
+<img src="en/closure1.png"  style="width:720px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/82/x3/y1/82x3y16luvwnxvimg_cdysisniq.png"  style="zoom:50%;"/> -->
 
 In such constructs, the new namespace begins at the end of the line, that is, in the least important area, where this beginning is not expected. It's more natural to place the beginning of this block of code where it should be — at the top left:
 
-<img src="closure2.png"  style="width:720px;"/>
+<img src="en/closure2.png"  style="width:720px;"/>
 
 <!-- <img src="https://habrastorage.org/webt/d3/2s/en/d32senybyy8wrbv9di8l_xy_tta.png"  style="zoom:50%;"/> -->
 
@@ -556,20 +556,20 @@ Decorating class and function names only makes sense if you are developing a lib
 As mentioned above, using any other separator between words instead of a space makes reading difficult, because of the difficulties in determining the boundaries of a word, which in turn lead to difficulties in recognizing and planning the next saccade.
 
 Therefore, it is recommended to separate identifiers in the program using spaces, even if formally such separation is not required. For example, it makes sense to separate the function name and the list of its parameters/arguments with a space:
-<img src="space1.png" style="width:720px;" />
+<img src="en/space1.png" style="width:720px;" />
 <!-- <img src="https://habrastorage.org/webt/1r/iy/il/1riyil0pm_dpnf0h9jkivaqvspi.png"  style="zoom:50%;"/> -->
 
 There is no space on the first line, and the function name visually sticks to the first argument in the argument list. In addition to the difficulty in reading, we can also notice that the visual structure does not quite correctly reflect the logical structure of the program: the function call expression includes the function name and the argument list, the argument list includes the first and second arguments. In the first line, the function name is more strictly bound to the first argument than the arguments to each other.
 
 One more example:
 
-<img src="space3_1.png" style="width:720px;" />
+<img src="en/space3_1.png" style="width:720px;" />
 
 <!-- <img src="https://habrastorage.org/webt/rs/dz/ku/rsdzkuirda_pdn22_ocsalvl8rg.png"  style="zoom:50%;"/> -->
 
 After splitting into two groups, adding spaces and alignment:
 
-<img src="space3_2.png" style="width:720px;" />
+<img src="en/space3_2.png" style="width:720px;" />
 
 <!-- <img src="https://habrastorage.org/webt/xv/ff/yr/xvffyrmbd0n3tn-ay-xxkdhsjqc.png"  style="zoom:50%;"/> -->
 
@@ -577,7 +577,7 @@ In this case, the addition of spaces not only made it easier to read individual 
 
 In the case when the total length of identifiers does not exceed the size of the recognition area, this requirement is not so critical, since the entire expression can be immediately captured with one glance:
 
-<img src="space2.png" style="width:720px;" />
+<img src="en/space2.png" style="width:720px;" />
 
 <!-- <img src="https://habrastorage.org/webt/qx/o-/al/qxo-alqr0-hwf2ycvpjo_wwh2dq.png"  style="zoom:50%;"/> -->
 
@@ -599,7 +599,7 @@ Placing the opening parenthesis at the beginning of a single line in the _Allman
 
 The disadvantages of _1TBS_ lead to the fact that the opening curly brace ceases to fully participate in the formation of the visual presentation of the code, the style provokes the programmer not to separate the code blocks inside the braces and their surrounding elements with empty lines, and as a result, the program text often looks like one poorly structured massive chunk:
 
-<img src="picture36.png" style="width:720px;" />
+<img src="en/picture36.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/y1/kr/zq/y1krzqjyfs1tpw0wshh7kznwioy.png" style="zoom:50%;" /> -->
 
@@ -607,7 +607,7 @@ The code in the example above demonstrates the main problems of the _1TBS_ style
 
 Reformatting this code using the _Allman_ style allows for a more acceptable result:
 
-<img src="picture37.png" style="width:720px;" />
+<img src="en/picture37.png"/>
 
 <!-- <img src="https://habrastorage.org/webt/jv/x-/pf/jvx-pfjfuqs01oiohffb9mjmltw.png" style="zoom:50%;" /> -->
 
@@ -615,7 +615,7 @@ Despite the fact that in most cases _Allman_ objectively outperforms _1TBS_, som
 
 So in the previous example, placing the last open brace at the end of the line looks quite natural, and the resulting empty space only adds a small accent, compensating for the small visual mass of the last block, consisting of only one line. When the brace is placed on a separate line, this space becomes too large, and this line looks torn off from the rest of the construction:
 
-<img src="picture38.png" style="width:720px;" />
+<img src="en/picture38.png" style="width:720px;" />
 
 <!-- <img src="https://habrastorage.org/webt/qx/b5/qe/qxb5qetfvjaier48xmxjlzw1yr8.png" style="zoom:50%;" /> -->
 
