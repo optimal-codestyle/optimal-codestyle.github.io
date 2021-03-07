@@ -1,5 +1,5 @@
 # Fundamentals of Optimal Code Style
-### Cognitively-Oriented Approach to Improve Program Readability
+### Cognitively-Oriented Approach to Improving the Readability of Programs
 
 
 
@@ -396,7 +396,7 @@ In this case, syntax highlighting made things worse, since the color similarity 
 
 When scanning text, such an arrangement provokes eye movement from the resulting variable `success` directly to the column of the list of arguments and only then regression to the function name.
 
-> ***Syntax highlighting*** can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it should not be taken into account when assessing whether program's particular visual representation is readable and correctly reflects its structure.
+_**Syntax highlighting** can greatly facilitate the perception of the program. However, in the case of an incorrect visual structure, the effect of it can be completely opposite. Considering also that since the programmer has no control over the syntax highlighting, it **should not be taken into account when assessing whether program's particular visual representation is readable and correctly reflects its structure**._
 
 To correctly display the logical structure of this code in its visual representation, it is necessary that the list of arguments is indented not relative to the beginning of the line, but relative to the beginning of the function name:
 
