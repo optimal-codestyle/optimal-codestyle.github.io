@@ -1,9 +1,11 @@
 # Fundamentals of Optimal Code Style
-### Cognitively-Oriented Approach to Improving <br/>the Readability of Programs
+### Cognitively-Oriented Approach to Improving Program Readability
 
 
 
-###### By Aleksandr Skobelev
+###### By [Aleksandr Skobelev](mailto:al.skobelev@gmail.com)
+
+###### Version 1.0
 
 
 
