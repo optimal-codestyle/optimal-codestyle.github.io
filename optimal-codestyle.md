@@ -550,7 +550,7 @@ Taking the means of the estimated ranges, we get the following table:
 | 1 (guessing the suffix) | 14                  |
 | 2                       | 22                  |
 
-These guidelines are reasonably consistent with the boundaries given in Steve McConnell's book[¹⁴](#fn-14): 10-16 and 8-20. Now we can somehow explain them.
+These guidelines are reasonably consistent with the boundaries given in Steve McConnell's book[¹³](#fn-13): 10-16 and 8-20. Now we can somehow explain them.
 
 In practice, it is sometimes necessary to use names that are outside the suggested lengths. For example, when the name includes some standard naming of the group to which the given item belongs, as in `PreferencesViewController`. By having the meaningful, unique part of the name at the beginning, we can expect to recognize the unique part of the name on the first fixation, and at the same time, we do not need much effort to recognize the "common continuation".
 
